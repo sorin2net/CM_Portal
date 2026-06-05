@@ -1,10 +1,10 @@
 {
   "name": "Creative Monkeyz Portal",
-  "generatedAt": "2026-06-05T20:18:42.602Z",
+  "generatedAt": "2026-06-05T20:35:17.265Z",
   "stats": {
-    "categories": 10,
-    "videos": 576,
-    "withYoutubeId": 574
+    "categories": 11,
+    "videos": 626,
+    "withYoutubeId": 626
   },
   "categories": [
     {
@@ -827,7 +827,7 @@
             {
               "title": "Random AF1",
               "file": "CODIN&RAMO/Extras/Random AF1.mp4",
-              "youtubeId": null
+              "youtubeId": "vSVl_rSWYOg"
             }
           ],
           "subcategories": []
@@ -1666,8 +1666,8 @@
         {
           "name": "Wolfenstein",
           "slug": "wolfenstein",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
               "title": "WOLFENSTEIN 01",
@@ -1767,10 +1767,113 @@
           ]
         },
         {
+          "name": "Dead Space",
+          "slug": "dead-space",
+          "source": "youtube",
+          "subcategories": [],
+          "videos": [
+            {
+              "title": "DEAD SPACE 2 Partea 1",
+              "file": null,
+              "youtubeId": "DYcpveDivCE"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 2-a",
+              "file": null,
+              "youtubeId": "sRfwPVoeuGc"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 3-a",
+              "file": null,
+              "youtubeId": "QplQcwrVMwU"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 4-a",
+              "file": null,
+              "youtubeId": "Ubbm-v8_1pk"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 5-a",
+              "file": null,
+              "youtubeId": "dhnN5OjVH6U"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 6-a",
+              "file": null,
+              "youtubeId": "riatWpYd4Eg"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 7-a",
+              "file": null,
+              "youtubeId": "DSwSIlaqZDk"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 8-a",
+              "file": null,
+              "youtubeId": "XMYZrWuIFw8"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 9-a",
+              "file": null,
+              "youtubeId": "Z1y0k8Kw_zc"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 10-a",
+              "file": null,
+              "youtubeId": "cdybexlaMgA"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 11-a",
+              "file": null,
+              "youtubeId": "dO34T4H7fPM"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 12-a",
+              "file": null,
+              "youtubeId": "MWloQrOqoW8"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 13-a",
+              "file": null,
+              "youtubeId": "nVUZOHcHNk0"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 14-a",
+              "file": null,
+              "youtubeId": "PlH2pMSigDE"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 15-a",
+              "file": null,
+              "youtubeId": "wAcZpONDhWU"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 16-a",
+              "file": null,
+              "youtubeId": "gG_drHpTQxs"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 17-a",
+              "file": null,
+              "youtubeId": "5CvAyw5p7RM"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 18-a",
+              "file": null,
+              "youtubeId": "bwLa_uU4pa4"
+            },
+            {
+              "title": "DEAD SPACE 2 Partea a 19-a",
+              "file": null,
+              "youtubeId": "6lgI7JtMui0"
+            }
+          ]
+        },
+        {
           "name": "Dying Light",
           "slug": "dying-light",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
               "title": "Dying Light P1",
@@ -1852,8 +1955,8 @@
         {
           "name": "Battlefield 1",
           "slug": "battlefield-1",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
               "title": "Battlefield 1",
@@ -1920,8 +2023,8 @@
         {
           "name": "Titanfall",
           "slug": "titanfall",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
               "title": "Titanfall Campanie 1",
@@ -1973,8 +2076,8 @@
         {
           "name": "Shadow Warrior",
           "slug": "shadow-warrior",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
               "title": "SHADOW WARRIOR Partea 1",
@@ -2011,14 +2114,9 @@
         {
           "name": "Hearthstone",
           "slug": "hearthstone",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
-            {
-              "title": "HearthStone (scurta prezentare)",
-              "file": null,
-              "youtubeId": "YbkfMO24cKg"
-            },
             {
               "title": "Hearthstone - Today's Quest 01",
               "file": null,
@@ -2042,10 +2140,38 @@
           ]
         },
         {
+          "name": "Call of Duty: Modern Warfare",
+          "slug": "call-of-duty-modern-warfare",
+          "source": "youtube",
+          "subcategories": [],
+          "videos": [
+            {
+              "title": "CALL OF DUTY MODERN WARFARE #RTXON",
+              "file": null,
+              "youtubeId": "l9AYyxzA-KM"
+            },
+            {
+              "title": "CALL OF DUTY MODERN WARFARE P2 #RTXON",
+              "file": null,
+              "youtubeId": "L5iqOec5hsE"
+            },
+            {
+              "title": "CALL OF DUTY MODERN WARFARE P3 #RTXON",
+              "file": null,
+              "youtubeId": "Lasw2nfr8M4"
+            },
+            {
+              "title": "CALL OF DUTY MODERN WARFARE P4 #RTXON",
+              "file": null,
+              "youtubeId": "u9BLB9tlzrI"
+            }
+          ]
+        },
+        {
           "name": "WildStar",
           "slug": "wildstar",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
               "title": "WILDSTAR Beta Giveaway",
@@ -2067,8 +2193,8 @@
         {
           "name": "Battlefield V",
           "slug": "battlefield-v",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
               "title": "Battlefield V: Campania P1",
@@ -2088,33 +2214,10 @@
           ]
         },
         {
-          "name": "Overwatch",
-          "slug": "overwatch",
-          "subcategories": [],
-          "source": "youtube",
-          "videos": [
-            {
-              "title": "Overwatch: Junkenstein's Revenge",
-              "file": null,
-              "youtubeId": "vu1X5YEGHYQ"
-            },
-            {
-              "title": "Deschidem 50 de Loot Boxes in Overwatch",
-              "file": null,
-              "youtubeId": "Sez3lTnrO7Q"
-            },
-            {
-              "title": "Deschidem 50 de Halloween LootBoxes (Overwatch)",
-              "file": null,
-              "youtubeId": "EcixYRz18vk"
-            }
-          ]
-        },
-        {
           "name": "DOOM",
           "slug": "doom",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
               "title": "DOOM Partea 1",
@@ -2134,10 +2237,33 @@
           ]
         },
         {
+          "name": "Call of Duty: Black Ops",
+          "slug": "call-of-duty-black-ops",
+          "source": "youtube",
+          "subcategories": [],
+          "videos": [
+            {
+              "title": "BLACK OPS 2 FFA 02",
+              "file": null,
+              "youtubeId": "2x6rmVbyK0c"
+            },
+            {
+              "title": "BLACK OPS 2 FFA",
+              "file": null,
+              "youtubeId": "VJjwECZOVsg"
+            },
+            {
+              "title": "MOMENTE BLACK OPS 4 BETA",
+              "file": null,
+              "youtubeId": "MlQWDW51FBs"
+            }
+          ]
+        },
+        {
           "name": "Ori and the Blind Forest",
           "slug": "ori-and-the-blind-forest",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
               "title": "ORI and the Blind Forest P1",
@@ -2154,8 +2280,8 @@
         {
           "name": "Lords of the Fallen",
           "slug": "lords-of-the-fallen",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
               "title": "Lords of the Fallen P1",
@@ -2172,8 +2298,8 @@
         {
           "name": "Borderlands: The Pre-Sequel",
           "slug": "borderlands-the-pre-sequel",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
               "title": "BORDERLANDS:Pre-Sequel Partea 1",
@@ -2188,28 +2314,28 @@
           ]
         },
         {
-          "name": "Minecraft",
-          "slug": "minecraft",
-          "subcategories": [],
+          "name": "Atomic Heart",
+          "slug": "atomic-heart",
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
-              "title": "joaca MINECRAFT 2",
+              "title": "ATOMIC HEART (P1)",
               "file": null,
-              "youtubeId": "vqwC4mC6NXI"
+              "youtubeId": "xDbQCwa_478"
             },
             {
-              "title": "joaca MINECRAFT P2",
+              "title": "ATOMIC HEART (P2)",
               "file": null,
-              "youtubeId": "xgffRxS4_0U"
+              "youtubeId": "ApLjZHMe4Ak"
             }
           ]
         },
         {
           "name": "Battlefield: Hardline",
           "slug": "battlefield-hardline",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
               "title": "BF:Hardline P1",
@@ -2221,8 +2347,8 @@
         {
           "name": "Paladins",
           "slug": "paladins",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
               "title": "PALADINS",
@@ -2234,8 +2360,8 @@
         {
           "name": "Fortnite",
           "slug": "fortnite",
-          "subcategories": [],
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
               "title": "joaca Fortnite Battle Royale",
@@ -2245,51 +2371,15 @@
           ]
         },
         {
-          "name": "Heroes of the Storm",
-          "slug": "heroes-of-the-storm",
-          "subcategories": [],
+          "name": "Apex Legends",
+          "slug": "apex-legends",
           "source": "youtube",
+          "subcategories": [],
           "videos": [
             {
-              "title": "Heroes of the Storm - Prezentare(ish)",
+              "title": "APEX LEGENDS",
               "file": null,
-              "youtubeId": "KI3J8jqoMxI"
-            }
-          ]
-        },
-        {
-          "name": "Insurgency",
-          "slug": "insurgency",
-          "subcategories": [],
-          "source": "youtube",
-          "videos": [
-            {
-              "title": "Insurgency - Scurta prezentare",
-              "file": null,
-              "youtubeId": "7LGr-oNoKR0"
-            }
-          ]
-        },
-        {
-          "name": "Diverse jocuri",
-          "slug": "diverse-jocuri",
-          "subcategories": [],
-          "source": "youtube",
-          "videos": [
-            {
-              "title": "Un Meci Adecvat cu HeimerDongr",
-              "file": null,
-              "youtubeId": "fUtA9lIXs-Q"
-            },
-            {
-              "title": "LOL cu SUSAN",
-              "file": null,
-              "youtubeId": "LqOJVpCLwls"
-            },
-            {
-              "title": "vs. 5 Nights at Freddy's 3",
-              "file": null,
-              "youtubeId": "JmIGCiFmWio"
+              "youtubeId": "1ZyOTJLKOZU"
             }
           ]
         }
@@ -3099,7 +3189,7 @@
             {
               "title": "s03e19",
               "file": "RObotzi/Sezonul 3/s03e19.mp4",
-              "youtubeId": null
+              "youtubeId": "KmD0HuEPL-o"
             },
             {
               "title": "s03e20",
@@ -3359,6 +3449,174 @@
             }
           ],
           "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "Altele de pe canal",
+      "slug": "altele-de-pe-canal",
+      "source": "youtube",
+      "subcategories": [],
+      "videos": [
+        {
+          "title": "RObotzi - LENE (MO x IOBAGG)",
+          "file": null,
+          "youtubeId": "XRYEdLPjiTE"
+        },
+        {
+          "title": "Facem Jocul RObotzi!",
+          "file": null,
+          "youtubeId": "-MSoZaGhBxc"
+        },
+        {
+          "title": "CSP (IOBAGG) - ZOOT SUIT - TEASER CLIP",
+          "file": null,
+          "youtubeId": "g2dQSiFUoXA"
+        },
+        {
+          "title": "CSP - ZOOT SUIT",
+          "file": null,
+          "youtubeId": "26S2lmH3iN0"
+        },
+        {
+          "title": "Diablo IV Full Gameplay si Review",
+          "file": null,
+          "youtubeId": "xfdsx-vYU0c"
+        },
+        {
+          "title": "Cade de Foarte Sus si...",
+          "file": null,
+          "youtubeId": "ipoL3MzdYjA"
+        },
+        {
+          "title": "Les Aventures Culinaires de NinjaRamo - Sandmici",
+          "file": null,
+          "youtubeId": "0rfgeZ3MmnA"
+        },
+        {
+          "title": "Les Aventures Culinaires de Ninja Ramo - Panko Banana",
+          "file": null,
+          "youtubeId": "Esvcs0l0zCA"
+        },
+        {
+          "title": "Les Aventures Culinaires de Ninja Ramo - Rainbow Crepe Cake",
+          "file": null,
+          "youtubeId": "cur3l2bIRE8"
+        },
+        {
+          "title": "DECI",
+          "file": null,
+          "youtubeId": "PvFzPw3wDe4"
+        },
+        {
+          "title": "Dupa Geamandura [Teaser Clip]",
+          "file": null,
+          "youtubeId": "dHVa4igp5cM"
+        },
+        {
+          "title": "IEFTIN i BUN cu Codrin i Echo",
+          "file": null,
+          "youtubeId": "jhgYxcS8y8c"
+        },
+        {
+          "title": "IEFTIN I BUN cu Bean i Afo",
+          "file": null,
+          "youtubeId": "PalltnDxgkU"
+        },
+        {
+          "title": "La Cafea cu Bean (Subcarpati)",
+          "file": null,
+          "youtubeId": "AhwTwlAJg_g"
+        },
+        {
+          "title": "IEFTIN I BUN cu Cortea i Bordea",
+          "file": null,
+          "youtubeId": "uLOaV72n2-Y"
+        },
+        {
+          "title": "RObotzi - TRACKACHULA (teaser)",
+          "file": null,
+          "youtubeId": "wUOnXjm26-w"
+        },
+        {
+          "title": "CM STREAM SETUP TOUR",
+          "file": null,
+          "youtubeId": "aG-1bg_f9dc"
+        },
+        {
+          "title": "PLECAM IN AMERICA! Update CM",
+          "file": null,
+          "youtubeId": "6eNBI2kdcbY"
+        },
+        {
+          "title": "UPDATE - CM la Bucharest Gaming Week",
+          "file": null,
+          "youtubeId": "trMEnbSwews"
+        },
+        {
+          "title": "Concurs \"Imagineaza-ti asta\"",
+          "file": null,
+          "youtubeId": "DgQO6hmgdc4"
+        },
+        {
+          "title": "IOBAG feat. Ninja Ramo - KKTGRS - Tizr bideoclip",
+          "file": null,
+          "youtubeId": "TmNJxtBiPgg"
+        },
+        {
+          "title": "League of Legends Drama - New Season Placement Matches",
+          "file": null,
+          "youtubeId": "tSgtalJ0joM"
+        },
+        {
+          "title": "Concurs \"FORTA!\" #CMAXNSTAR",
+          "file": null,
+          "youtubeId": "jd1VV48BPTk"
+        },
+        {
+          "title": "Concurs SuperErou",
+          "file": null,
+          "youtubeId": "u6RuhBdpbH4"
+        },
+        {
+          "title": "RObotzi.S04.Ep18.Cadou",
+          "file": null,
+          "youtubeId": "TaW9IukuUBI"
+        },
+        {
+          "title": "Asus Giveaway - GeForce GTX 970",
+          "file": null,
+          "youtubeId": "Q5-DBoHFvO0"
+        },
+        {
+          "title": "Roccat Kave Giveaway",
+          "file": null,
+          "youtubeId": "bviuAAZtteY"
+        },
+        {
+          "title": "Logitech Gear Giveaway",
+          "file": null,
+          "youtubeId": "TzMPIC-oQPs"
+        },
+        {
+          "title": "Nimeni Nu Doarme 2 Promo",
+          "file": null,
+          "youtubeId": "giN83aGnLLE"
+        },
+        {
+          "title": "CHIVALRY",
+          "file": null,
+          "youtubeId": "rqdjuKMuVAg"
+        },
+        {
+          "title": "RObotzi.S04.Ep05.Pescuit",
+          "file": null,
+          "youtubeId": "KMlYlrftf_g"
+        },
+        {
+          "title": "RObotzi.S04.Ep3.Inundatie",
+          "file": null,
+          "youtubeId": "rCUx0HX9sQo"
         }
       ]
     }

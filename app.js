@@ -188,7 +188,6 @@ function renderAbout() {
         <p>Tot conţinutul aparţine creatorilor <b>Creative Monkeyz</b>. Dacă îţi place, susţine-i pe canalele oficiale:</p>
         <div class="chip-links">
           <a class="chip" href="https://www.youtube.com/@CreativeMonkeyzArmy" target="_blank" rel="noopener">${YT_ICON} Creative Monkeyz Army</a>
-          <a class="chip" href="https://www.youtube.com/@lacafea9748" target="_blank" rel="noopener">${YT_ICON} La Cafea</a>
         </div>
         <p class="muted" style="margin-top:16px">Portal neoficial, neafiliat cu canalul. Realizat din respect pentru munca lor.</p>
       </div>
@@ -205,7 +204,6 @@ function renderFooter() {
       </div>
       <div class="chip-links">
         <a class="chip" href="https://www.youtube.com/@CreativeMonkeyzArmy" target="_blank" rel="noopener">${YT_ICON} Canal oficial</a>
-        <a class="chip" href="https://www.youtube.com/@lacafea9748" target="_blank" rel="noopener">${YT_ICON} La Cafea</a>
       </div>
     </div>`;
 }
