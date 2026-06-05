@@ -1,14 +1,8 @@
-// match-pass2.js
-// Completeaza videoclipurile ramase GOALE potrivindu-le in interiorul playlist-ului
-// propriu de categorie (mai putine confuzii). OUTLAST: cifre romane -> numere.
-// Ruleaza:  node scripts/match-pass2.js   (dupa match-youtube.js)
-
 const fs = require("fs");
 const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const CATALOG = path.join(ROOT, "catalog.json");
 
-// ---- normalizare + similaritate (la fel ca in match-youtube.js) ----
 const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
   .replace(/[：]/g, ":").replace(/[^a-z0-9]+/g, " ").trim();
 const tok = (s) => new Set(norm(s).split(" ").filter(Boolean));
@@ -18,7 +12,6 @@ const loadPl = (f) => fs.existsSync(path.join(ROOT, "data", f))
       .map((l) => { const i = l.indexOf("|||"); return { id: l.slice(0, i), title: l.slice(i + 3) }; })
   : [];
 
-// ---- cifre romane -> intreg ----
 function roman(s) {
   const m = { i: 1, v: 5, x: 10, l: 50, c: 100, d: 500, m: 1000 };
   s = s.toLowerCase(); let n = 0;
@@ -30,7 +23,6 @@ function roman(s) {
   return n;
 }
 
-// ---- configurare: ce folder local -> ce playlist, ce metoda ----
 const JOBS = [
   { prefix: "PIRAMIDA",                pls: ["pl-piramida.txt"],                 mode: "fuzzy" },
   { prefix: "RENDAM",                  pls: ["pl-rendam-en.txt", "pl-rendam-ro.txt"], mode: "fuzzy" },
@@ -44,28 +36,26 @@ const JOBS = [
 ];
 const FUZZY_MIN = 0.34;
 
-// ---- potriveste OUTLAST MainGame dupa numar ----
 function outlastMatch(localTitle, pool) {
   const ln = (localTitle.match(/partea\s+0*(\d+)/i) || [])[1];
   if (!ln) return null;
   const wantFinal = /final/i.test(localTitle);
   for (const p of pool) {
     const t = norm(p.title);
-    if (/whistleblower|demo/.test(t)) continue;       // alt subfolder
-    if (wantFinal && /final/.test(t) && !/partea/.test(t)) return p; // "OUTLAST FINAL"
+    if (/whistleblower|demo/.test(t)) continue;
+    if (wantFinal && /final/.test(t) && !/partea/.test(t)) return p;
     const rm = t.match(/partea\s+(?:a\s+)?([ivxlcdm]+)\b/);
     if (rm && roman(rm[1]) === +ln) return p;
   }
   return null;
 }
 
-// ---- ruleaza ----
 const catalog = JSON.parse(fs.readFileSync(CATALOG, "utf8"));
 let filled = 0;
 const log = [];
 
 function tryJob(video, dirPath) {
-  if (video.youtubeId) return;                         // deja completat in Pass 1
+  if (video.youtubeId) return;
   const job = JOBS.find((j) => dirPath.startsWith(j.prefix));
   if (!job) return;
   const pool = job.pls.flatMap(loadPl);
@@ -75,7 +65,7 @@ function tryJob(video, dirPath) {
     if (m) { video.youtubeId = m.id; filled++; log.push(`OUTLAST  ${video.title}  ->  ${m.title}`); }
     return;
   }
-  // fuzzy in interiorul playlist-ului
+
   const lt = tok(video.title);
   let best = null, bs = 0;
   for (const p of pool) { const sc = dice(lt, tok(p.title)); if (sc > bs) { bs = sc; best = p; } }
@@ -88,7 +78,6 @@ function walk(node, dirPath) {
 }
 catalog.categories.forEach((c) => walk(c, c.name));
 
-// recalculeaza cate au id
 let withId = 0, total = 0;
 (function cnt(n){ n.videos.forEach(v=>{total++; if(v.youtubeId) withId++;}); n.subcategories.forEach(cnt); })({videos:[],subcategories:catalog.categories});
 catalog.stats.withYoutubeId = withId;

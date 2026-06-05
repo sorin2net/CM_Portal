@@ -1,21 +1,12 @@
-// build-catalog.js
-// Scaneaza folderul CM si genereaza catalog.json (categorii -> subcategorii -> videoclipuri).
-// Ruleaza cu:  node scripts/build-catalog.js
-//
-// Pastreaza ID-urile YouTube deja completate intr-un catalog.json existent,
-// ca sa nu pierzi munca atunci cand re-generezi dupa ce adaugi/scoti fisiere.
-
 const fs = require("fs");
 const path = require("path");
 
-const ROOT = path.join(__dirname, "..", "CM");          // folderul cu videoclipuri
-const OUT = path.join(__dirname, "..", "catalog.json");  // fisierul rezultat
+const ROOT = path.join(__dirname, "..", "CM");
+const OUT = path.join(__dirname, "..", "catalog.json");
 
-// --- sortare "naturala": "Sezonul 2" inainte de "Sezonul 10", "02" inainte de "10" ---
 const collator = new Intl.Collator("ro", { numeric: true, sensitivity: "base" });
 const natSort = (a, b) => collator.compare(a, b);
 
-// --- incarca youtubeId-urile dintr-un catalog vechi, indexate dupa calea fisierului ---
 function loadExistingIds(node, map) {
   if (!node) return map;
   for (const v of node.videos || []) {
@@ -35,17 +26,15 @@ if (fs.existsSync(OUT)) {
   }
 }
 
-// --- transforma un nume de folder/fisier intr-un "slug" pentru URL ---
 function slugify(s) {
   return s
     .toLowerCase()
-    .normalize("NFD").replace(/[̀-ͯ]/g, "") // scoate diacriticele
+    .normalize("NFD").replace(/[̀-ͯ]/g, "")
     .replace(/&/g, "-and-")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "") || "x";
 }
 
-// --- scaneaza recursiv un director si construieste un "nod" ---
 function scanDir(absDir, relDir) {
   const entries = fs.readdirSync(absDir, { withFileTypes: true });
 
@@ -59,15 +48,15 @@ function scanDir(absDir, relDir) {
     const rel = relDir ? `${relDir}/${name}` : name;
     return {
       title: name.replace(/\.mp4$/i, ""),
-      file: rel,                              // calea locala (pentru proiectul fizic)
-      youtubeId: knownIds.get(rel) || null,   // ID-ul YouTube (il completam in Faza 2)
+      file: rel,
+      youtubeId: knownIds.get(rel) || null,
     };
   });
 
   const subcategories = [];
   for (const d of dirs) {
     const child = scanDir(path.join(absDir, d), relDir ? `${relDir}/${d}` : d);
-    // pastram doar subcategoriile care contin pana la urma ceva
+
     if (child.videos.length || child.subcategories.length) subcategories.push(child);
   }
 
@@ -79,7 +68,6 @@ function scanDir(absDir, relDir) {
   };
 }
 
-// --- construieste catalogul de la categoriile principale ---
 const topEntries = fs.readdirSync(ROOT, { withFileTypes: true })
   .filter(e => e.isDirectory())
   .map(e => e.name)
@@ -91,7 +79,6 @@ for (const name of topEntries) {
   if (node.videos.length || node.subcategories.length) categories.push(node);
 }
 
-// --- mici statistici ---
 let totalVideos = 0, withId = 0;
 function count(node) {
   totalVideos += node.videos.length;

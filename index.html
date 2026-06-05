@@ -4,40 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Creative Monkeyz Portal</title>
+  <meta name="description" content="Portal-tribut neoficial: o colectie organizata de videoclipuri Creative Monkeyz, de la Robotzi la gaming." />
+  <link rel="icon" href="assets/cm-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Bara de sus -->
-  <header class="topbar">
+  <header class="topbar" id="topbar">
     <div class="brand" id="brand">
-      <span class="brand-mark">CM</span>
-      <span class="brand-name">Creative Monkeyz <b>Portal</b></span>
+      <img class="brand-logo" src="assets/cm-logo.jpg" alt="Creative Monkeyz" />
+      <div class="brand-text">
+        <span class="brand-title">Creative Monkeyz</span>
+        <span class="brand-sub">P O R T A L</span>
+      </div>
     </div>
+    <nav class="nav">
+      <a class="nav-link" id="navHome">Acas&#259;</a>
+      <a class="nav-link" id="navAbout">Despre</a>
+    </nav>
     <div class="search">
+      <svg viewBox="0 0 24 24" class="search-ic"><path d="M21 21l-4.3-4.3M11 19a8 8 0 110-16 8 8 0 010 16z"/></svg>
       <input id="searchInput" type="search" placeholder="Caut&#259; un clip..." autocomplete="off" />
     </div>
   </header>
 
-  <!-- Firul de navigare (breadcrumb) -->
-  <nav class="breadcrumb" id="breadcrumb"></nav>
-
-  <!-- Continutul principal (se umple din JavaScript) -->
   <main id="content" class="content"></main>
 
-  <!-- Player-ul (ascuns pana cand dai play) -->
+  <footer class="site-footer" id="siteFooter"></footer>
+
   <div class="player-overlay" id="playerOverlay" hidden>
     <div class="player-box">
       <div class="player-header">
-        <span id="playerTitle" class="player-title"></span>
+        <div class="player-meta">
+          <span id="playerTitle" class="player-title"></span>
+          <span id="playerWhere" class="player-where"></span>
+        </div>
         <button class="btn-close" id="btnClose" title="Ie&#537;ire (Esc)">&times;</button>
       </div>
-      <div class="player-frame" id="playerFrame">
-        <!-- aici se injecteaza iframe-ul YouTube sau un mesaj -->
-      </div>
+      <div class="player-frame" id="playerFrame"></div>
       <div class="player-controls">
-        <button id="btnPrev" class="ctrl">&#9664; Anteriorul</button>
-        <button id="btnFullscreen" class="ctrl">&#9974; Fullscreen</button>
-        <button id="btnNext" class="ctrl">Urm&#259;torul &#9654;</button>
+        <button id="btnPrev" class="ctrl"><span>&#9664;</span> Anteriorul</button>
+        <button id="btnFullscreen" class="ctrl ctrl-ghost"><span>&#9974;</span> Fullscreen</button>
+        <button id="btnNext" class="ctrl">Urm&#259;torul <span>&#9654;</span></button>
       </div>
     </div>
   </div>
