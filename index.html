@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Monkeyz Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Bara de sus -->
+  <header class="topbar">
+    <div class="brand" id="brand">
+      <span class="brand-mark">CM</span>
+      <span class="brand-name">Creative Monkeyz <b>Portal</b></span>
+    </div>
+    <div class="search">
+      <input id="searchInput" type="search" placeholder="Caut&#259; un clip..." autocomplete="off" />
+    </div>
+  </header>
+
+  <!-- Firul de navigare (breadcrumb) -->
+  <nav class="breadcrumb" id="breadcrumb"></nav>
+
+  <!-- Continutul principal (se umple din JavaScript) -->
+  <main id="content" class="content"></main>
+
+  <!-- Player-ul (ascuns pana cand dai play) -->
+  <div class="player-overlay" id="playerOverlay" hidden>
+    <div class="player-box">
+      <div class="player-header">
+        <span id="playerTitle" class="player-title"></span>
+        <button class="btn-close" id="btnClose" title="Ie&#537;ire (Esc)">&times;</button>
+      </div>
+      <div class="player-frame" id="playerFrame">
+        <!-- aici se injecteaza iframe-ul YouTube sau un mesaj -->
+      </div>
+      <div class="player-controls">
+        <button id="btnPrev" class="ctrl">&#9664; Anteriorul</button>
+        <button id="btnFullscreen" class="ctrl">&#9974; Fullscreen</button>
+        <button id="btnNext" class="ctrl">Urm&#259;torul &#9654;</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

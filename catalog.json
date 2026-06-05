@@ -1,0 +1,2736 @@
+{
+  "name": "Creative Monkeyz Portal",
+  "generatedAt": "2026-06-05T18:21:35.913Z",
+  "stats": {
+    "categories": 10,
+    "videos": 482,
+    "withYoutubeId": 454
+  },
+  "categories": [
+    {
+      "name": "3lar",
+      "slug": "3lar",
+      "videos": [],
+      "subcategories": [
+        {
+          "name": "2013",
+          "slug": "2013",
+          "videos": [
+            {
+              "title": "01 - Pacific Rim, The Package, The Haunting in Connecticut 2",
+              "file": "3lar/2013/01 - Pacific Rim, The Package, The Haunting in Connecticut 2.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "02 - Burt Wonderstone's Call is the End",
+              "file": "3lar/2013/02 - Burt Wonderstone's Call is the End.mp4",
+              "youtubeId": "6FvNr_8UnIU"
+            },
+            {
+              "title": "03 - The Red Power of the Last Exorcism",
+              "file": "3lar/2013/03 - The Red Power of the Last Exorcism.mp4",
+              "youtubeId": "kg7nR4de8mo"
+            },
+            {
+              "title": "04 - Dead Knights of Mimesis Badassdom",
+              "file": "3lar/2013/04 - Dead Knights of Mimesis Badassdom.mp4",
+              "youtubeId": "wo4CT70U59U"
+            },
+            {
+              "title": "05 - The Furious Lords of Blackhats",
+              "file": "3lar/2013/05 - The Furious Lords of Blackhats.mp4",
+              "youtubeId": "arGDckaAA1A"
+            },
+            {
+              "title": "06 - The Scary Monsters University has Fallen",
+              "file": "3lar/2013/06 - The Scary Monsters University has Fallen.mp4",
+              "youtubeId": "BNHfhQ-ZerA"
+            },
+            {
+              "title": "07 - The Stranger's Internship Prototype",
+              "file": "3lar/2013/07 - The Stranger's Internship Prototype.mp4",
+              "youtubeId": "LOZCJyjxouI"
+            },
+            {
+              "title": "08 - Justin stole Frankenstein's Ufo",
+              "file": "3lar/2013/08 - Justin stole Frankenstein's Ufo.mp4",
+              "youtubeId": "AdH11Bi6dBg"
+            },
+            {
+              "title": "09 - Conjuring a Cloudy Rapturepalooza",
+              "file": "3lar/2013/09 - Conjuring a Cloudy Rapturepalooza.mp4",
+              "youtubeId": "PFp92r4gKZM"
+            },
+            {
+              "title": "10 - A Gallowwalking Family Hangover",
+              "file": "3lar/2013/10 - A Gallowwalking Family Hangover.mp4",
+              "youtubeId": "eL99X-OofA8"
+            },
+            {
+              "title": "11 - Despicable Me Kicks The Colony's Ass",
+              "file": "3lar/2013/11 - Despicable Me Kicks The Colony's Ass.mp4",
+              "youtubeId": "u4I9x4qqa0I"
+            },
+            {
+              "title": "12 - Star Trek All Stars Into Turbo Darkness",
+              "file": "3lar/2013/12 - Star Trek All Stars Into Turbo Darkness.mp4",
+              "youtubeId": "5qXI8DQNFwo"
+            },
+            {
+              "title": "13 - White Wolverine Guns",
+              "file": "3lar/2013/13 - White Wolverine Guns.mp4",
+              "youtubeId": "EcmScEUViZc"
+            },
+            {
+              "title": "14 - No One Lives for Carrie's Elysium",
+              "file": "3lar/2013/14 - No One Lives for Carrie's Elysium.mp4",
+              "youtubeId": "N0J4a6Hz-Y8"
+            },
+            {
+              "title": "15 - Holla for Thor and his Dark World",
+              "file": "3lar/2013/15 - Holla for Thor and his Dark World.mp4",
+              "youtubeId": "g_Lw4RL4AHQ"
+            },
+            {
+              "title": "16 - Ender's White Game Redirected",
+              "file": "3lar/2013/16 - Ender's White Game Redirected.mp4",
+              "youtubeId": "9AKbCDHJ8x0"
+            },
+            {
+              "title": "17 - Ooga Booga's Gravity Hammer",
+              "file": "3lar/2013/17 - Ooga Booga's Gravity Hammer.mp4",
+              "youtubeId": "2fQ3BADl__A"
+            },
+            {
+              "title": "18 - Riddick's all Grown Up in Byzantium",
+              "file": "3lar/2013/18 - Riddick's all Grown Up in Byzantium.mp4",
+              "youtubeId": "7cA8yJqUad8"
+            },
+            {
+              "title": "19 - Captain Phillips & The Millers in The World's End",
+              "file": "3lar/2013/19 - Captain Phillips & The Millers in The World's End.mp4",
+              "youtubeId": "sMqGIeC_uLE"
+            },
+            {
+              "title": "20 - Rush and Purge The Hot Flashes",
+              "file": "3lar/2013/20 - Rush and Purge The Hot Flashes.mp4",
+              "youtubeId": "YkdYV2HWRjM"
+            },
+            {
+              "title": "21 - The Hobbit's Insidious Family",
+              "file": "3lar/2013/21 - The Hobbit's Insidious Family.mp4",
+              "youtubeId": "s2hdLMzV5-A"
+            },
+            {
+              "title": "22 - 300： Rise of a Getaway Plan",
+              "file": "3lar/2013/22 - 300： Rise of a Getaway Plan.mp4",
+              "youtubeId": "dEo6YsNG0eg"
+            },
+            {
+              "title": "23 - Lego's Seventh Killing Season",
+              "file": "3lar/2013/23 - Lego's Seventh Killing Season.mp4",
+              "youtubeId": "sJT_vfVjS7I"
+            },
+            {
+              "title": "24 - Free Magic Birds for Frankenstein's Army",
+              "file": "3lar/2013/24 - Free Magic Birds for Frankenstein's Army.mp4",
+              "youtubeId": "wk2Lx15z7SQ"
+            },
+            {
+              "title": "25 - The Hunger Games： Ride Along a Slave",
+              "file": "3lar/2013/25 - The Hunger Games： Ride Along a Slave.mp4",
+              "youtubeId": "5Aq8cPh9z_4"
+            },
+            {
+              "title": "26 - Bad Ronin： The Wolf of Milo",
+              "file": "3lar/2013/26 - Bad Ronin： The Wolf of Milo.mp4",
+              "youtubeId": "vg_YhpCh6VY"
+            },
+            {
+              "title": "27 - The Monuments Men Lost All The Planes",
+              "file": "3lar/2013/27 - The Monuments Men Lost All The Planes.mp4",
+              "youtubeId": "CkzsneNj3zY"
+            },
+            {
+              "title": "28 - Biopic Special",
+              "file": "3lar/2013/28 - Biopic Special.mp4",
+              "youtubeId": "UeRwappKBuo"
+            },
+            {
+              "title": "29 - Mr. Banks The Divergent Book Thief",
+              "file": "3lar/2013/29 - Mr. Banks The Divergent Book Thief.mp4",
+              "youtubeId": "lIHtaRzB6OE"
+            },
+            {
+              "title": "30 - Ass Bounty Killer Live",
+              "file": "3lar/2013/30 - Ass Bounty Killer Live.mp4",
+              "youtubeId": "Zi0Z8dOsV1U"
+            },
+            {
+              "title": "31 - Railway Man's Robocop Year",
+              "file": "3lar/2013/31 - Railway Man's Robocop Year.mp4",
+              "youtubeId": "0vkS-NQDC60"
+            },
+            {
+              "title": "32 - Grudge Ghost One on Mars",
+              "file": "3lar/2013/32 - Grudge Ghost One on Mars.mp4",
+              "youtubeId": "hJVyRMdRMX0"
+            },
+            {
+              "title": "33 - Machete Kills Dracula's Need for Speed",
+              "file": "3lar/2013/33 - Machete Kills Dracula's Need for Speed.mp4",
+              "youtubeId": "3oYSm2SHNas"
+            },
+            {
+              "title": "34 - Vikingdom's Frozen Last Vegas",
+              "file": "3lar/2013/34 - Vikingdom's Frozen Last Vegas.mp4",
+              "youtubeId": "hUtxoGOKCJc"
+            },
+            {
+              "title": "35 - The Secret Homefront of Walter Frankenstein",
+              "file": "3lar/2013/35 - The Secret Homefront of Walter Frankenstein.mp4",
+              "youtubeId": "Oxq-WPERMQ8"
+            },
+            {
+              "title": "36 - Hercules Games： The Non-Stop Legend",
+              "file": "3lar/2013/36 - Hercules Games： The Non-Stop Legend.mp4",
+              "youtubeId": "VLLmVpfttuQ"
+            },
+            {
+              "title": "37 - Tarzan's Neighbors in Budapest",
+              "file": "3lar/2013/37 - Tarzan's Neighbors in Budapest.mp4",
+              "youtubeId": "qQMe7Fslmx8"
+            },
+            {
+              "title": "38 - Halloween Special",
+              "file": "3lar/2013/38 - Halloween Special.mp4",
+              "youtubeId": "RsXK3dKUTBk"
+            },
+            {
+              "title": "39 - X-Men of the Future： Captain Charlie",
+              "file": "3lar/2013/39 - X-Men of the Future： Captain Charlie.mp4",
+              "youtubeId": "ey1WbUF0cFY"
+            },
+            {
+              "title": "40 - Oldboy Perry's Christmas Raid",
+              "file": "3lar/2013/40 - Oldboy Perry's Christmas Raid.mp4",
+              "youtubeId": "1c8J9KeSUc4"
+            },
+            {
+              "title": "41 - Noah's Best Sherman Ever",
+              "file": "3lar/2013/41 - Noah's Best Sherman Ever.mp4",
+              "youtubeId": "ZZc4zd79vEg"
+            },
+            {
+              "title": "42 - Welcome to the Jungle： Sabotage The Ice Soldiers",
+              "file": "3lar/2013/42 - Welcome to the Jungle： Sabotage The Ice Soldiers.mp4",
+              "youtubeId": "RAo9vSSb3ug"
+            },
+            {
+              "title": "43 - Muppets of God： Nut Job Wanted",
+              "file": "3lar/2013/43 - Muppets of God： Nut Job Wanted.mp4",
+              "youtubeId": "tVVt_8eS7dk"
+            },
+            {
+              "title": "44 - Hungover Spidermans Games on Jupiter Ascending",
+              "file": "3lar/2013/44 - Hungover Spidermans Games on Jupiter Ascending.mp4",
+              "youtubeId": "RnsA81CF6MA"
+            },
+            {
+              "title": "45 - Sort of Semi Nu Prea Top",
+              "file": "3lar/2013/45 - Sort of Semi Nu Prea Top.mp4",
+              "youtubeId": "Gf8TeXff0Wk"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "2014",
+          "slug": "2014",
+          "videos": [
+            {
+              "title": "01 - How to Train your Ape Tomorrow",
+              "file": "3lar/2014/01 - How to Train your Ape Tomorrow.mp4",
+              "youtubeId": "FqSqMv4WjhU"
+            },
+            {
+              "title": "02 - 22 Jump Str. Transcends The Other Woman",
+              "file": "3lar/2014/02 - 22 Jump Str. Transcends The Other Woman.mp4",
+              "youtubeId": "Ybch-aGUvMQ"
+            },
+            {
+              "title": "03 - The Bad Babadook Words Godzilla",
+              "file": "3lar/2014/03 - The Bad Babadook Words Godzilla.mp4",
+              "youtubeId": "iftU5YsOkmQ"
+            },
+            {
+              "title": "04 - A Haunted Maleficent Brick",
+              "file": "3lar/2014/04 - A Haunted Maleficent Brick.mp4",
+              "youtubeId": "9skrjNTwBZI"
+            },
+            {
+              "title": "05 - Guardians of The Man Purge",
+              "file": "3lar/2014/05 - Guardians of The Man Purge.mp4",
+              "youtubeId": "7aPROrDK214"
+            },
+            {
+              "title": "06 - Welcome to Tammys Zombeavers",
+              "file": "3lar/2014/06 - Welcome to Tammys Zombeavers.mp4",
+              "youtubeId": "rs4blSQm-8I"
+            },
+            {
+              "title": "07 - Legend of Jinn Oz's Transformers",
+              "file": "3lar/2014/07 - Legend of Jinn Oz's Transformers.mp4",
+              "youtubeId": "MHCj26tWOaI"
+            },
+            {
+              "title": "08 - Deliver us from Sin City Monaco",
+              "file": "3lar/2014/08 - Deliver us from Sin City Monaco.mp4",
+              "youtubeId": "8_Kd9u40QDc"
+            },
+            {
+              "title": "09 - The Maze Den Boxtrolls",
+              "file": "3lar/2014/09 - The Maze Den Boxtrolls.mp4",
+              "youtubeId": "3yOLumVHakY"
+            },
+            {
+              "title": "10 - Semi Sort of Tv Top",
+              "file": "3lar/2014/10 - Semi Sort of Tv Top.mp4",
+              "youtubeId": "33c34c__Xs0"
+            },
+            {
+              "title": "11 -  Earth to Teenage Mutant Hercules",
+              "file": "3lar/2014/11 -  Earth to Teenage Mutant Hercules.mp4",
+              "youtubeId": "8gTPyOq5fRY"
+            },
+            {
+              "title": "12 - Lucy, The Angriest Squatter",
+              "file": "3lar/2014/12 - Lucy, The Angriest Squatter.mp4",
+              "youtubeId": "TCFyO1Fg3QE"
+            },
+            {
+              "title": "13 - Peyote's Girl： Gone with the shame!",
+              "file": "3lar/2014/13 - Peyote's Girl： Gone with the shame!.mp4",
+              "youtubeId": "BgRf5eMfubw"
+            },
+            {
+              "title": "14 - So Cold Above Jessabelle!",
+              "file": "3lar/2014/14 - So Cold Above Jessabelle!.mp4",
+              "youtubeId": "ymW0IPDrxTY"
+            },
+            {
+              "title": "15 - Badly Drop Together",
+              "file": "3lar/2014/15 - Badly Drop Together.mp4",
+              "youtubeId": "nY-uo58P8-8"
+            },
+            {
+              "title": "16 - The Lost Interstellar Snowpiercer!",
+              "file": "3lar/2014/16 - The Lost Interstellar Snowpiercer!.mp4",
+              "youtubeId": "vnEfGPbtxv4"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "2018",
+          "slug": "2018",
+          "videos": [
+            {
+              "title": "01 - Godzilla si Arthur la un Glass de vorba",
+              "file": "3lar/2018/01 - Godzilla si Arthur la un Glass de vorba.mp4",
+              "youtubeId": "SAYCZ29j6s4"
+            },
+            {
+              "title": "02 -  La Llorona il apara pe Kid Arthur de Aquaman",
+              "file": "3lar/2018/02 -  La Llorona il apara pe Kid Arthur de Aquaman.mp4",
+              "youtubeId": "Zh-mWKNhUpc"
+            },
+            {
+              "title": "03 - Dumbo is a Dark Pokemon",
+              "file": "3lar/2018/03 - Dumbo is a Dark Pokemon.mp4",
+              "youtubeId": "oyCImyjJNNY"
+            },
+            {
+              "title": "04 - Madea the LEGO Lion King",
+              "file": "3lar/2018/04 - Madea the LEGO Lion King.mp4",
+              "youtubeId": "6bFFYPUoVZA"
+            },
+            {
+              "title": "05 - Happy Men want To Train Your Death Dragon",
+              "file": "3lar/2018/05 - Happy Men want To Train Your Death Dragon.mp4",
+              "youtubeId": "4Z7m0SCVeNQ"
+            },
+            {
+              "title": "06 - Avengers： Captain Endgame the Marvel Mutant",
+              "file": "3lar/2018/06 - Avengers： Captain Endgame the Marvel Mutant.mp4",
+              "youtubeId": "tHAunE9Mr00"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "2019",
+          "slug": "2019",
+          "videos": [
+            {
+              "title": "01 - US Men in Black Hellboy",
+              "file": "3lar/2019/01 - US Men in Black Hellboy.mp4",
+              "youtubeId": "Zvr-X935oh8"
+            },
+            {
+              "title": "02 - The Prodigys Arctic BrightBurn",
+              "file": "3lar/2019/02 - The Prodigys Arctic BrightBurn.mp4",
+              "youtubeId": "XOdy4PWqbc0"
+            },
+            {
+              "title": "03 - Playmobil Movie： Shazzam the Little",
+              "file": "3lar/2019/03 - Playmobil Movie： Shazzam the Little.mp4",
+              "youtubeId": "WJvE_DSA_RI"
+            },
+            {
+              "title": "04 - Spider Man vs. John Wick： Pet Sematary",
+              "file": "3lar/2019/04 - Spider Man vs. John Wick： Pet Sematary.mp4",
+              "youtubeId": "wIpAgrqi3jA"
+            },
+            {
+              "title": "05 - Drunk Romantic Parents： Hobbs & Shaw",
+              "file": "3lar/2019/05 - Drunk Romantic Parents： Hobbs & Shaw.mp4",
+              "youtubeId": "k6ihGztyK10"
+            },
+            {
+              "title": "06 - Dolls Play with Ugly Child's Shaft",
+              "file": "3lar/2019/06 - Dolls Play with Ugly Child's Shaft.mp4",
+              "youtubeId": "OrXS4G19wuE"
+            },
+            {
+              "title": "07 - MA Tolkien is Frozen 2",
+              "file": "3lar/2019/07 - MA Tolkien is Frozen 2.mp4",
+              "youtubeId": "IK8umhf9JLs"
+            },
+            {
+              "title": "08 - Highwaymen Hustle like Angry Birds",
+              "file": "3lar/2019/08 - Highwaymen Hustle like Angry Birds.mp4",
+              "youtubeId": "xfhZuG8Vsdc"
+            },
+            {
+              "title": "09 - Don Quixote Dragged Across Stockholm",
+              "file": "3lar/2019/09 - Don Quixote Dragged Across Stockholm.mp4",
+              "youtubeId": "b578c1R25Ec"
+            },
+            {
+              "title": "10 - Good Boys： The Art of Booksmart Self-Defense",
+              "file": "3lar/2019/10 - Good Boys： The Art of Booksmart Self-Defense.mp4",
+              "youtubeId": "XxE1Ztfd92Y"
+            },
+            {
+              "title": "11 - Alladin's Late Midsommar Night",
+              "file": "3lar/2019/11 - Alladin's Late Midsommar Night.mp4",
+              "youtubeId": "7MMGT-JxK7I"
+            },
+            {
+              "title": "12 - Dora's Toy Story： Time is Gold in Hollywood",
+              "file": "3lar/2019/12 - Dora's Toy Story： Time is Gold in Hollywood.mp4",
+              "youtubeId": "sXk9uOtkPY4"
+            },
+            {
+              "title": "13 - Annabelle, the Scary Story of the Dark Joker",
+              "file": "3lar/2019/13 - Annabelle, the Scary Story of the Dark Joker.mp4",
+              "youtubeId": "K18oTF-F2fk"
+            },
+            {
+              "title": "14 - Star Wars： The Dead Anna",
+              "file": "3lar/2019/14 - Star Wars： The Dead Anna.mp4",
+              "youtubeId": "Sy2IrJn9eQU"
+            },
+            {
+              "title": "15 - The Addams Gemini Spy",
+              "file": "3lar/2019/15 - The Addams Gemini Spy.mp4",
+              "youtubeId": "mYh5vI7HZOo"
+            },
+            {
+              "title": "16 - Sonic the Stuber： Murder Mistery",
+              "file": "3lar/2019/16 - Sonic the Stuber： Murder Mistery.mp4",
+              "youtubeId": "VbNB74ag9n8"
+            },
+            {
+              "title": "17 - Crawl 21： The World of Rim Bridges",
+              "file": "3lar/2019/17 - Crawl 21： The World of Rim Bridges.mp4",
+              "youtubeId": "jZAbV-iCUB4"
+            },
+            {
+              "title": "18 - Maleficent Chapter： Mother IT Mistress of Evil",
+              "file": "3lar/2019/18 - Maleficent Chapter： Mother IT Mistress of Evil.mp4",
+              "youtubeId": "WEG3A9RZmWw"
+            },
+            {
+              "title": "19 - Semi-sort of TOP Netflix & HBO",
+              "file": "3lar/2019/19 - Semi-sort of TOP Netflix & HBO.mp4",
+              "youtubeId": "7I3wZtISJEM"
+            }
+          ],
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "CODIN&RAMO",
+      "slug": "codin-and-ramo",
+      "videos": [],
+      "subcategories": [
+        {
+          "name": "ALTCEVA",
+          "slug": "altceva",
+          "videos": [
+            {
+              "title": "01 - Outfitul perfect pentru prima intalnire",
+              "file": "CODIN&RAMO/ALTCEVA/01 - Outfitul perfect pentru prima intalnire.mp4",
+              "youtubeId": "if-fm-S518k"
+            },
+            {
+              "title": "02 - Cum sa nu pierzi timpul cu un cartof",
+              "file": "CODIN&RAMO/ALTCEVA/02 - Cum sa nu pierzi timpul cu un cartof.mp4",
+              "youtubeId": "PEsnZUyKuHk"
+            },
+            {
+              "title": "03 - Unboxing Laptoputz + Anunt",
+              "file": "CODIN&RAMO/ALTCEVA/03 - Unboxing Laptoputz + Anunt.mp4",
+              "youtubeId": "fBxr15gAEt0"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "Conferinte",
+          "slug": "conferinte",
+          "videos": [
+            {
+              "title": "Codin - Conferinta Anului Viitor",
+              "file": "CODIN&RAMO/Conferinte/Codin - Conferinta Anului Viitor.mp4",
+              "youtubeId": "LKiFZA-m1_U"
+            },
+            {
+              "title": "Codin la Conferinta Anului Viitor 2",
+              "file": "CODIN&RAMO/Conferinte/Codin la Conferinta Anului Viitor 2.mp4",
+              "youtubeId": "4H1OH69C__M"
+            },
+            {
+              "title": "Codin Pop - Conferința Anului Viitor 2014",
+              "file": "CODIN&RAMO/Conferinte/Codin Pop - Conferința Anului Viitor 2014.mp4",
+              "youtubeId": "LKiFZA-m1_U"
+            },
+            {
+              "title": "Codin Pop Conferinta Anului Viitor",
+              "file": "CODIN&RAMO/Conferinte/Codin Pop Conferinta Anului Viitor.mp4",
+              "youtubeId": "LKiFZA-m1_U"
+            },
+            {
+              "title": "Creative Monkeyz panel at East European Comic Con 2013",
+              "file": "CODIN&RAMO/Conferinte/Creative Monkeyz panel at East European Comic Con 2013.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "CreativeMonkeyz  la East European Comic Con 2018  part I",
+              "file": "CODIN&RAMO/Conferinte/CreativeMonkeyz  la East European Comic Con 2018  part I.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "CreativeMonkeyz  la East European Comic Con 2018  part II i",
+              "file": "CODIN&RAMO/Conferinte/CreativeMonkeyz  la East European Comic Con 2018  part II i.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "East European Comic Con 2016 - Creative Monkeyz",
+              "file": "CODIN&RAMO/Conferinte/East European Comic Con 2016 - Creative Monkeyz.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "EECC 2015 Creative Monkeyz Panel - Part 1",
+              "file": "CODIN&RAMO/Conferinte/EECC 2015 Creative Monkeyz Panel - Part 1.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "EECC 2015 Creative Monkeyz Panel - Part 2",
+              "file": "CODIN&RAMO/Conferinte/EECC 2015 Creative Monkeyz Panel - Part 2.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "EECC 2015 Creative Monkeyz Panel - Part 3",
+              "file": "CODIN&RAMO/Conferinte/EECC 2015 Creative Monkeyz Panel - Part 3.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "Ice Comic Con - Creative Monkeyz Panel Part 1",
+              "file": "CODIN&RAMO/Conferinte/Ice Comic Con - Creative Monkeyz Panel Part 1.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "Ice Comic Con - Creative Monkeyz Panel Part 2",
+              "file": "CODIN&RAMO/Conferinte/Ice Comic Con - Creative Monkeyz Panel Part 2.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "Ice Comic Con - Creative Monkeyz Panel Part 3",
+              "file": "CODIN&RAMO/Conferinte/Ice Comic Con - Creative Monkeyz Panel Part 3.mp4",
+              "youtubeId": null
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "DPS",
+          "slug": "dps",
+          "videos": [
+            {
+              "title": "DPS #1 - De Pe Stream： Random Clipe si Pedepse",
+              "file": "CODIN&RAMO/DPS/DPS #1 - De Pe Stream： Random Clipe si Pedepse.mp4",
+              "youtubeId": "rExmRZt_BwE"
+            },
+            {
+              "title": "DPS #2 - Primul Strudel Uman, Pirueta Neagra si Mamaliga Secreta!",
+              "file": "CODIN&RAMO/DPS/DPS #2 - Primul Strudel Uman, Pirueta Neagra si Mamaliga Secreta!.mp4",
+              "youtubeId": "gmW7uOjrHto"
+            },
+            {
+              "title": "DPS #3 - Cand te speli pe dinti cu Mustar nu esti un Raton!",
+              "file": "CODIN&RAMO/DPS/DPS #3 - Cand te speli pe dinti cu Mustar nu esti un Raton!.mp4",
+              "youtubeId": "3ovWhpBmCVM"
+            },
+            {
+              "title": "DPS #4 - Reactie cu Avioane despre Sex in Nisip si Sunete Speciale",
+              "file": "CODIN&RAMO/DPS/DPS #4 - Reactie cu Avioane despre Sex in Nisip si Sunete Speciale.mp4",
+              "youtubeId": "Y6JC2mu7i2g"
+            },
+            {
+              "title": "DPS #5 - Reclame la Detergent, Inregistrari la Castravete, Nemorts in Tendinte",
+              "file": "CODIN&RAMO/DPS/DPS #5 - Reclame la Detergent, Inregistrari la Castravete, Nemorts in Tendinte.mp4",
+              "youtubeId": "ZmVFcg-BpeY"
+            },
+            {
+              "title": "DPS #6 - Ce sa faci cand auzi Voci, tutorial Anti Depresie 2020",
+              "file": "CODIN&RAMO/DPS/DPS #6 - Ce sa faci cand auzi Voci, tutorial Anti Depresie 2020.mp4",
+              "youtubeId": "OQDaMxRV9A4"
+            },
+            {
+              "title": "DPS #7 - Tragerea pe Fundick, Halatul Maro, Apa Dura si Mima Praf",
+              "file": "CODIN&RAMO/DPS/DPS #7 - Tragerea pe Fundick, Halatul Maro, Apa Dura si Mima Praf.mp4",
+              "youtubeId": "F1unXUAZNRs"
+            },
+            {
+              "title": "DPS #8 - Sculptura-n Dovleac, Hello-Win-u, Usa, Spirtu si Puiu",
+              "file": "CODIN&RAMO/DPS/DPS #8 - Sculptura-n Dovleac, Hello-Win-u, Usa, Spirtu si Puiu.mp4",
+              "youtubeId": "n99ydg-WFpk"
+            },
+            {
+              "title": "DPS #9 - Imnul la Kazoo █▬█ █ ▀█▀ feat. Nu Mor F00t Dop Inca (2020)",
+              "file": "CODIN&RAMO/DPS/DPS #9 - Imnul la Kazoo █▬█ █ ▀█▀ feat. Nu Mor F00t Dop Inca (2020).mp4",
+              "youtubeId": "mEGNIImgejw"
+            },
+            {
+              "title": "DPS #10 - Sarbautori Fericite Peeps!",
+              "file": "CODIN&RAMO/DPS/DPS #10 - Sarbautori Fericite Peeps!.mp4",
+              "youtubeId": "uF0ROhv6xRU"
+            },
+            {
+              "title": "DPS #11 - Fara de Bărbi, cu fofilari, desene si reactii",
+              "file": "CODIN&RAMO/DPS/DPS #11 - Fara de Bărbi, cu fofilari, desene si reactii.mp4",
+              "youtubeId": "aOEpOm3N0mM"
+            },
+            {
+              "title": "DPS #12 - Cei mai Saritori Jugadori",
+              "file": "CODIN&RAMO/DPS/DPS #12 - Cei mai Saritori Jugadori.mp4",
+              "youtubeId": "JNEF6mQNUn4"
+            },
+            {
+              "title": "DPS #13 - Sa fluieram cu Fetzele",
+              "file": "CODIN&RAMO/DPS/DPS #13 - Sa fluieram cu Fetzele.mp4",
+              "youtubeId": "nbtsadUMXmo"
+            },
+            {
+              "title": "DPS #14 - Survivorii Survivand",
+              "file": "CODIN&RAMO/DPS/DPS #14 - Survivorii Survivand.mp4",
+              "youtubeId": "GtTdbN-HA8I"
+            },
+            {
+              "title": "DPS #15 - Stam Acasa si invatzam LOL",
+              "file": "CODIN&RAMO/DPS/DPS #15 - Stam Acasa si invatzam LOL.mp4",
+              "youtubeId": "TmrlHO6Cwjk"
+            },
+            {
+              "title": "DPS #16 - Aventuri Culinare In Carantina",
+              "file": "CODIN&RAMO/DPS/DPS #16 - Aventuri Culinare In Carantina.mp4",
+              "youtubeId": "ommdaeDNkY0"
+            },
+            {
+              "title": "DPS #17 - Editie DUBLA!",
+              "file": "CODIN&RAMO/DPS/DPS #17 - Editie DUBLA!.mp4",
+              "youtubeId": "Lk2w35zxtsc"
+            },
+            {
+              "title": "DPS #18 - Cum sa-ti omori prietenii？",
+              "file": "CODIN&RAMO/DPS/DPS #18 - Cum sa-ti omori prietenii？.mp4",
+              "youtubeId": "dl4VqosBAf8"
+            },
+            {
+              "title": "DPS #19 - CLOUT Testoasa Departe",
+              "file": "CODIN&RAMO/DPS/DPS #19 - CLOUT Testoasa Departe.mp4",
+              "youtubeId": "47CltzfzaHM"
+            },
+            {
+              "title": "DPS #20 - Rechinu Superliminal Pictural",
+              "file": "CODIN&RAMO/DPS/DPS #20 - Rechinu Superliminal Pictural.mp4",
+              "youtubeId": "p1Tx3yymA-I"
+            },
+            {
+              "title": "DPS #21 - Clipe din Streamul Caritabil",
+              "file": "CODIN&RAMO/DPS/DPS #21 - Clipe din Streamul Caritabil.mp4",
+              "youtubeId": "Dhggs6idiXA"
+            },
+            {
+              "title": "DPS #22 - HAHAOS",
+              "file": "CODIN&RAMO/DPS/DPS #22 - HAHAOS.mp4",
+              "youtubeId": "x84TXlGJohs"
+            },
+            {
+              "title": "DPS #23 - SCHMUTZ si skinuri",
+              "file": "CODIN&RAMO/DPS/DPS #23 - SCHMUTZ si skinuri.mp4",
+              "youtubeId": "GjAJ98h7dq8"
+            },
+            {
+              "title": "DPS #24 - Ardem parchetu, fierbem vinu si facem shoutout catre streameri care ne plac",
+              "file": "CODIN&RAMO/DPS/DPS #24 - Ardem parchetu, fierbem vinu si facem shoutout catre streameri care ne plac.mp4",
+              "youtubeId": "gv95oPTABAc"
+            },
+            {
+              "title": "DPS #25 - Si Jeleuri Picante",
+              "file": "CODIN&RAMO/DPS/DPS #25 - Si Jeleuri Picante.mp4",
+              "youtubeId": "glNq-D7IaZs"
+            },
+            {
+              "title": "DPS #26 - COSMARURI DIN DESENE",
+              "file": "CODIN&RAMO/DPS/DPS #26 - COSMARURI DIN DESENE.mp4",
+              "youtubeId": "0vYRMzGqJok"
+            },
+            {
+              "title": "DPS #27 - EXPERIMENTE COOLINARE",
+              "file": "CODIN&RAMO/DPS/DPS #27 - EXPERIMENTE COOLINARE.mp4",
+              "youtubeId": "QhBtC7ZgnPM"
+            },
+            {
+              "title": "DPS #28 - Cu React, Povesti din State, Foto si Quick",
+              "file": "CODIN&RAMO/DPS/DPS #28 - Cu React, Povesti din State, Foto si Quick.mp4",
+              "youtubeId": "W1e-bOMdH58"
+            },
+            {
+              "title": "DPS #29 - ＂Drunk＂ Stream şi Electric Castle + Şusca şi Şelly",
+              "file": "CODIN&RAMO/DPS/DPS #29 - ＂Drunk＂ Stream şi Electric Castle + Şusca şi Şelly.mp4",
+              "youtubeId": "Pt-3i47uoqs"
+            },
+            {
+              "title": "DPS #30 Ciupercogirafa presedinte!",
+              "file": "CODIN&RAMO/DPS/DPS #30 Ciupercogirafa presedinte!.mp4",
+              "youtubeId": "6rbfYB9HL-0"
+            },
+            {
+              "title": "DPS #31 Winter Recap!",
+              "file": "CODIN&RAMO/DPS/DPS #31 Winter Recap!.mp4",
+              "youtubeId": "6ZkfWp25hQs"
+            },
+            {
+              "title": "DPS 32 - HaOsArE pe doua mii douaj doi",
+              "file": "CODIN&RAMO/DPS/DPS 32 - HaOsArE pe doua mii douaj doi.mp4",
+              "youtubeId": "V6ZtUDjlcRY"
+            },
+            {
+              "title": "DPS 33 - Poezia de pe Elden Rift",
+              "file": "CODIN&RAMO/DPS/DPS 33 - Poezia de pe Elden Rift.mp4",
+              "youtubeId": "TNY_VYnZpr8"
+            },
+            {
+              "title": "DPS 34 -  Mult prea picant 🔥",
+              "file": "CODIN&RAMO/DPS/DPS 34 -  Mult prea picant 🔥.mp4",
+              "youtubeId": "N4teAvbedPM"
+            },
+            {
+              "title": "DPS 35 - Call of Dovleci： Warzone 3",
+              "file": "CODIN&RAMO/DPS/DPS 35 - Call of Dovleci： Warzone 3.mp4",
+              "youtubeId": "kehI2eHT0J4"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "Educational",
+          "slug": "educational",
+          "videos": [
+            {
+              "title": "28",
+              "file": "CODIN&RAMO/Educational/28.mp4",
+              "youtubeId": "W5wD5jaQQGw"
+            },
+            {
+              "title": "CM la RedSchool Brains and Talents",
+              "file": "CODIN&RAMO/Educational/CM la RedSchool Brains and Talents.mp4",
+              "youtubeId": "heLh9S36umc"
+            },
+            {
+              "title": "CM Poker Inviteişăn",
+              "file": "CODIN&RAMO/Educational/CM Poker Inviteişăn.mp4",
+              "youtubeId": "ZmUBXJiAPmQ"
+            },
+            {
+              "title": "Concurs Imagineaza-ti asta",
+              "file": "CODIN&RAMO/Educational/Concurs Imagineaza-ti asta.mp4",
+              "youtubeId": "Mui4yI2UqbQ"
+            },
+            {
+              "title": "Concurs SuperCoders",
+              "file": "CODIN&RAMO/Educational/Concurs SuperCoders.mp4",
+              "youtubeId": "kRDBimU25n8"
+            },
+            {
+              "title": "CONCURS： IMAGINEAZA-TI ASTA!",
+              "file": "CODIN&RAMO/Educational/CONCURS： IMAGINEAZA-TI ASTA!.mp4",
+              "youtubeId": "Mui4yI2UqbQ"
+            },
+            {
+              "title": "Despre Conflictul din Siria",
+              "file": "CODIN&RAMO/Educational/Despre Conflictul din Siria.mp4",
+              "youtubeId": "x9SS3XK2oMA"
+            },
+            {
+              "title": "RObotzi.Special.Acta",
+              "file": "CODIN&RAMO/Educational/RObotzi.Special.Acta.mp4",
+              "youtubeId": "5bQV_pdr2lI"
+            },
+            {
+              "title": "Update Imagineaza-ti asta",
+              "file": "CODIN&RAMO/Educational/Update Imagineaza-ti asta.mp4",
+              "youtubeId": "LqPNv74d7Is"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "Extras",
+          "slug": "extras",
+          "videos": [
+            {
+              "title": "Istoria numelui Piramida - MiEZ (2011)",
+              "file": "CODIN&RAMO/Extras/Istoria numelui Piramida - MiEZ (2011).mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "La Cafea (Creative Monkeyz) - Instrumental",
+              "file": "CODIN&RAMO/Extras/La Cafea (Creative Monkeyz) - Instrumental.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "Random AF1",
+              "file": "CODIN&RAMO/Extras/Random AF1.mp4",
+              "youtubeId": null
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "Interviuri",
+          "slug": "interviuri",
+          "videos": [
+            {
+              "title": "Creative Monkeyz - Interviu",
+              "file": "CODIN&RAMO/Interviuri/Creative Monkeyz - Interviu.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "Creative Monkeyz raspunde la intrebari",
+              "file": "CODIN&RAMO/Interviuri/Creative Monkeyz raspunde la intrebari.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "de vorba cu Creative Monkeyz @ EECC 2014",
+              "file": "CODIN&RAMO/Interviuri/de vorba cu Creative Monkeyz @ EECC 2014.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "Interviu cu Codin de la Creative Monkeyz",
+              "file": "CODIN&RAMO/Interviuri/Interviu cu Codin de la Creative Monkeyz.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "Interviu： Creative Monkeyz despre Gaming (HD 1080p)",
+              "file": "CODIN&RAMO/Interviuri/Interviu： Creative Monkeyz despre Gaming (HD 1080p).mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "Interviu： Creative Monkeyz despre IN GENERAL (HD 1080p)",
+              "file": "CODIN&RAMO/Interviuri/Interviu： Creative Monkeyz despre IN GENERAL (HD 1080p).mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "Interviu： Creative Monkeyz despre RObotzi (HD 1080p)",
+              "file": "CODIN&RAMO/Interviuri/Interviu： Creative Monkeyz despre RObotzi (HD 1080p).mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "Jocuri video cu MO si F.O.C.A. [by Creative Monkeyz]",
+              "file": "CODIN&RAMO/Interviuri/Jocuri video cu MO si F.O.C.A. [by Creative Monkeyz].mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "RObotzi si @CreativeMonkeyzArmy  la Observator @ Antena1",
+              "file": "CODIN&RAMO/Interviuri/RObotzi si @CreativeMonkeyzArmy  la Observator @ Antena1.mp4",
+              "youtubeId": null
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "LaCafea",
+          "slug": "lacafea",
+          "videos": [
+            {
+              "title": "La Cafea - 13.04.2016",
+              "file": "CODIN&RAMO/LaCafea/La Cafea - 13.04.2016.mp4",
+              "youtubeId": "tMBznb1PKx4"
+            },
+            {
+              "title": "La Cafea 04.05.2016",
+              "file": "CODIN&RAMO/LaCafea/La Cafea 04.05.2016.mp4",
+              "youtubeId": "HUSdVEyTIyM"
+            },
+            {
+              "title": "La Cafea 05 05 2016",
+              "file": "CODIN&RAMO/LaCafea/La Cafea 05 05 2016.mp4",
+              "youtubeId": "hxO25TDzt-0"
+            },
+            {
+              "title": "La Cafea 09.05.2016",
+              "file": "CODIN&RAMO/LaCafea/La Cafea 09.05.2016.mp4",
+              "youtubeId": "NZhVSA1Dzeg"
+            },
+            {
+              "title": "La Cafea 14.04.2016",
+              "file": "CODIN&RAMO/LaCafea/La Cafea 14.04.2016.mp4",
+              "youtubeId": "b1PCnZY0n5U"
+            },
+            {
+              "title": "La Cafea 15.04.2016",
+              "file": "CODIN&RAMO/LaCafea/La Cafea 15.04.2016.mp4",
+              "youtubeId": "HpG96_JZjHo"
+            },
+            {
+              "title": "La Cafea 18.04.2016",
+              "file": "CODIN&RAMO/LaCafea/La Cafea 18.04.2016.mp4",
+              "youtubeId": "lxzTB3ymhKY"
+            },
+            {
+              "title": "La Cafea 18.05.2016",
+              "file": "CODIN&RAMO/LaCafea/La Cafea 18.05.2016.mp4",
+              "youtubeId": "-FPIjEpa0KQ"
+            },
+            {
+              "title": "La Cafea 19.04.2016",
+              "file": "CODIN&RAMO/LaCafea/La Cafea 19.04.2016.mp4",
+              "youtubeId": "0eQZzUGJrn0"
+            },
+            {
+              "title": "La Cafea 21.04.2016",
+              "file": "CODIN&RAMO/LaCafea/La Cafea 21.04.2016.mp4",
+              "youtubeId": "ZOGb0v3jimY"
+            },
+            {
+              "title": "La Cafea 22.04.2016",
+              "file": "CODIN&RAMO/LaCafea/La Cafea 22.04.2016.mp4",
+              "youtubeId": "7jBgPUc-3Xw"
+            },
+            {
+              "title": "La Cafea 26.04.2016",
+              "file": "CODIN&RAMO/LaCafea/La Cafea 26.04.2016.mp4",
+              "youtubeId": "pDiDJtGPXvk"
+            },
+            {
+              "title": "La Cafea 27.04.2016",
+              "file": "CODIN&RAMO/LaCafea/La Cafea 27.04.2016.mp4",
+              "youtubeId": "k7_rq3VmR6U"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "PUNCT",
+          "slug": "punct",
+          "videos": [
+            {
+              "title": "01 - Primul Pas",
+              "file": "CODIN&RAMO/PUNCT/01 - Primul Pas.mp4",
+              "youtubeId": "zf7cJ6QdO3I"
+            },
+            {
+              "title": "02 - LUMINILE!!!",
+              "file": "CODIN&RAMO/PUNCT/02 - LUMINILE!!!.mp4",
+              "youtubeId": "vT8sECx8mjs"
+            },
+            {
+              "title": "03 - Progrese",
+              "file": "CODIN&RAMO/PUNCT/03 - Progrese.mp4",
+              "youtubeId": "PXeVzNllJjA"
+            },
+            {
+              "title": "04 - YEEY, Am dat drumul inscrierilor!",
+              "file": "CODIN&RAMO/PUNCT/04 - YEEY, Am dat drumul inscrierilor!.mp4",
+              "youtubeId": "7DuIb3aCLGY"
+            },
+            {
+              "title": "05 - Secretul din Masina + Test si Testimoniale",
+              "file": "CODIN&RAMO/PUNCT/05 - Secretul din Masina + Test si Testimoniale.mp4",
+              "youtubeId": "9o4Kr8Ckbpw"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "Q&A",
+          "slug": "q-and-a",
+          "videos": [
+            {
+              "title": "IOBAGG - Q&A Dezvirginam 33 de intrebari",
+              "file": "CODIN&RAMO/Q&A/IOBAGG - Q&A Dezvirginam 33 de intrebari.mp4",
+              "youtubeId": "A4nGpoSoS9I"
+            },
+            {
+              "title": "Q & A ❌ 30.334 de € caritate ❌ Suspendare ❌ Podcast",
+              "file": "CODIN&RAMO/Q&A/Q & A ❌ 30.334 de € caritate ❌ Suspendare ❌ Podcast.mp4",
+              "youtubeId": "Z-Hh0EcSjUg"
+            },
+            {
+              "title": "Q&A - IN PREUNA",
+              "file": "CODIN&RAMO/Q&A/Q&A - IN PREUNA.mp4",
+              "youtubeId": "H6yJoKTAPBY"
+            },
+            {
+              "title": "Q&A - Ramo isi arata pisicuta la camera X Parere 5gang the movie",
+              "file": "CODIN&RAMO/Q&A/Q&A - Ramo isi arata pisicuta la camera X Parere 5gang the movie.mp4",
+              "youtubeId": "LyZ4AKIw_Y8"
+            },
+            {
+              "title": "Q&A 4K █▬█ █ ▀█▀ OFFICIAL MO SI FOCA ARATA CA OAMENI! Do you need a website？",
+              "file": "CODIN&RAMO/Q&A/Q&A 4K █▬█ █ ▀█▀ OFFICIAL MO SI FOCA ARATA CA OAMENI! Do you need a website？.mp4",
+              "youtubeId": "-B-LsBZ7uvU"
+            },
+            {
+              "title": "Q&A-ul ala cu teaser videoclip",
+              "file": "CODIN&RAMO/Q&A/Q&A-ul ala cu teaser videoclip.mp4",
+              "youtubeId": "uOd9sik0cXA"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "RAID",
+          "slug": "raid",
+          "videos": [
+            {
+              "title": "RAID 01",
+              "file": "CODIN&RAMO/RAID/RAID 01.mp4",
+              "youtubeId": "FIvhzd4Ghxo"
+            },
+            {
+              "title": "RAID 02",
+              "file": "CODIN&RAMO/RAID/RAID 02.mp4",
+              "youtubeId": "MWXt4Ih2WZg"
+            }
+          ],
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "CSP",
+      "slug": "csp",
+      "videos": [],
+      "subcategories": [
+        {
+          "name": "Gameplay",
+          "slug": "gameplay",
+          "videos": [
+            {
+              "title": "Codin in BATTLEGROUNDS： Singur Pe Locu 2!",
+              "file": "CSP/Gameplay/Codin in BATTLEGROUNDS： Singur Pe Locu 2!.mp4",
+              "youtubeId": "X8D4lG4AGhA"
+            },
+            {
+              "title": "Codin prin PUBG - DUO Boostat #1",
+              "file": "CSP/Gameplay/Codin prin PUBG - DUO Boostat #1.mp4",
+              "youtubeId": "TiE5jLWGy_A"
+            },
+            {
+              "title": "Codin-n BATTLEGROUNDS SoloRun 8Killz1Cup",
+              "file": "CSP/Gameplay/Codin-n BATTLEGROUNDS SoloRun 8Killz1Cup.mp4",
+              "youtubeId": "KNUprYI5Mc4"
+            },
+            {
+              "title": "Deschidem 50 de Halloween LootBoxes (Overwatch)",
+              "file": "CSP/Gameplay/Deschidem 50 de Halloween LootBoxes (Overwatch).mp4",
+              "youtubeId": "EcixYRz18vk"
+            },
+            {
+              "title": "Deschidem 50 de Loot Boxes in Overwatch",
+              "file": "CSP/Gameplay/Deschidem 50 de Loot Boxes in Overwatch.mp4",
+              "youtubeId": "Sez3lTnrO7Q"
+            },
+            {
+              "title": "HearthStone (scurta prezentare)",
+              "file": "CSP/Gameplay/HearthStone (scurta prezentare).mp4",
+              "youtubeId": "YbkfMO24cKg"
+            },
+            {
+              "title": "Heroes of the Storm - Prezentare(ish)",
+              "file": "CSP/Gameplay/Heroes of the Storm - Prezentare(ish).mp4",
+              "youtubeId": "KI3J8jqoMxI"
+            },
+            {
+              "title": "Insurgency - Scurta prezentare",
+              "file": "CSP/Gameplay/Insurgency - Scurta prezentare.mp4",
+              "youtubeId": "7LGr-oNoKR0"
+            },
+            {
+              "title": "LOL cu SUSAN",
+              "file": "CSP/Gameplay/LOL cu SUSAN.mp4",
+              "youtubeId": "LqOJVpCLwls"
+            },
+            {
+              "title": "Overwatch： Junkenstein's Revenge",
+              "file": "CSP/Gameplay/Overwatch： Junkenstein's Revenge.mp4",
+              "youtubeId": "vu1X5YEGHYQ"
+            },
+            {
+              "title": "Se poate face comeback？ - LOL cu Codin ",
+              "file": "CSP/Gameplay/Se poate face comeback？ - LOL cu Codin .mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "Un Meci Adecvat cu HeimerDongăr",
+              "file": "CSP/Gameplay/Un Meci Adecvat cu HeimerDongăr.mp4",
+              "youtubeId": "fUtA9lIXs-Q"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "ZOOT SUIT",
+          "slug": "zoot-suit",
+          "videos": [
+            {
+              "title": "01 - IOBAGG X CSP - VIN",
+              "file": "CSP/ZOOT SUIT/01 - IOBAGG X CSP - VIN.mp4",
+              "youtubeId": "u_CeXQrFOOU"
+            },
+            {
+              "title": "02 - CSP - TONY SOPRANO",
+              "file": "CSP/ZOOT SUIT/02 - CSP - TONY SOPRANO.mp4",
+              "youtubeId": "OZ41QxOHQLE"
+            },
+            {
+              "title": "03 - CSP(IOBAGG) - ZOOT SUIT",
+              "file": "CSP/ZOOT SUIT/03 - CSP(IOBAGG) - ZOOT SUIT.mp4",
+              "youtubeId": "zTIL_CxNPVc"
+            },
+            {
+              "title": "04 - IOBAGG X NJRAMO - SEFU-I SEF",
+              "file": "CSP/ZOOT SUIT/04 - IOBAGG X NJRAMO - SEFU-I SEF.mp4",
+              "youtubeId": "RjZ0N8miJrU"
+            },
+            {
+              "title": "05 - CSP - PIREU",
+              "file": "CSP/ZOOT SUIT/05 - CSP - PIREU.mp4",
+              "youtubeId": "LQ8VOMKyhHM"
+            },
+            {
+              "title": "06 - IOBAGG - LENE",
+              "file": "CSP/ZOOT SUIT/06 - IOBAGG - LENE.mp4",
+              "youtubeId": "HfwJfQTsCxs"
+            },
+            {
+              "title": "07 - IOBAGG x NJRAMO - IOBAGG",
+              "file": "CSP/ZOOT SUIT/07 - IOBAGG x NJRAMO - IOBAGG.mp4",
+              "youtubeId": "9zOm209X7m0"
+            },
+            {
+              "title": "08 - CSP - CHIAREL",
+              "file": "CSP/ZOOT SUIT/08 - CSP - CHIAREL.mp4",
+              "youtubeId": "er2mGpfdOoM"
+            },
+            {
+              "title": "09 - IOBAGG - BLESTEM",
+              "file": "CSP/ZOOT SUIT/09 - IOBAGG - BLESTEM.mp4",
+              "youtubeId": "2SyH3FA2b0k"
+            },
+            {
+              "title": "10 - CSP - AFUMATOAREA",
+              "file": "CSP/ZOOT SUIT/10 - CSP - AFUMATOAREA.mp4",
+              "youtubeId": "-od4u9SoYKU"
+            },
+            {
+              "title": "11 - CSP - GENERATII",
+              "file": "CSP/ZOOT SUIT/11 - CSP - GENERATII.mp4",
+              "youtubeId": "NhU2xlaly6Q"
+            },
+            {
+              "title": "12 - CSP - STRAZI",
+              "file": "CSP/ZOOT SUIT/12 - CSP - STRAZI.mp4",
+              "youtubeId": "7dyDa_XJxAc"
+            }
+          ],
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "IOBAGG",
+      "slug": "iobagg",
+      "videos": [],
+      "subcategories": [
+        {
+          "name": "LOL MOMENTE",
+          "slug": "lol-momente",
+          "videos": [
+            {
+              "title": "League of Legends Momente 01",
+              "file": "IOBAGG/LOL MOMENTE/League of Legends Momente 01.mp4",
+              "youtubeId": "ZKMQEMuir6g"
+            },
+            {
+              "title": "League of Legends Momente 02",
+              "file": "IOBAGG/LOL MOMENTE/League of Legends Momente 02.mp4",
+              "youtubeId": "Ubafo68NL0M"
+            },
+            {
+              "title": "League of Legends Momente 03",
+              "file": "IOBAGG/LOL MOMENTE/League of Legends Momente 03.mp4",
+              "youtubeId": "1bwpcMFsmIA"
+            },
+            {
+              "title": "League of Legends Momente 04",
+              "file": "IOBAGG/LOL MOMENTE/League of Legends Momente 04.mp4",
+              "youtubeId": "y2t2f9HWM2c"
+            },
+            {
+              "title": "League of Legends Momente 05",
+              "file": "IOBAGG/LOL MOMENTE/League of Legends Momente 05.mp4",
+              "youtubeId": "mWrFgv5iZJs"
+            },
+            {
+              "title": "League of Legends Momente 06",
+              "file": "IOBAGG/LOL MOMENTE/League of Legends Momente 06.mp4",
+              "youtubeId": "b587pTDhglY"
+            },
+            {
+              "title": "League of Legends Momente 07",
+              "file": "IOBAGG/LOL MOMENTE/League of Legends Momente 07.mp4",
+              "youtubeId": "I9bBRsMtN1E"
+            },
+            {
+              "title": "League of Legends Momente 08",
+              "file": "IOBAGG/LOL MOMENTE/League of Legends Momente 08.mp4",
+              "youtubeId": "gI-e3xPiDKg"
+            },
+            {
+              "title": "League of Legends Momente 09",
+              "file": "IOBAGG/LOL MOMENTE/League of Legends Momente 09.mp4",
+              "youtubeId": "LdVFuS9WLgM"
+            },
+            {
+              "title": "League of Legends MOMENTE 10",
+              "file": "IOBAGG/LOL MOMENTE/League of Legends MOMENTE 10.mp4",
+              "youtubeId": "3jiwx-Kxr_Y"
+            },
+            {
+              "title": "League Of Legends MOMENTE 11",
+              "file": "IOBAGG/LOL MOMENTE/League Of Legends MOMENTE 11.mp4",
+              "youtubeId": "cgS-Qbm30cQ"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "O ORA DE",
+          "slug": "o-ora-de",
+          "videos": [
+            {
+              "title": "O ORA DE： 10 Second Ninja",
+              "file": "IOBAGG/O ORA DE/O ORA DE： 10 Second Ninja.mp4",
+              "youtubeId": "5gvLDWs4efM"
+            },
+            {
+              "title": "O ORA DE： Devil Daggers",
+              "file": "IOBAGG/O ORA DE/O ORA DE： Devil Daggers.mp4",
+              "youtubeId": "wcakJKd59VE"
+            },
+            {
+              "title": "O ORA DE： Enter the Gungeon",
+              "file": "IOBAGG/O ORA DE/O ORA DE： Enter the Gungeon.mp4",
+              "youtubeId": "ajwzRIrUP_8"
+            },
+            {
+              "title": "O ORA DE： HOTLINE MIAMI 2",
+              "file": "IOBAGG/O ORA DE/O ORA DE： HOTLINE MIAMI 2.mp4",
+              "youtubeId": "DAVUCgneqj8"
+            },
+            {
+              "title": "O ORA DE： Hotline Miami",
+              "file": "IOBAGG/O ORA DE/O ORA DE： Hotline Miami.mp4",
+              "youtubeId": "ccH41HJZ6_U"
+            },
+            {
+              "title": "O ORA DE： I am Bread",
+              "file": "IOBAGG/O ORA DE/O ORA DE： I am Bread.mp4",
+              "youtubeId": "TqPMtjXVGW0"
+            },
+            {
+              "title": "O ORA DE： Risk of Rain",
+              "file": "IOBAGG/O ORA DE/O ORA DE： Risk of Rain.mp4",
+              "youtubeId": "dGSP9rDsVCc"
+            },
+            {
+              "title": "O ORA DE： Super Meat Boy",
+              "file": "IOBAGG/O ORA DE/O ORA DE： Super Meat Boy.mp4",
+              "youtubeId": "g8YTxCcqMIQ"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "OUTLAST",
+          "slug": "outlast",
+          "videos": [],
+          "subcategories": [
+            {
+              "name": "MainGame",
+              "slug": "maingame",
+              "videos": [
+                {
+                  "title": "OUTLAST partea 01",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 01.mp4",
+                  "youtubeId": "JkNJDycXUpo"
+                },
+                {
+                  "title": "OUTLAST partea 02",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 02.mp4",
+                  "youtubeId": "iv3RshfJpuQ"
+                },
+                {
+                  "title": "OUTLAST partea 03",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 03.mp4",
+                  "youtubeId": "5WFVDDYH-0Q"
+                },
+                {
+                  "title": "OUTLAST partea 04",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 04.mp4",
+                  "youtubeId": "jl8MWQgroPs"
+                },
+                {
+                  "title": "OUTLAST partea 05",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 05.mp4",
+                  "youtubeId": "e82rhWEfT3g"
+                },
+                {
+                  "title": "OUTLAST partea 06",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 06.mp4",
+                  "youtubeId": "SGW4qud5lWA"
+                },
+                {
+                  "title": "OUTLAST partea 07",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 07.mp4",
+                  "youtubeId": "OI_TPrUhhkw"
+                },
+                {
+                  "title": "OUTLAST partea 08",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 08.mp4",
+                  "youtubeId": "lRE9PDNOu94"
+                },
+                {
+                  "title": "OUTLAST partea 09",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 09.mp4",
+                  "youtubeId": "FptuFgesIYA"
+                },
+                {
+                  "title": "OUTLAST partea 10",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 10.mp4",
+                  "youtubeId": "NUvuGN-ljKI"
+                },
+                {
+                  "title": "OUTLAST partea 11",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 11.mp4",
+                  "youtubeId": "Ieq8s7CLfeI"
+                },
+                {
+                  "title": "OUTLAST partea 12",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 12.mp4",
+                  "youtubeId": "AV3xgTOrnps"
+                },
+                {
+                  "title": "OUTLAST partea 13",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 13.mp4",
+                  "youtubeId": "WReDOeRjCbU"
+                },
+                {
+                  "title": "OUTLAST partea 14",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 14.mp4",
+                  "youtubeId": "Bx5WLOiYKrU"
+                },
+                {
+                  "title": "OUTLAST partea 15",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 15.mp4",
+                  "youtubeId": "hfV7OnSfE5M"
+                },
+                {
+                  "title": "Outlast partea 16",
+                  "file": "IOBAGG/OUTLAST/MainGame/Outlast partea 16.mp4",
+                  "youtubeId": "O4vUV6tv6lA"
+                },
+                {
+                  "title": "OUTLAST partea 17 FINAL",
+                  "file": "IOBAGG/OUTLAST/MainGame/OUTLAST partea 17 FINAL.mp4",
+                  "youtubeId": "Jfx_4MaW1qM"
+                }
+              ],
+              "subcategories": []
+            },
+            {
+              "name": "OUTLAST2",
+              "slug": "outlast2",
+              "videos": [
+                {
+                  "title": "IOBAGG joaca MINECRAFT 2",
+                  "file": "IOBAGG/OUTLAST/OUTLAST2/IOBAGG joaca MINECRAFT 2.mp4",
+                  "youtubeId": "vqwC4mC6NXI"
+                },
+                {
+                  "title": "IOBAGG joaca MINECRAFT P2",
+                  "file": "IOBAGG/OUTLAST/OUTLAST2/IOBAGG joaca MINECRAFT P2.mp4",
+                  "youtubeId": "xgffRxS4_0U"
+                },
+                {
+                  "title": "OUTLAST 2 DEMO",
+                  "file": "IOBAGG/OUTLAST/OUTLAST2/OUTLAST 2 DEMO.mp4",
+                  "youtubeId": "7jWDqoP691w"
+                }
+              ],
+              "subcategories": []
+            },
+            {
+              "name": "Whistleblower",
+              "slug": "whistleblower",
+              "videos": [
+                {
+                  "title": "OUTLAST Whistleblower 01",
+                  "file": "IOBAGG/OUTLAST/Whistleblower/OUTLAST Whistleblower 01.mp4",
+                  "youtubeId": "DllFtR7wrsM"
+                },
+                {
+                  "title": "OUTLAST Whistleblower 02",
+                  "file": "IOBAGG/OUTLAST/Whistleblower/OUTLAST Whistleblower 02.mp4",
+                  "youtubeId": "DVBHB3xR9XQ"
+                },
+                {
+                  "title": "OUTLAST Whistleblower 03",
+                  "file": "IOBAGG/OUTLAST/Whistleblower/OUTLAST Whistleblower 03.mp4",
+                  "youtubeId": "yyc-du-Yec0"
+                },
+                {
+                  "title": "OUTLAST Whistleblower 04",
+                  "file": "IOBAGG/OUTLAST/Whistleblower/OUTLAST Whistleblower 04.mp4",
+                  "youtubeId": "sYogDNEHrZY"
+                },
+                {
+                  "title": "OUTLAST Whistleblower 05",
+                  "file": "IOBAGG/OUTLAST/Whistleblower/OUTLAST Whistleblower 05.mp4",
+                  "youtubeId": "Tz-4IZ-Sx7s"
+                },
+                {
+                  "title": "Outlast Whistleblower partea 6 FINAL",
+                  "file": "IOBAGG/OUTLAST/Whistleblower/Outlast Whistleblower partea 6 FINAL.mp4",
+                  "youtubeId": "32YEtTVDkaw"
+                }
+              ],
+              "subcategories": []
+            }
+          ]
+        },
+        {
+          "name": "PUBG",
+          "slug": "pubg",
+          "videos": [
+            {
+              "title": " Profesorul PipiBanana te-nvata cum sa iesi pe geam in PUBG",
+              "file": "IOBAGG/PUBG/ Profesorul PipiBanana te-nvata cum sa iesi pe geam in PUBG.mp4",
+              "youtubeId": "5TZU_hAdjdc"
+            },
+            {
+              "title": "Campion Pa State #1 -  PUBG P9",
+              "file": "IOBAGG/PUBG/Campion Pa State #1 -  PUBG P9.mp4",
+              "youtubeId": "P_bLHl3seYY"
+            },
+            {
+              "title": "Campion Pa State #2 - PUBG P10",
+              "file": "IOBAGG/PUBG/Campion Pa State #2 - PUBG P10.mp4",
+              "youtubeId": "Vt-Ck6A5OYQ"
+            },
+            {
+              "title": "Campion Pa State #3 - PUBG P11",
+              "file": "IOBAGG/PUBG/Campion Pa State #3 - PUBG P11.mp4",
+              "youtubeId": "2Ht7V2EVT4c"
+            },
+            {
+              "title": "Campion Pa State 4 - PUBG P12",
+              "file": "IOBAGG/PUBG/Campion Pa State 4 - PUBG P12.mp4",
+              "youtubeId": "Oa1VK2ODQK8"
+            },
+            {
+              "title": "Player Unknown's BATTLEGROUNDS P7",
+              "file": "IOBAGG/PUBG/Player Unknown's BATTLEGROUNDS P7.mp4",
+              "youtubeId": "pkD4ijfAQ5k"
+            },
+            {
+              "title": "Player Unknown's BATTLEGROUNDS",
+              "file": "IOBAGG/PUBG/Player Unknown's BATTLEGROUNDS.mp4",
+              "youtubeId": "GhHsLc8E4-E"
+            },
+            {
+              "title": "PlayerUnknown's BATTLEGROUNDS P2",
+              "file": "IOBAGG/PUBG/PlayerUnknown's BATTLEGROUNDS P2.mp4",
+              "youtubeId": "-9djn9dYGJs"
+            },
+            {
+              "title": "PlayerUnknown's BATTLEGROUNDS P3",
+              "file": "IOBAGG/PUBG/PlayerUnknown's BATTLEGROUNDS P3.mp4",
+              "youtubeId": "8dea9kIX8Es"
+            },
+            {
+              "title": "PlayerUnknown's BATTLEGROUNDS P4",
+              "file": "IOBAGG/PUBG/PlayerUnknown's BATTLEGROUNDS P4.mp4",
+              "youtubeId": "5O0NpczR3K0"
+            },
+            {
+              "title": "PlayerUnknown's BATTLEGROUNDS P5",
+              "file": "IOBAGG/PUBG/PlayerUnknown's BATTLEGROUNDS P5.mp4",
+              "youtubeId": "b1gyV0YVGZ8"
+            },
+            {
+              "title": "PlayerUnknown's BATTLEGROUNDS P6",
+              "file": "IOBAGG/PUBG/PlayerUnknown's BATTLEGROUNDS P6.mp4",
+              "youtubeId": "BaAUEsb81Fg"
+            },
+            {
+              "title": "PlayerUnknown's BATTLEGROUNDS P8 Dubla de ZiuaLuCopil",
+              "file": "IOBAGG/PUBG/PlayerUnknown's BATTLEGROUNDS P8 Dubla de ZiuaLuCopil.mp4",
+              "youtubeId": "vDZ04yzI9LY"
+            },
+            {
+              "title": "PUBG - TUPEU DE POET 2",
+              "file": "IOBAGG/PUBG/PUBG - TUPEU DE POET 2.mp4",
+              "youtubeId": "FGul1HEv5Pg"
+            },
+            {
+              "title": "PUBG - TUPEU DE POET 3",
+              "file": "IOBAGG/PUBG/PUBG - TUPEU DE POET 3.mp4",
+              "youtubeId": "ZQyPMK0epZQ"
+            },
+            {
+              "title": "PUBG - Tupeu De Poet 4",
+              "file": "IOBAGG/PUBG/PUBG - Tupeu De Poet 4.mp4",
+              "youtubeId": "cpLZW2q_O6c"
+            },
+            {
+              "title": "PUBG MOMENTE si Tutorial Shadowplay Highlights",
+              "file": "IOBAGG/PUBG/PUBG MOMENTE si Tutorial Shadowplay Highlights.mp4",
+              "youtubeId": "TMKS4m5iTWY"
+            },
+            {
+              "title": "PUBG P13 Munca Campului pe EU",
+              "file": "IOBAGG/PUBG/PUBG P13 Munca Campului pe EU.mp4",
+              "youtubeId": "xLP8rh7lsMU"
+            },
+            {
+              "title": "PUBG P14 Locu 2 nu-i pentru noi",
+              "file": "IOBAGG/PUBG/PUBG P14 Locu 2 nu-i pentru noi.mp4",
+              "youtubeId": "0b5sAFGcxk4"
+            },
+            {
+              "title": "PUBG P15 Campion Asia si-Asia (edit： evenimentul s-a mutat in ianuarie)",
+              "file": "IOBAGG/PUBG/PUBG P15 Campion Asia si-Asia (edit： evenimentul s-a mutat in ianuarie).mp4",
+              "youtubeId": "ReHUG14Uy10"
+            },
+            {
+              "title": "PUBG P16 - Tupeu de Poet pe Asia",
+              "file": "IOBAGG/PUBG/PUBG P16 - Tupeu de Poet pe Asia.mp4",
+              "youtubeId": "a5jNT2acaZs"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "RESIDENT EVIL BIOHAZARD",
+          "slug": "resident-evil-biohazard",
+          "videos": [
+            {
+              "title": "Resident Evil Biohazard P1",
+              "file": "IOBAGG/RESIDENT EVIL BIOHAZARD/Resident Evil Biohazard P1.mp4",
+              "youtubeId": "N43VhXAXfgs"
+            },
+            {
+              "title": "Resident Evil Biohazard P2",
+              "file": "IOBAGG/RESIDENT EVIL BIOHAZARD/Resident Evil Biohazard P2.mp4",
+              "youtubeId": "8D1vXP40W_M"
+            },
+            {
+              "title": "Resident Evil Biohazard P3",
+              "file": "IOBAGG/RESIDENT EVIL BIOHAZARD/Resident Evil Biohazard P3.mp4",
+              "youtubeId": "NUE6l6xizkk"
+            },
+            {
+              "title": "Resident Evil Biohazard P4",
+              "file": "IOBAGG/RESIDENT EVIL BIOHAZARD/Resident Evil Biohazard P4.mp4",
+              "youtubeId": "zD0S0W0WxHY"
+            },
+            {
+              "title": "Resident Evil Biohazard P5",
+              "file": "IOBAGG/RESIDENT EVIL BIOHAZARD/Resident Evil Biohazard P5.mp4",
+              "youtubeId": "Se0Rf3rTikI"
+            },
+            {
+              "title": "Resident Evil Biohazard P6",
+              "file": "IOBAGG/RESIDENT EVIL BIOHAZARD/Resident Evil Biohazard P6.mp4",
+              "youtubeId": "WOFSV_3fr5M"
+            },
+            {
+              "title": "Resident Evil Biohazard P7",
+              "file": "IOBAGG/RESIDENT EVIL BIOHAZARD/Resident Evil Biohazard P7.mp4",
+              "youtubeId": "mJtrSoKyxAI"
+            },
+            {
+              "title": "Resident Evil Biohazard P8",
+              "file": "IOBAGG/RESIDENT EVIL BIOHAZARD/Resident Evil Biohazard P8.mp4",
+              "youtubeId": "R3GtgDz_fD4"
+            },
+            {
+              "title": "Resident Evil Biohazard P9 FINAL",
+              "file": "IOBAGG/RESIDENT EVIL BIOHAZARD/Resident Evil Biohazard P9 FINAL.mp4",
+              "youtubeId": "F6rjoqDsZxM"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "Songs",
+          "slug": "songs",
+          "videos": [
+            {
+              "title": "IOBAGG - CABANA PUERCO RICO",
+              "file": "IOBAGG/Songs/IOBAGG - CABANA PUERCO RICO.mp4",
+              "youtubeId": "AvEB15_y5K4"
+            },
+            {
+              "title": "IOBAGG - DUPA GEAMANDURA",
+              "file": "IOBAGG/Songs/IOBAGG - DUPA GEAMANDURA.mp4",
+              "youtubeId": "s0T2bKcckDs"
+            },
+            {
+              "title": "IOBAGG - LENE",
+              "file": "IOBAGG/Songs/IOBAGG - LENE.mp4",
+              "youtubeId": "HfwJfQTsCxs"
+            },
+            {
+              "title": "IOBAGG feat. Ninja Ramo - KKTGRS",
+              "file": "IOBAGG/Songs/IOBAGG feat. Ninja Ramo - KKTGRS.mp4",
+              "youtubeId": "csc9Hi5nfv8"
+            },
+            {
+              "title": "IOBAGG X CSP - VIN",
+              "file": "IOBAGG/Songs/IOBAGG X CSP - VIN.mp4",
+              "youtubeId": "u_CeXQrFOOU"
+            },
+            {
+              "title": "IOBAGG X MO X BAZOOKA - BE CU MINE",
+              "file": "IOBAGG/Songs/IOBAGG X MO X BAZOOKA - BE CU MINE.mp4",
+              "youtubeId": "p3VhAqf8KW0"
+            },
+            {
+              "title": "IOBAGG x NJRAMO - IOBAGG",
+              "file": "IOBAGG/Songs/IOBAGG x NJRAMO - IOBAGG.mp4",
+              "youtubeId": "9zOm209X7m0"
+            }
+          ],
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "MiEZ",
+      "slug": "miez",
+      "videos": [
+        {
+          "title": "MiEZ Classic 01",
+          "file": "MiEZ/MiEZ Classic 01.mp4",
+          "youtubeId": "cmISV9SXlHE"
+        },
+        {
+          "title": "MiEZ Classic 02",
+          "file": "MiEZ/MiEZ Classic 02.mp4",
+          "youtubeId": "5ySWXpLAGTE"
+        },
+        {
+          "title": "MiEZ Classic 04",
+          "file": "MiEZ/MiEZ Classic 04.mp4",
+          "youtubeId": "WsywAAZUz5Y"
+        },
+        {
+          "title": "MiEZ Classic 05",
+          "file": "MiEZ/MiEZ Classic 05.mp4",
+          "youtubeId": "pK1IDe-Y_UU"
+        },
+        {
+          "title": "MiEZ Classic 06",
+          "file": "MiEZ/MiEZ Classic 06.mp4",
+          "youtubeId": "YLGWbS6Tjuc"
+        },
+        {
+          "title": "MiEZ Classic 07",
+          "file": "MiEZ/MiEZ Classic 07.mp4",
+          "youtubeId": "ueyn1MVqzbY"
+        },
+        {
+          "title": "MiEZ Classic 08",
+          "file": "MiEZ/MiEZ Classic 08.mp4",
+          "youtubeId": "hbBI7ARBFow"
+        },
+        {
+          "title": "MiEZ CM la Comic Con",
+          "file": "MiEZ/MiEZ CM la Comic Con.mp4",
+          "youtubeId": "zrK3Kg1p-TI"
+        },
+        {
+          "title": "Miez El Iobag Dromadero",
+          "file": "MiEZ/Miez El Iobag Dromadero.mp4",
+          "youtubeId": null
+        },
+        {
+          "title": "MiEZ Gamescom",
+          "file": "MiEZ/MiEZ Gamescom.mp4",
+          "youtubeId": "v5aQtLzEeco"
+        },
+        {
+          "title": "MiEZ Informativ",
+          "file": "MiEZ/MiEZ Informativ.mp4",
+          "youtubeId": "7Ntbk0HUzlE"
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "name": "MONSTRII Recomand",
+      "slug": "monstrii-recomand",
+      "videos": [
+        {
+          "title": "Monstrii Recomand 01",
+          "file": "MONSTRII Recomand/Monstrii Recomand 01.mp4",
+          "youtubeId": "IwStiv8kBN8"
+        },
+        {
+          "title": "Monstrii Recomand 02",
+          "file": "MONSTRII Recomand/Monstrii Recomand 02.mp4",
+          "youtubeId": "RLh_DrFwtkw"
+        },
+        {
+          "title": "Monstrii Recomand 03",
+          "file": "MONSTRII Recomand/Monstrii Recomand 03.mp4",
+          "youtubeId": "EP2Bil9C_vg"
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "name": "NinjaRamo",
+      "slug": "ninjaramo",
+      "videos": [],
+      "subcategories": [
+        {
+          "name": "Gameplay",
+          "slug": "gameplay",
+          "videos": [
+            {
+              "title": "NinjaRamo vs. 5 Nights at Freddy's 3",
+              "file": "NinjaRamo/Gameplay/NinjaRamo vs. 5 Nights at Freddy's 3.mp4",
+              "youtubeId": "JmIGCiFmWio"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "Muzica",
+          "slug": "muzica",
+          "videos": [
+            {
+              "title": "IOBAGG feat. Ninja Ramo - KKTGRS",
+              "file": "NinjaRamo/Muzica/IOBAGG feat. Ninja Ramo - KKTGRS.mp4",
+              "youtubeId": "csc9Hi5nfv8"
+            },
+            {
+              "title": "IOBAGG x NJRAMO - IOBAGG",
+              "file": "NinjaRamo/Muzica/IOBAGG x NJRAMO - IOBAGG.mp4",
+              "youtubeId": "9zOm209X7m0"
+            },
+            {
+              "title": "IOBAGG X NJRAMO - SEFU-I SEF",
+              "file": "NinjaRamo/Muzica/IOBAGG X NJRAMO - SEFU-I SEF.mp4",
+              "youtubeId": "RjZ0N8miJrU"
+            },
+            {
+              "title": "MO - Ciue Fatza Ai",
+              "file": "NinjaRamo/Muzica/MO - Ciue Fatza Ai.mp4",
+              "youtubeId": "N84F3xi3jEc"
+            },
+            {
+              "title": "MO (feat.Pufoshenia) - Ler is MOre",
+              "file": "NinjaRamo/Muzica/MO (feat.Pufoshenia) - Ler is MOre.mp4",
+              "youtubeId": "KmD0HuEPL-o"
+            },
+            {
+              "title": "MO x NjRamo - Cine Ma Vrea",
+              "file": "NinjaRamo/Muzica/MO x NjRamo - Cine Ma Vrea.mp4",
+              "youtubeId": "9DNGkApGlIM"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "RFX",
+          "slug": "rfx",
+          "videos": [
+            {
+              "title": "01 - Taieturi",
+              "file": "NinjaRamo/RFX/01 - Taieturi.mp4",
+              "youtubeId": "RL_2S8eePoA"
+            },
+            {
+              "title": "02 - Headshot",
+              "file": "NinjaRamo/RFX/02 - Headshot.mp4",
+              "youtubeId": "SMxiP_7jP5Y"
+            },
+            {
+              "title": "03 - Halloween Bonus Clip - Camasa",
+              "file": "NinjaRamo/RFX/03 - Halloween Bonus Clip - Camasa.mp4",
+              "youtubeId": "YI4Wt5B5eN4"
+            },
+            {
+              "title": "04 - Halloween Bonus Clip - Palarioara",
+              "file": "NinjaRamo/RFX/04 - Halloween Bonus Clip - Palarioara.mp4",
+              "youtubeId": "8n6mnE-phSM"
+            },
+            {
+              "title": "05 - Halloween Bonus Clip - Manusi",
+              "file": "NinjaRamo/RFX/05 - Halloween Bonus Clip - Manusi.mp4",
+              "youtubeId": "sdmWMWn8Ufk"
+            },
+            {
+              "title": "05 - Halloween Bonus Clip - Unghii",
+              "file": "NinjaRamo/RFX/05 - Halloween Bonus Clip - Unghii.mp4",
+              "youtubeId": "XNUVKVMtIcA"
+            },
+            {
+              "title": "07 - Halloween： Contesa (Ne)Moarta",
+              "file": "NinjaRamo/RFX/07 - Halloween： Contesa (Ne)Moarta.mp4",
+              "youtubeId": "Dyd8lGn67ZM"
+            },
+            {
+              "title": "08 - Halloween： The Little Devil",
+              "file": "NinjaRamo/RFX/08 - Halloween： The Little Devil.mp4",
+              "youtubeId": "8V-Trzv6Ojg"
+            },
+            {
+              "title": "09 - In Fruntea lui IOBAG",
+              "file": "NinjaRamo/RFX/09 - In Fruntea lui IOBAG.mp4",
+              "youtubeId": "clCzCfio0GU"
+            }
+          ],
+          "subcategories": []
+        }
+      ]
+    },
+    {
+      "name": "PIRAMIDA",
+      "slug": "piramida",
+      "videos": [
+        {
+          "title": "01 - E ceva ce tu poti sa ai",
+          "file": "PIRAMIDA/01 - E ceva ce tu poti sa ai.mp4",
+          "youtubeId": "9_YFjPSahh8"
+        },
+        {
+          "title": "02 - Dadada Dadada",
+          "file": "PIRAMIDA/02 - Dadada Dadada.mp4",
+          "youtubeId": "BYIkZhfIC7c"
+        },
+        {
+          "title": "03 - Descoperim Talente",
+          "file": "PIRAMIDA/03 - Descoperim Talente.mp4",
+          "youtubeId": "-YNoAdUPTtc"
+        },
+        {
+          "title": "04 - Apa nu va moare",
+          "file": "PIRAMIDA/04 - Apa nu va moare.mp4",
+          "youtubeId": "F5SHIyYUKEs"
+        },
+        {
+          "title": "05 - Gheata bate vantu tata",
+          "file": "PIRAMIDA/05 - Gheata bate vantu tata.mp4",
+          "youtubeId": "9TnNTPMuLFc"
+        },
+        {
+          "title": "06 - Legenda lui Petrica",
+          "file": "PIRAMIDA/06 - Legenda lui Petrica.mp4",
+          "youtubeId": "VnzXvXeE9jA"
+        },
+        {
+          "title": "07 - Metode de Trezire",
+          "file": "PIRAMIDA/07 - Metode de Trezire.mp4",
+          "youtubeId": "8lY00PvmrH0"
+        },
+        {
+          "title": "08 - #Cocainaucide",
+          "file": "PIRAMIDA/08 - #Cocainaucide.mp4",
+          "youtubeId": "xNaREepZK2U"
+        },
+        {
+          "title": "09 - Editia Especial",
+          "file": "PIRAMIDA/09 - Editia Especial.mp4",
+          "youtubeId": "vRszTb9j4qs"
+        },
+        {
+          "title": "10 - 1 Mai",
+          "file": "PIRAMIDA/10 - 1 Mai.mp4",
+          "youtubeId": "WKn6mMj2CaU"
+        },
+        {
+          "title": "11 - Copilu din Mine",
+          "file": "PIRAMIDA/11 - Copilu din Mine.mp4",
+          "youtubeId": "A6r2Cn8rDH8"
+        },
+        {
+          "title": "12 - BORCANIE!",
+          "file": "PIRAMIDA/12 - BORCANIE!.mp4",
+          "youtubeId": "3y1Q2dUtFGE"
+        },
+        {
+          "title": "13 - Graba",
+          "file": "PIRAMIDA/13 - Graba.mp4",
+          "youtubeId": "8Rjo8cz0ZPc"
+        },
+        {
+          "title": "14 - Dreptate din Borcan",
+          "file": "PIRAMIDA/14 - Dreptate din Borcan.mp4",
+          "youtubeId": "omGTv3-6F5Q"
+        },
+        {
+          "title": "15 - ADiiiO!",
+          "file": "PIRAMIDA/15 - ADiiiO!.mp4",
+          "youtubeId": "nfXRB1lEetk"
+        },
+        {
+          "title": "16 - Tratament",
+          "file": "PIRAMIDA/16 - Tratament.mp4",
+          "youtubeId": "8h08FjhvSz0"
+        },
+        {
+          "title": "17 - Caldura",
+          "file": "PIRAMIDA/17 - Caldura.mp4",
+          "youtubeId": "OXNhztwS5tQ"
+        },
+        {
+          "title": "18 - Beatbox",
+          "file": "PIRAMIDA/18 - Beatbox.mp4",
+          "youtubeId": "AMzKDV0jYrY"
+        },
+        {
+          "title": "19 - Iubire",
+          "file": "PIRAMIDA/19 - Iubire.mp4",
+          "youtubeId": "E_tXHqBG20U"
+        },
+        {
+          "title": "20 - Frica",
+          "file": "PIRAMIDA/20 - Frica.mp4",
+          "youtubeId": "gpraZo-oUXc"
+        },
+        {
+          "title": "21 - Nostradamus",
+          "file": "PIRAMIDA/21 - Nostradamus.mp4",
+          "youtubeId": "OXHyj3tljkY"
+        },
+        {
+          "title": "22 - Animalic",
+          "file": "PIRAMIDA/22 - Animalic.mp4",
+          "youtubeId": "GBW893fHgvw"
+        },
+        {
+          "title": "23 - Fetele",
+          "file": "PIRAMIDA/23 - Fetele.mp4",
+          "youtubeId": "JZDYfJTG7Q0"
+        },
+        {
+          "title": "24 - KKTGRS",
+          "file": "PIRAMIDA/24 - KKTGRS.mp4",
+          "youtubeId": "ciIo-ijDPbg"
+        },
+        {
+          "title": "25 - Piramida 25 - Blestemu Continua",
+          "file": "PIRAMIDA/25 - Piramida 25 - Blestemu Continua.mp4",
+          "youtubeId": "WSyS5qb8DW0"
+        },
+        {
+          "title": "26 - Piramida 26 - APA",
+          "file": "PIRAMIDA/26 - Piramida 26 - APA.mp4",
+          "youtubeId": "ETKCC1vR9SI"
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "name": "RENDAM",
+      "slug": "rendam",
+      "videos": [
+        {
+          "title": "[EN] Chameleon",
+          "file": "RENDAM/[EN] Chameleon.mp4",
+          "youtubeId": "hPKDa-fvyzY"
+        },
+        {
+          "title": "[EN] Full",
+          "file": "RENDAM/[EN] Full.mp4",
+          "youtubeId": "ulvhCXo5OT8"
+        },
+        {
+          "title": "[EN] Hook",
+          "file": "RENDAM/[EN] Hook.mp4",
+          "youtubeId": "LmHy95d-4No"
+        },
+        {
+          "title": "[EN] Taxi",
+          "file": "RENDAM/[EN] Taxi.mp4",
+          "youtubeId": "mBwSkBzok2A"
+        },
+        {
+          "title": "[EN] The Artist",
+          "file": "RENDAM/[EN] The Artist.mp4",
+          "youtubeId": "v6S9w9h6_FU"
+        },
+        {
+          "title": "[EN] Tim",
+          "file": "RENDAM/[EN] Tim.mp4",
+          "youtubeId": "UIeN_JJ5QSA"
+        },
+        {
+          "title": "[RO] Aspir",
+          "file": "RENDAM/[RO] Aspir.mp4",
+          "youtubeId": "-K22t_wDNkA"
+        },
+        {
+          "title": "[RO] Baiazid",
+          "file": "RENDAM/[RO] Baiazid.mp4",
+          "youtubeId": "F07p3SEkOD0"
+        },
+        {
+          "title": "[RO] Cinci",
+          "file": "RENDAM/[RO] Cinci.mp4",
+          "youtubeId": "uxNWVMux8a4"
+        },
+        {
+          "title": "[RO] LMA",
+          "file": "RENDAM/[RO] LMA.mp4",
+          "youtubeId": "3QLBZOg6hc0"
+        },
+        {
+          "title": "[RO] Omoara",
+          "file": "RENDAM/[RO] Omoara.mp4",
+          "youtubeId": "sCK7qpftibg"
+        },
+        {
+          "title": "[RO] Para",
+          "file": "RENDAM/[RO] Para.mp4",
+          "youtubeId": "Dx5ZVDTvbXg"
+        },
+        {
+          "title": "[RO] Poate",
+          "file": "RENDAM/[RO] Poate.mp4",
+          "youtubeId": "Vw3_LElFtzw"
+        },
+        {
+          "title": "[RO] Ras",
+          "file": "RENDAM/[RO] Ras.mp4",
+          "youtubeId": "hUHEY6MbnCE"
+        }
+      ],
+      "subcategories": []
+    },
+    {
+      "name": "RObotzi",
+      "slug": "robotzi",
+      "videos": [],
+      "subcategories": [
+        {
+          "name": "Extras",
+          "slug": "extras",
+          "videos": [
+            {
+              "title": "Ciob",
+              "file": "RObotzi/Extras/Ciob.mp4",
+              "youtubeId": "Xb9RktjwESQ"
+            },
+            {
+              "title": "Harlem Shake",
+              "file": "RObotzi/Extras/Harlem Shake.mp4",
+              "youtubeId": "A5VP9B6EeW0"
+            },
+            {
+              "title": "PhooThay",
+              "file": "RObotzi/Extras/PhooThay.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "S01 Ep3.14 ZDA",
+              "file": "RObotzi/Extras/S01 Ep3.14 ZDA.mp4",
+              "youtubeId": "O_jrhK62UEA"
+            },
+            {
+              "title": "Sarbatori fericite",
+              "file": "RObotzi/Extras/Sarbatori fericite.mp4",
+              "youtubeId": "OuZbZxeAflg"
+            },
+            {
+              "title": "Un Milion Special",
+              "file": "RObotzi/Extras/Un Milion Special.mp4",
+              "youtubeId": "J_bslER_3y0"
+            },
+            {
+              "title": "Youtube Rewind 2013",
+              "file": "RObotzi/Extras/Youtube Rewind 2013.mp4",
+              "youtubeId": "nd6-W_-kGdQ"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "Sezonul 1",
+          "slug": "sezonul-1",
+          "videos": [
+            {
+              "title": "s01e00",
+              "file": "RObotzi/Sezonul 1/s01e00.mp4",
+              "youtubeId": "Rtog93HyR3k"
+            },
+            {
+              "title": "s01e01",
+              "file": "RObotzi/Sezonul 1/s01e01.mp4",
+              "youtubeId": "2iCLCJifhfQ"
+            },
+            {
+              "title": "s01e02",
+              "file": "RObotzi/Sezonul 1/s01e02.mp4",
+              "youtubeId": "teV8-IGhSt8"
+            },
+            {
+              "title": "s01e03",
+              "file": "RObotzi/Sezonul 1/s01e03.mp4",
+              "youtubeId": "D8kCiZGtXGM"
+            },
+            {
+              "title": "s01e04",
+              "file": "RObotzi/Sezonul 1/s01e04.mp4",
+              "youtubeId": "OIpRU2DZgvE"
+            },
+            {
+              "title": "s01e05",
+              "file": "RObotzi/Sezonul 1/s01e05.mp4",
+              "youtubeId": "IN1puDtSoXE"
+            },
+            {
+              "title": "s01e06",
+              "file": "RObotzi/Sezonul 1/s01e06.mp4",
+              "youtubeId": "P1M28fAPHl4"
+            },
+            {
+              "title": "s01e07",
+              "file": "RObotzi/Sezonul 1/s01e07.mp4",
+              "youtubeId": "ehJC3ulJ1NM"
+            },
+            {
+              "title": "s01e08",
+              "file": "RObotzi/Sezonul 1/s01e08.mp4",
+              "youtubeId": "Jn-h49jsb5U"
+            },
+            {
+              "title": "s01e09",
+              "file": "RObotzi/Sezonul 1/s01e09.mp4",
+              "youtubeId": "6jBzmVI6M9E"
+            },
+            {
+              "title": "s01e10",
+              "file": "RObotzi/Sezonul 1/s01e10.mp4",
+              "youtubeId": "vRWMkpJWUas"
+            },
+            {
+              "title": "s01e11",
+              "file": "RObotzi/Sezonul 1/s01e11.mp4",
+              "youtubeId": "s4itGkB168Q"
+            },
+            {
+              "title": "s01e12",
+              "file": "RObotzi/Sezonul 1/s01e12.mp4",
+              "youtubeId": "nBrWrH2ZgUA"
+            },
+            {
+              "title": "s01e13",
+              "file": "RObotzi/Sezonul 1/s01e13.mp4",
+              "youtubeId": "F5hq0pLW1sA"
+            },
+            {
+              "title": "s01e14",
+              "file": "RObotzi/Sezonul 1/s01e14.mp4",
+              "youtubeId": "f0sQkN5yFYY"
+            },
+            {
+              "title": "s01e15",
+              "file": "RObotzi/Sezonul 1/s01e15.mp4",
+              "youtubeId": "X4xVRgjdwdw"
+            },
+            {
+              "title": "s01e16",
+              "file": "RObotzi/Sezonul 1/s01e16.mp4",
+              "youtubeId": "GaHri6vcMU0"
+            },
+            {
+              "title": "s01e17",
+              "file": "RObotzi/Sezonul 1/s01e17.mp4",
+              "youtubeId": "s0dM0QKAEfI"
+            },
+            {
+              "title": "s01e18",
+              "file": "RObotzi/Sezonul 1/s01e18.mp4",
+              "youtubeId": "UXyC9D-UN5Y"
+            },
+            {
+              "title": "s01e19",
+              "file": "RObotzi/Sezonul 1/s01e19.mp4",
+              "youtubeId": "gpKf4iLZo7Y"
+            },
+            {
+              "title": "s01e20",
+              "file": "RObotzi/Sezonul 1/s01e20.mp4",
+              "youtubeId": "LQM3sDL3lWw"
+            },
+            {
+              "title": "s01e21",
+              "file": "RObotzi/Sezonul 1/s01e21.mp4",
+              "youtubeId": "uauUufxvFoY"
+            },
+            {
+              "title": "s01e22",
+              "file": "RObotzi/Sezonul 1/s01e22.mp4",
+              "youtubeId": "p_GF3I13bpg"
+            },
+            {
+              "title": "s01e23",
+              "file": "RObotzi/Sezonul 1/s01e23.mp4",
+              "youtubeId": "h_1nqGY37zM"
+            },
+            {
+              "title": "s01e24",
+              "file": "RObotzi/Sezonul 1/s01e24.mp4",
+              "youtubeId": "alHd5WXdF9Q"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "Sezonul 2",
+          "slug": "sezonul-2",
+          "videos": [
+            {
+              "title": "s02e01",
+              "file": "RObotzi/Sezonul 2/s02e01.mp4",
+              "youtubeId": "LO5bHIEIXW0"
+            },
+            {
+              "title": "s02e02",
+              "file": "RObotzi/Sezonul 2/s02e02.mp4",
+              "youtubeId": "J_DaN7iiTh0"
+            },
+            {
+              "title": "s02e03",
+              "file": "RObotzi/Sezonul 2/s02e03.mp4",
+              "youtubeId": "5tFw9efzeCk"
+            },
+            {
+              "title": "s02e04",
+              "file": "RObotzi/Sezonul 2/s02e04.mp4",
+              "youtubeId": "AEF8boLiuho"
+            },
+            {
+              "title": "s02e05",
+              "file": "RObotzi/Sezonul 2/s02e05.mp4",
+              "youtubeId": "Boe9Mks2OYs"
+            },
+            {
+              "title": "s02e06",
+              "file": "RObotzi/Sezonul 2/s02e06.mp4",
+              "youtubeId": "chBFhZ4VcRc"
+            },
+            {
+              "title": "s02e07",
+              "file": "RObotzi/Sezonul 2/s02e07.mp4",
+              "youtubeId": "fdbPBBbsw3M"
+            },
+            {
+              "title": "s02e08",
+              "file": "RObotzi/Sezonul 2/s02e08.mp4",
+              "youtubeId": "21wPWq0Crzg"
+            },
+            {
+              "title": "s02e09",
+              "file": "RObotzi/Sezonul 2/s02e09.mp4",
+              "youtubeId": "LXvhwJvBkyM"
+            },
+            {
+              "title": "s02e10",
+              "file": "RObotzi/Sezonul 2/s02e10.mp4",
+              "youtubeId": "OKZZRsOoSVU"
+            },
+            {
+              "title": "s02e11",
+              "file": "RObotzi/Sezonul 2/s02e11.mp4",
+              "youtubeId": "QIsmIYyvEJ8"
+            },
+            {
+              "title": "s02e12",
+              "file": "RObotzi/Sezonul 2/s02e12.mp4",
+              "youtubeId": "phethO_lypQ"
+            },
+            {
+              "title": "s02e13",
+              "file": "RObotzi/Sezonul 2/s02e13.mp4",
+              "youtubeId": "67QGHDrVjtI"
+            },
+            {
+              "title": "s02e14",
+              "file": "RObotzi/Sezonul 2/s02e14.mp4",
+              "youtubeId": "ewPsvFyehLU"
+            },
+            {
+              "title": "s02e15",
+              "file": "RObotzi/Sezonul 2/s02e15.mp4",
+              "youtubeId": "OYwAqxB1QFs"
+            },
+            {
+              "title": "s02e16",
+              "file": "RObotzi/Sezonul 2/s02e16.mp4",
+              "youtubeId": "mbp3GDYfQ7k"
+            },
+            {
+              "title": "s02e17",
+              "file": "RObotzi/Sezonul 2/s02e17.mp4",
+              "youtubeId": "TaGN30OHqVs"
+            },
+            {
+              "title": "s02e18",
+              "file": "RObotzi/Sezonul 2/s02e18.mp4",
+              "youtubeId": "dmRU1Ii4a64"
+            },
+            {
+              "title": "s02e19",
+              "file": "RObotzi/Sezonul 2/s02e19.mp4",
+              "youtubeId": "lU5G5j6ynBw"
+            },
+            {
+              "title": "s02e20",
+              "file": "RObotzi/Sezonul 2/s02e20.mp4",
+              "youtubeId": "HB1eZV1jM8Q"
+            },
+            {
+              "title": "s02e21",
+              "file": "RObotzi/Sezonul 2/s02e21.mp4",
+              "youtubeId": "aYPFHoO-Ae0"
+            },
+            {
+              "title": "s02e22",
+              "file": "RObotzi/Sezonul 2/s02e22.mp4",
+              "youtubeId": "TUhBH13qMM4"
+            },
+            {
+              "title": "s02e23",
+              "file": "RObotzi/Sezonul 2/s02e23.mp4",
+              "youtubeId": "ziUoUX8DkPw"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "Sezonul 3",
+          "slug": "sezonul-3",
+          "videos": [
+            {
+              "title": "s03e01",
+              "file": "RObotzi/Sezonul 3/s03e01.mp4",
+              "youtubeId": "dbc3IcNSO1M"
+            },
+            {
+              "title": "s03e02",
+              "file": "RObotzi/Sezonul 3/s03e02.mp4",
+              "youtubeId": "KSSoALMXq34"
+            },
+            {
+              "title": "s03e03",
+              "file": "RObotzi/Sezonul 3/s03e03.mp4",
+              "youtubeId": "o0Ei81re1Ao"
+            },
+            {
+              "title": "s03e04",
+              "file": "RObotzi/Sezonul 3/s03e04.mp4",
+              "youtubeId": "8Xi-cKelEZQ"
+            },
+            {
+              "title": "s03e05",
+              "file": "RObotzi/Sezonul 3/s03e05.mp4",
+              "youtubeId": "VRQuosybr6I"
+            },
+            {
+              "title": "s03e06",
+              "file": "RObotzi/Sezonul 3/s03e06.mp4",
+              "youtubeId": "CNkEhzyEURA"
+            },
+            {
+              "title": "s03e07",
+              "file": "RObotzi/Sezonul 3/s03e07.mp4",
+              "youtubeId": "-HJnWV82YUM"
+            },
+            {
+              "title": "s03e08",
+              "file": "RObotzi/Sezonul 3/s03e08.mp4",
+              "youtubeId": "Jyvp6CqpFPU"
+            },
+            {
+              "title": "s03e09",
+              "file": "RObotzi/Sezonul 3/s03e09.mp4",
+              "youtubeId": "WE1dUfke3qs"
+            },
+            {
+              "title": "s03e10",
+              "file": "RObotzi/Sezonul 3/s03e10.mp4",
+              "youtubeId": "Q1jPRBiOfGk"
+            },
+            {
+              "title": "s03e11",
+              "file": "RObotzi/Sezonul 3/s03e11.mp4",
+              "youtubeId": "YslwEChToHw"
+            },
+            {
+              "title": "s03e12",
+              "file": "RObotzi/Sezonul 3/s03e12.mp4",
+              "youtubeId": "c08kbQkQF7A"
+            },
+            {
+              "title": "s03e13",
+              "file": "RObotzi/Sezonul 3/s03e13.mp4",
+              "youtubeId": "4z0WmWUT2rM"
+            },
+            {
+              "title": "s03e14",
+              "file": "RObotzi/Sezonul 3/s03e14.mp4",
+              "youtubeId": "7wTt7Zs48mY"
+            },
+            {
+              "title": "s03e15",
+              "file": "RObotzi/Sezonul 3/s03e15.mp4",
+              "youtubeId": "8wQh-Zvec44"
+            },
+            {
+              "title": "s03e16",
+              "file": "RObotzi/Sezonul 3/s03e16.mp4",
+              "youtubeId": "4J-XwyiJkRQ"
+            },
+            {
+              "title": "s03e17",
+              "file": "RObotzi/Sezonul 3/s03e17.mp4",
+              "youtubeId": "QlnvgD81zag"
+            },
+            {
+              "title": "s03e18",
+              "file": "RObotzi/Sezonul 3/s03e18.mp4",
+              "youtubeId": "ObKGIf_40Jw"
+            },
+            {
+              "title": "s03e19",
+              "file": "RObotzi/Sezonul 3/s03e19.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "s03e20",
+              "file": "RObotzi/Sezonul 3/s03e20.mp4",
+              "youtubeId": "o-kKQJo-uIQ"
+            },
+            {
+              "title": "s03e21",
+              "file": "RObotzi/Sezonul 3/s03e21.mp4",
+              "youtubeId": "7hfvk4CoJy0"
+            },
+            {
+              "title": "s03e22",
+              "file": "RObotzi/Sezonul 3/s03e22.mp4",
+              "youtubeId": "K8r7l290T3o"
+            },
+            {
+              "title": "s03e23",
+              "file": "RObotzi/Sezonul 3/s03e23.mp4",
+              "youtubeId": "QupsvH-W-YE"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "Sezonul 4",
+          "slug": "sezonul-4",
+          "videos": [
+            {
+              "title": "s04e01",
+              "file": "RObotzi/Sezonul 4/s04e01.mp4",
+              "youtubeId": "H0UyP5_37Ic"
+            },
+            {
+              "title": "s04e02",
+              "file": "RObotzi/Sezonul 4/s04e02.mp4",
+              "youtubeId": "JEB95xws9Dk"
+            },
+            {
+              "title": "s04e04",
+              "file": "RObotzi/Sezonul 4/s04e04.mp4",
+              "youtubeId": "o2_BKEVb5pU"
+            },
+            {
+              "title": "s04e06",
+              "file": "RObotzi/Sezonul 4/s04e06.mp4",
+              "youtubeId": "D7UkOe2_H9s"
+            },
+            {
+              "title": "s04e07",
+              "file": "RObotzi/Sezonul 4/s04e07.mp4",
+              "youtubeId": "Zwz-DP7BuPo"
+            },
+            {
+              "title": "s04e08",
+              "file": "RObotzi/Sezonul 4/s04e08.mp4",
+              "youtubeId": "g6yVnkv-d0w"
+            },
+            {
+              "title": "s04e09",
+              "file": "RObotzi/Sezonul 4/s04e09.mp4",
+              "youtubeId": "k42FQM7TrG4"
+            },
+            {
+              "title": "s04e10",
+              "file": "RObotzi/Sezonul 4/s04e10.mp4",
+              "youtubeId": "-juDAPNv0dQ"
+            },
+            {
+              "title": "s04e11",
+              "file": "RObotzi/Sezonul 4/s04e11.mp4",
+              "youtubeId": "cXqKl0j7Pfc"
+            },
+            {
+              "title": "s04e12",
+              "file": "RObotzi/Sezonul 4/s04e12.mp4",
+              "youtubeId": "LOc8JDRNQWA"
+            },
+            {
+              "title": "s04e13",
+              "file": "RObotzi/Sezonul 4/s04e13.mp4",
+              "youtubeId": "RoqF138J-1c"
+            },
+            {
+              "title": "s04e14",
+              "file": "RObotzi/Sezonul 4/s04e14.mp4",
+              "youtubeId": "d4-r7SEcaAM"
+            },
+            {
+              "title": "s04e15",
+              "file": "RObotzi/Sezonul 4/s04e15.mp4",
+              "youtubeId": "ekhkqWCRIlA"
+            },
+            {
+              "title": "s04e16",
+              "file": "RObotzi/Sezonul 4/s04e16.mp4",
+              "youtubeId": "7NJCwxCLklg"
+            },
+            {
+              "title": "s04e17",
+              "file": "RObotzi/Sezonul 4/s04e17.mp4",
+              "youtubeId": "4ql0xDyJuZU"
+            },
+            {
+              "title": "s04e19",
+              "file": "RObotzi/Sezonul 4/s04e19.mp4",
+              "youtubeId": "7hYhQssXjN8"
+            },
+            {
+              "title": "s04e20",
+              "file": "RObotzi/Sezonul 4/s04e20.mp4",
+              "youtubeId": "Blu_ql4fBhI"
+            },
+            {
+              "title": "s04e21",
+              "file": "RObotzi/Sezonul 4/s04e21.mp4",
+              "youtubeId": "UazjFVB5Xn0"
+            },
+            {
+              "title": "s04e22",
+              "file": "RObotzi/Sezonul 4/s04e22.mp4",
+              "youtubeId": "QtzMLGNOTI8"
+            },
+            {
+              "title": "s04e23",
+              "file": "RObotzi/Sezonul 4/s04e23.mp4",
+              "youtubeId": "a9xJVeToCzY"
+            },
+            {
+              "title": "s04e24",
+              "file": "RObotzi/Sezonul 4/s04e24.mp4",
+              "youtubeId": "md3yP7xTl78"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "Sezonul 5",
+          "slug": "sezonul-5",
+          "videos": [
+            {
+              "title": "s05e01",
+              "file": "RObotzi/Sezonul 5/s05e01.mp4",
+              "youtubeId": "iBpX8tzgOlg"
+            },
+            {
+              "title": "s05e02",
+              "file": "RObotzi/Sezonul 5/s05e02.mp4",
+              "youtubeId": "nIkbfnNUaQM"
+            },
+            {
+              "title": "s05e03",
+              "file": "RObotzi/Sezonul 5/s05e03.mp4",
+              "youtubeId": "ldIRps48T3E"
+            },
+            {
+              "title": "s05e04",
+              "file": "RObotzi/Sezonul 5/s05e04.mp4",
+              "youtubeId": "knjvTmagZYA"
+            },
+            {
+              "title": "s05e05",
+              "file": "RObotzi/Sezonul 5/s05e05.mp4",
+              "youtubeId": "40v7RgRSfuc"
+            },
+            {
+              "title": "s05e06",
+              "file": "RObotzi/Sezonul 5/s05e06.mp4",
+              "youtubeId": "-O2uQCKV4H4"
+            },
+            {
+              "title": "s05e07",
+              "file": "RObotzi/Sezonul 5/s05e07.mp4",
+              "youtubeId": "ikChB5YxqfY"
+            },
+            {
+              "title": "s05e08",
+              "file": "RObotzi/Sezonul 5/s05e08.mp4",
+              "youtubeId": "1KWrWNZ6I8w"
+            },
+            {
+              "title": "s05e09",
+              "file": "RObotzi/Sezonul 5/s05e09.mp4",
+              "youtubeId": "tFA6KWDs_aE"
+            },
+            {
+              "title": "s05e10",
+              "file": "RObotzi/Sezonul 5/s05e10.mp4",
+              "youtubeId": "euFDVPdYiMk"
+            },
+            {
+              "title": "s05e11",
+              "file": "RObotzi/Sezonul 5/s05e11.mp4",
+              "youtubeId": "2DdERYZ7h5U"
+            },
+            {
+              "title": "s05e12",
+              "file": "RObotzi/Sezonul 5/s05e12.mp4",
+              "youtubeId": "eWOaFHZ1NgA"
+            },
+            {
+              "title": "s05e13",
+              "file": "RObotzi/Sezonul 5/s05e13.mp4",
+              "youtubeId": "jntAF_Oso3U"
+            },
+            {
+              "title": "s05e14",
+              "file": "RObotzi/Sezonul 5/s05e14.mp4",
+              "youtubeId": "9xZyss2AfoI"
+            },
+            {
+              "title": "s05e15",
+              "file": "RObotzi/Sezonul 5/s05e15.mp4",
+              "youtubeId": "PXzsLTL8ewk"
+            }
+          ],
+          "subcategories": []
+        },
+        {
+          "name": "Songs",
+          "slug": "songs",
+          "videos": [
+            {
+              "title": "Cine Ma Vrea",
+              "file": "RObotzi/Songs/Cine Ma Vrea.mp4",
+              "youtubeId": "1kRBGtV8_Js"
+            },
+            {
+              "title": "Ciue Fatza Ai",
+              "file": "RObotzi/Songs/Ciue Fatza Ai.mp4",
+              "youtubeId": "N84F3xi3jEc"
+            },
+            {
+              "title": "LENE",
+              "file": "RObotzi/Songs/LENE.mp4",
+              "youtubeId": "HfwJfQTsCxs"
+            },
+            {
+              "title": "Ler is MOre",
+              "file": "RObotzi/Songs/Ler is MOre.mp4",
+              "youtubeId": "KmD0HuEPL-o"
+            },
+            {
+              "title": "Misca-ti Placinta",
+              "file": "RObotzi/Songs/Misca-ti Placinta.mp4",
+              "youtubeId": null
+            },
+            {
+              "title": "Piftel",
+              "file": "RObotzi/Songs/Piftel.mp4",
+              "youtubeId": "2GeOa14pOuM"
+            },
+            {
+              "title": "TRACKACHULA",
+              "file": "RObotzi/Songs/TRACKACHULA.mp4",
+              "youtubeId": "KM7a6Ot9Qzk"
+            }
+          ],
+          "subcategories": []
+        }
+      ]
+    }
+  ]
+}

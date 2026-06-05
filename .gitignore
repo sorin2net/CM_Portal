@@ -1,0 +1,21 @@
+# === NU urca aceste lucruri pe internet ===
+
+# Arhiva video locala (108 GB!) - ramane doar pe disc, pentru mini-TV
+CM/
+
+# Unelte / binare
+*.exe
+
+# Fisiere de sistem
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node
+node_modules/
+
+# Setari editor / harness (nu fac parte din site)
+.claude/
+
+# Loguri goale de la yt-dlp
+*.err

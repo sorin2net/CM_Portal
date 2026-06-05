@@ -1,0 +1,6 @@
+{
+  "_README": "Pentru orice clip fara link: gaseste-l pe YouTube, copiaza ID-ul din adresa (youtube.com/watch?v=ACESTA_E_ID-ul) si adauga o linie aici sub forma \"cale/relativa/fisier.mp4\": \"ID\". Apoi ruleaza: node scripts/build-all.js. Caile exacte le vezi in catalog.json (campul file).",
+  "CODIN&RAMO/PUNCT/02 - LUMINILE!!!.mp4": "vT8sECx8mjs",
+  "CODIN&RAMO/PUNCT/03 - Progrese.mp4": "PXeVzNllJjA",
+  "RObotzi/Extras/Ciob.mp4": "Xb9RktjwESQ"
+}
