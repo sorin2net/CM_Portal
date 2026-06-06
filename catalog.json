@@ -1,6 +1,6 @@
 {
   "name": "Creative Monkeyz Portal",
-  "generatedAt": "2026-06-06T07:36:50.469Z",
+  "generatedAt": "2026-06-06T09:04:14.097Z",
   "stats": {
     "categories": 10,
     "videos": 594,
@@ -1148,7 +1148,8 @@
             {
               "title": "06 - IOBAGG - LENE",
               "file": "CSP/ZOOT SUIT/06 - IOBAGG - LENE.mp4",
-              "youtubeId": "HfwJfQTsCxs"
+              "youtubeId": "HfwJfQTsCxs",
+              "noThumb": true
             },
             {
               "title": "07 - IOBAGG x NJRAMO - IOBAGG",
@@ -1638,7 +1639,8 @@
             {
               "title": "IOBAGG - LENE",
               "file": "IOBAGG/Songs/IOBAGG - LENE.mp4",
-              "youtubeId": "HfwJfQTsCxs"
+              "youtubeId": "HfwJfQTsCxs",
+              "noThumb": true
             },
             {
               "title": "IOBAGG feat. Ninja Ramo - KKTGRS",
@@ -3159,7 +3161,8 @@
             {
               "title": "s03e13",
               "file": "RObotzi/Sezonul 3/s03e13.mp4",
-              "youtubeId": "4z0WmWUT2rM"
+              "youtubeId": "4z0WmWUT2rM",
+              "noThumb": true
             },
             {
               "title": "s03e14",
@@ -3425,7 +3428,8 @@
             {
               "title": "LENE",
               "file": "RObotzi/Songs/LENE.mp4",
-              "youtubeId": "HfwJfQTsCxs"
+              "youtubeId": "HfwJfQTsCxs",
+              "noThumb": true
             },
             {
               "title": "Ler is MOre",

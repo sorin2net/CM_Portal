@@ -8,6 +8,7 @@ const steps = [
   ["match-pass2",   "potriveste pe playlist-uri (Piramida, Rendam, OUTLAST...)"],
   ["apply-manual",  "aplica ID-urile completate manual"],
   ["add-games",     "adauga jocurile de pe canal (Wolfenstein, Dying Light...)"],
+  ["check-thumbs",  "verifica pozele (cele goale primesc placeholder)"],
 ];
 
 for (const [file, desc] of steps) {

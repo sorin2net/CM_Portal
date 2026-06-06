@@ -60,7 +60,7 @@ function thumb(id, q) { return `https://img.youtube.com/vi/${id}/${q || "mqdefau
 function coverId(node) {
   if (node.__cover !== undefined) return node.__cover;
   let id = null;
-  for (const v of node.videos) if (v.youtubeId) { id = v.youtubeId; break; }
+  for (const v of node.videos) if (v.youtubeId && !v.noThumb) { id = v.youtubeId; break; }
   if (!id) for (const s of node.subcategories) { const c = coverId(s); if (c) { id = c; break; } }
   node.__cover = id;
   return id;
@@ -112,32 +112,46 @@ function simpleBreadcrumb(label) {
   return bc;
 }
 
+function makeCover(id, noThumb) {
+  const cover = document.createElement("div");
+  cover.className = "cover";
+  if (id && !noThumb) {
+    const img = document.createElement("img");
+    img.loading = "lazy"; img.alt = "";
+    img.onerror = () => { cover.classList.add("no-thumb"); img.remove(); };
+    img.src = thumb(id, "mqdefault");
+    cover.appendChild(img);
+  } else {
+    cover.classList.add("no-thumb");
+  }
+  return cover;
+}
+
 function folderCard(node, chain) {
-  const id = coverId(node);
   const el = document.createElement("div");
   el.className = "card";
-  el.innerHTML = `
-    <div class="cover">${id ? `<img loading="lazy" src="${thumb(id)}" alt="">` : ""}</div>
-    <div class="badge-folder">${FOLDER_ICON}${countVideos(node)}</div>
-    <div class="card-label"><div class="card-title">${escapeHtml(node.name)}</div></div>`;
+  el.appendChild(makeCover(coverId(node)));
+  const badge = document.createElement("div");
+  badge.className = "badge-folder"; badge.innerHTML = FOLDER_ICON + countVideos(node);
+  el.appendChild(badge);
+  const label = document.createElement("div");
+  label.className = "card-label"; label.innerHTML = `<div class="card-title">${escapeHtml(node.name)}</div>`;
+  el.appendChild(label);
   el.onclick = () => navNode(chain);
   return el;
 }
 
 function videoCard(video, list, index, where) {
-  const id = video.youtubeId;
   const el = document.createElement("div");
   el.className = "card";
-  el.innerHTML = `
-    <div class="cover">
-      ${id ? `<img loading="lazy" src="${thumb(id)}" alt="">` : ""}
-      <div class="play-badge"><i></i></div>
-    </div>
-    ${id ? "" : '<div class="badge-nolink">f&#259;r&#259; link</div>'}
-    <div class="card-label">
-      <div class="card-title">${escapeHtml(video.title)}</div>
-      ${where ? `<div class="card-where">${escapeHtml(where)}</div>` : ""}
-    </div>`;
+  const cover = makeCover(video.youtubeId, video.noThumb);
+  const pb = document.createElement("div"); pb.className = "play-badge"; pb.innerHTML = "<i></i>";
+  cover.appendChild(pb);
+  el.appendChild(cover);
+  if (!video.youtubeId) { const nl = document.createElement("div"); nl.className = "badge-nolink"; nl.innerHTML = "f&#259;r&#259; link"; el.appendChild(nl); }
+  const label = document.createElement("div"); label.className = "card-label";
+  label.innerHTML = `<div class="card-title">${escapeHtml(video.title)}</div>${where ? `<div class="card-where">${escapeHtml(where)}</div>` : ""}`;
+  el.appendChild(label);
   el.onclick = () => openPlayer(list, index, where || "");
   return el;
 }
@@ -155,7 +169,7 @@ function doHome() {
     <div class="hero-inner">
       <img class="hero-logo" src="assets/cm-logo.jpg" alt="">
       <h1>Creative Monkeyz <b>Portal</b></h1>
-      <p>O colec&#539;ie organizat&#259; cu drag a show-urilor Creative Monkeyz — de la Robotzi la gaming, muzic&#259;, interviuri &#537;i momente de pe stream. Toate la un loc, gata de vizionat.</p>
+      <p>O colec&#539;ie organizat&#259; cu drag a show-urilor Creative Monkeyz: de la Robotzi la gaming, muzic&#259;, interviuri &#537;i momente de pe stream. Toate la un loc, gata de vizionat.</p>
       <div class="hero-stats">
         <div class="hero-stat"><b>${CATALOG.categories.length}</b><span>Categorii</span></div>
         <div class="hero-stat"><b>${CATALOG.stats.videos}</b><span>Videoclipuri</span></div>
@@ -255,7 +269,7 @@ function doAbout() {
       <div class="about-card">
         <h2>Despre <b>proiect</b></h2>
         <p>Creative Monkeyz Portal este un proiect-tribut neoficial, făcut de un fan. Adună într-un singur loc, organizat pe categorii şi sezoane, show-urile care ne-au făcut să râdem: <b>Robotzi</b>, <b>IOBAGG</b>, <b>3lar</b>, <b>Piramida</b>, <b>Rendam</b>, interviuri, muzică şi zeci de gameplay-uri (Wolfenstein, Dying Light, Dead Space, Call of Duty şi multe altele).</p>
-        <p>Videoclipurile rulează direct de pe YouTube, prin player-ul oficial — aşa creatorii îşi păstrează vizualizările, iar tu ai totul ordonat ca într-o bibliotecă.</p>
+        <p>Videoclipurile rulează direct de pe YouTube, prin player-ul oficial, astfel încât creatorii îşi păstrează vizualizările, iar tu ai totul ordonat ca într-o bibliotecă.</p>
         <p class="muted">${CATALOG.stats.videos} videoclipuri în ${CATALOG.categories.length} categorii.</p>
       </div>
       <div class="about-card">
@@ -280,11 +294,11 @@ function doFartravel() {
   wrap.innerHTML = `
     <div class="ft-card">
       <img class="ft-logo" src="assets/fartravel-icon.png" alt="RObotzi Fartravel">
-      <div class="ft-badge">JOC PIERDUT · 2014</div>
       <h1>RObotzi <b>Fartravel</b></h1>
-      <p>Jocul mobil lansat de Creative Monkeyz în 2014 şi retras din Google Play în 2017. Îi ghidezi pe <b>MO</b> şi <b>F.O.C.A.</b> prin spaţiu — plutind cu ajutorul gazelor 💨 şi colectând boabe spaţiale pentru combustibil. Un mic giuvaer pierdut, readus la lumină aici.</p>
+      <p class="ft-tag">„How fart can you travel?"</p>
+      <p>O aventură prin spaţiu cu <b>MO</b> şi <b>F.O.C.A.</b>, din serialul RObotzi. După ce MO a folosit piese de navă ca să repare o staţie orbitală, cei doi pornesc spre casă pe o rablă spaţială, navigând cu ajutorul „reactorului cu fasole" al lui MO. Ai doar 5 apăsări, aşa că adună boabele spaţiale ca să te realimentezi şi să mergi mai departe. Strânge 20 de boabe şi apare o fasole secretă specială! Disponibil în engleză şi română.</p>
       <div class="ft-video"><iframe src="https://www.youtube.com/embed/iIkoraEr4K4?rel=0&modestbranding=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
-      <p class="ft-note">Joc <b>Unity</b> nativ din 2014 — codul nu poate rula direct într-un browser, aşa că îl retrăieşti aici prin gameplay. Tot conţinutul aparţine Creative Monkeyz.</p>
+      <p class="ft-note">Joc creat de Creative Monkeyz.</p>
     </div>`;
   content.appendChild(wrap);
 }
