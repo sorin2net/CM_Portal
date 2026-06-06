@@ -95,6 +95,11 @@ img { display: block; }
 .breadcrumb .sep { opacity: .4; }
 .breadcrumb .current { color: var(--text); font-weight: 600; }
 
+.navbar { display: flex; align-items: center; gap: 14px; padding: 22px 0 4px; flex-wrap: wrap; }
+.navbar .breadcrumb { padding: 0; }
+.back-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--line); color: var(--text); border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600; cursor: pointer; transition: .15s; }
+.back-btn:hover { background: var(--surface-2); border-color: var(--red); color: var(--red); }
+
 .page-head { display: flex; align-items: center; gap: 18px; margin: 8px 0 26px; }
 .page-head-cover { width: 130px; aspect-ratio: 16/9; border-radius: 12px; object-fit: cover; box-shadow: var(--shadow); }
 .page-head h1 { font-family: "Poppins"; font-size: clamp(24px, 3.4vw, 38px); font-weight: 700; }

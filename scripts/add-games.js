@@ -85,15 +85,11 @@ for (const [name, list] of [...groups.entries()].sort((a, b) => b[1].length - a[
   addedGames++; addedVideos += list.length;
 }
 if (miscDiverse.length) { iobagg.subcategories.push(makeSub("Diverse jocuri", miscDiverse)); addedVideos += miscDiverse.length; }
-if (miscChannel.length) {
-  catalog.categories.push({ name: "Altele de pe canal", slug: "altele-de-pe-canal", source: "youtube", subcategories: [], videos: miscChannel.map((e) => ({ title: cleanTitle(e.title), file: null, youtubeId: e.id })) });
-  addedVideos += miscChannel.length;
-}
 
 let withId = 0, total = 0;
 (function cnt(n) { n.videos.forEach((v) => { total++; if (v.youtubeId) withId++; }); n.subcategories.forEach(cnt); })({ videos: [], subcategories: catalog.categories });
 catalog.stats.videos = total; catalog.stats.withYoutubeId = withId; catalog.stats.categories = catalog.categories.length;
 fs.writeFileSync(path.join(ROOT, "catalog.json"), JSON.stringify(catalog, null, 2), "utf8");
 
-console.log(`Adaugate ${addedGames} jocuri + ${miscDiverse.length} diverse + ${miscChannel.length} altele = ${addedVideos} clipuri.`);
+console.log(`Adaugate ${addedGames} jocuri + ${miscDiverse.length} diverse = ${addedVideos} clipuri. (${miscChannel.length} 'altele' ignorate)`);
 console.log(`Total catalog: ${total} clipuri (${withId} cu link).`);

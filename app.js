@@ -12,8 +12,33 @@ const FOLDER_ICON = '<svg viewBox="0 0 24 24"><path d="M10 4H4a2 2 0 0 0-2 2v12a
 
 fetch("catalog.json")
   .then((r) => r.json())
-  .then((data) => { CATALOG = data; renderFooter(); renderHome(); })
+  .then((data) => {
+    CATALOG = data;
+    renderFooter();
+    history.replaceState({ v: "home" }, "");
+    doHome();
+  })
   .catch((err) => { content.innerHTML = '<p class="empty-msg">Nu am putut incarca catalog.json. Deschide pagina printr-un server local.</p>'; console.error(err); });
+
+window.addEventListener("popstate", (e) => render(e.state || { v: "home" }));
+
+function render(state) {
+  if (state.v === "about") return doAbout();
+  if (state.v === "node") {
+    const chain = resolvePath(state.path);
+    if (chain && chain.length) return doNode(chain);
+  }
+  doHome();
+}
+function applyState(state) { history.pushState(state, ""); render(state); }
+function navHome() { $("#searchInput").value = ""; applyState({ v: "home" }); }
+function navAbout() { applyState({ v: "about" }); }
+function navNode(chain) { applyState({ v: "node", path: chain.map((n) => n.name) }); }
+function resolvePath(names) {
+  let nodes = CATALOG.categories, chain = [];
+  for (const nm of names) { const n = nodes.find((x) => x.name === nm); if (!n) return null; chain.push(n); nodes = n.subcategories; }
+  return chain;
+}
 
 function escapeHtml(s) { return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
 function countVideos(node) { let n = node.videos.length; node.subcategories.forEach((s) => (n += countVideos(s))); return n; }
@@ -32,6 +57,21 @@ function setActiveNav(which) {
   $("#navAbout").classList.toggle("active", which === "about");
 }
 
+function backButton() {
+  const b = document.createElement("button");
+  b.className = "back-btn";
+  b.innerHTML = "&#8249; &Icirc;napoi";
+  b.onclick = () => history.back();
+  return b;
+}
+function navBar(breadcrumbEl) {
+  const bar = document.createElement("div");
+  bar.className = "navbar";
+  bar.appendChild(backButton());
+  bar.appendChild(breadcrumbEl);
+  return bar;
+}
+
 function folderCard(node, chain) {
   const id = coverId(node);
   const el = document.createElement("div");
@@ -40,7 +80,7 @@ function folderCard(node, chain) {
     <div class="cover">${id ? `<img loading="lazy" src="${thumb(id)}" alt="">` : ""}</div>
     <div class="badge-folder">${FOLDER_ICON}${countVideos(node)}</div>
     <div class="card-label"><div class="card-title">${escapeHtml(node.name)}</div></div>`;
-  el.onclick = () => goTo(chain);
+  el.onclick = () => navNode(chain);
   return el;
 }
 
@@ -62,7 +102,7 @@ function videoCard(video, list, index, where) {
   return el;
 }
 
-function renderHome() {
+function doHome() {
   setActiveNav("home");
   pathStack = [];
   window.scrollTo(0, 0);
@@ -93,11 +133,10 @@ function renderHome() {
     if (cat.subcategories.length) {
       const more = document.createElement("span");
       more.className = "more"; more.textContent = "Vezi tot ›";
-      more.onclick = () => goTo([cat]);
+      more.onclick = () => navNode([cat]);
       head.appendChild(more);
     }
     sec.appendChild(head);
-
     const row = document.createElement("div");
     row.className = "row";
     cat.subcategories.forEach((sub) => row.appendChild(folderCard(sub, [cat, sub])));
@@ -107,16 +146,13 @@ function renderHome() {
   });
 }
 
-function goTo(chain) {
-  pathStack = chain.slice();
-  renderNode(chain[chain.length - 1]);
-}
-
-function renderNode(node) {
+function doNode(chain) {
   setActiveNav(null);
+  pathStack = chain.slice();
+  const node = chain[chain.length - 1];
   window.scrollTo(0, 0);
   content.innerHTML = "";
-  content.appendChild(buildBreadcrumb());
+  content.appendChild(navBar(buildBreadcrumb()));
 
   const id = coverId(node);
   const head = document.createElement("div");
@@ -127,7 +163,6 @@ function renderNode(node) {
   content.appendChild(head);
 
   const where = pathStack.map((n) => n.name).join(" › ");
-
   if (node.subcategories.length) {
     const sec = document.createElement("section");
     sec.className = "section";
@@ -148,14 +183,13 @@ function renderNode(node) {
     sec.appendChild(grid);
     content.appendChild(sec);
   }
-  if (!node.subcategories.length && !node.videos.length) content.innerHTML += '<p class="empty-msg">Nimic aici.</p>';
 }
 
 function buildBreadcrumb() {
   const bc = document.createElement("nav");
   bc.className = "breadcrumb";
   const home = document.createElement("a");
-  home.textContent = "Acasă"; home.onclick = renderHome;
+  home.textContent = "Acasă"; home.onclick = navHome;
   bc.appendChild(home);
   pathStack.forEach((node, i) => {
     const sep = document.createElement("span"); sep.className = "sep"; sep.textContent = "›"; bc.appendChild(sep);
@@ -163,36 +197,44 @@ function buildBreadcrumb() {
       const cur = document.createElement("span"); cur.className = "current"; cur.textContent = node.name; bc.appendChild(cur);
     } else {
       const a = document.createElement("a"); a.textContent = node.name;
-      a.onclick = () => goTo(pathStack.slice(0, i + 1)); bc.appendChild(a);
+      a.onclick = () => navNode(pathStack.slice(0, i + 1)); bc.appendChild(a);
     }
   });
   return bc;
 }
 
-function renderAbout() {
+function doAbout() {
   setActiveNav("about");
   pathStack = [];
   window.scrollTo(0, 0);
-  content.innerHTML = `
-    <nav class="breadcrumb"><a id="bcHome">Acasă</a><span class="sep">›</span><span class="current">Despre</span></nav>
+  const bc = document.createElement("nav");
+  bc.className = "breadcrumb";
+  const home = document.createElement("a"); home.textContent = "Acasă"; home.onclick = navHome; bc.appendChild(home);
+  const sep = document.createElement("span"); sep.className = "sep"; sep.textContent = "›"; bc.appendChild(sep);
+  const cur = document.createElement("span"); cur.className = "current"; cur.textContent = "Despre"; bc.appendChild(cur);
+
+  content.innerHTML = "";
+  content.appendChild(navBar(bc));
+  const wrap = document.createElement("div");
+  wrap.innerHTML = `
     <div class="about">
       <div class="about-card">
         <h2>Despre <b>proiect</b></h2>
-        <p>Creative Monkeyz Portal este un proiect-tribut neoficial, făcut de un fan. Adună într-un singur loc, organizat pe categorii şi sezoane, show-urile care ne-au făcut să râdem: <b>Robotzi</b>, <b>IOBAGG</b>, <b>3lar</b>, <b>Piramida</b>, <b>Rendam</b>, interviuri, muzică şi zeci de gameplay-uri (Wolfenstein, Dying Light, Titanfall şi multe altele).</p>
+        <p>Creative Monkeyz Portal este un proiect-tribut neoficial, făcut de un fan. Adună într-un singur loc, organizat pe categorii şi sezoane, show-urile care ne-au făcut să râdem: <b>Robotzi</b>, <b>IOBAGG</b>, <b>3lar</b>, <b>Piramida</b>, <b>Rendam</b>, interviuri, muzică şi zeci de gameplay-uri (Wolfenstein, Dying Light, Dead Space, Call of Duty şi multe altele).</p>
         <p>Videoclipurile rulează direct de pe YouTube, prin player-ul oficial — aşa creatorii îşi păstrează vizualizările, iar tu ai totul ordonat ca într-o bibliotecă.</p>
-        <p class="muted">${CATALOG.stats.videos} videoclipuri în ${CATALOG.categories.length} categorii · ${CATALOG.stats.withYoutubeId} cu redare directă.</p>
+        <p class="muted">${CATALOG.stats.videos} videoclipuri în ${CATALOG.categories.length} categorii.</p>
       </div>
       <div class="about-card">
         <img class="credit-logo" src="assets/cm-logo.jpg" alt="">
         <h2>Credite</h2>
-        <p>Tot conţinutul aparţine creatorilor <b>Creative Monkeyz</b>. Dacă îţi place, susţine-i pe canalele oficiale:</p>
+        <p>Tot conţinutul aparţine creatorilor <b>Creative Monkeyz</b>. Dacă îţi place, susţine-i pe canalul oficial:</p>
         <div class="chip-links">
           <a class="chip" href="https://www.youtube.com/@CreativeMonkeyzArmy" target="_blank" rel="noopener">${YT_ICON} Creative Monkeyz Army</a>
         </div>
         <p class="muted" style="margin-top:16px">Portal neoficial, neafiliat cu canalul. Realizat din respect pentru munca lor.</p>
       </div>
     </div>`;
-  $("#bcHome").onclick = renderHome;
+  content.appendChild(wrap);
 }
 
 function renderFooter() {
@@ -245,7 +287,7 @@ document.addEventListener("keydown", (e) => {
 
 $("#searchInput").addEventListener("input", (e) => {
   const q = e.target.value.trim().toLowerCase();
-  if (!q) { renderHome(); return; }
+  if (!q) { doHome(); return; }
   setActiveNav(null);
   pathStack = [];
   const results = [];
@@ -254,7 +296,15 @@ $("#searchInput").addEventListener("input", (e) => {
     node.subcategories.forEach((s) => walk(s, prefix + " › " + s.name));
   })({ videos: [], subcategories: CATALOG.categories }, "");
   window.scrollTo(0, 0);
-  content.innerHTML = `<div class="section-head" style="margin-top:24px"><h2>Rezultate</h2><span class="count">${results.length}</span></div>`;
+  content.innerHTML = "";
+  const bc = document.createElement("nav"); bc.className = "breadcrumb";
+  const home = document.createElement("a"); home.textContent = "Acasă"; home.onclick = navHome; bc.appendChild(home);
+  const sep = document.createElement("span"); sep.className = "sep"; sep.textContent = "›"; bc.appendChild(sep);
+  const cur = document.createElement("span"); cur.className = "current"; cur.textContent = "Căutare"; bc.appendChild(cur);
+  content.appendChild(navBar(bc));
+  const sh = document.createElement("div"); sh.className = "section-head";
+  sh.innerHTML = `<h2>Rezultate</h2><span class="count">${results.length}</span>`;
+  content.appendChild(sh);
   const grid = document.createElement("div"); grid.className = "grid";
   const list = results.map((r) => r.v);
   results.forEach((r, i) => grid.appendChild(videoCard(r.v, list, i, r.where.replace(/^ › /, ""))));
@@ -262,6 +312,6 @@ $("#searchInput").addEventListener("input", (e) => {
   if (!results.length) content.innerHTML += '<p class="empty-msg">Niciun rezultat.</p>';
 });
 
-$("#brand").onclick = () => { $("#searchInput").value = ""; renderHome(); };
-$("#navHome").onclick = () => { $("#searchInput").value = ""; renderHome(); };
-$("#navAbout").onclick = renderAbout;
+$("#brand").onclick = navHome;
+$("#navHome").onclick = navHome;
+$("#navAbout").onclick = navAbout;
