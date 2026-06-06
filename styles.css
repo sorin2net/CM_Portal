@@ -242,8 +242,9 @@ img { display: block; }
 
 .menu-btn { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); color: var(--text); font-size: 20px; cursor: pointer; }
 
-.banana { position: fixed; top: -50px; z-index: 9999; pointer-events: none; animation: banana-fall linear forwards; }
-@keyframes banana-fall { to { transform: translateY(112vh) rotate(540deg); } }
+.lltcm-drop { position: fixed; top: -40px; z-index: 9999; pointer-events: none; font-family: "Poppins", sans-serif; font-weight: 800; letter-spacing: 1px; color: var(--yellow); text-shadow: 0 2px 10px rgba(0,0,0,.7); animation: lltcm-fall linear forwards; }
+@keyframes lltcm-fall { to { transform: translateY(112vh) rotate(360deg); } }
+.lltcm-sign { font-family: "Poppins", sans-serif; font-weight: 700; color: var(--red); letter-spacing: 1px; margin-top: 14px; }
 .cmp-toast { position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%) translateY(24px); background: var(--red); color: #fff; padding: 13px 24px; border-radius: 999px; font-weight: 600; z-index: 10000; opacity: 0; transition: opacity .3s, transform .3s; box-shadow: var(--shadow); }
 .cmp-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 

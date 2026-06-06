@@ -88,7 +88,9 @@ function getPopular(n) {
     node.subcategories.forEach((s) => w(s, p ? p + " › " + s.name : s.name));
   })({ videos: [], subcategories: CATALOG.categories }, "");
   arr.sort((a, b) => b.views - a.views);
-  return arr.slice(0, n);
+  const seen = new Set(); const uniq = [];
+  for (const v of arr) { if (!seen.has(v.youtubeId)) { seen.add(v.youtubeId); uniq.push(v); } }
+  return uniq.slice(0, n);
 }
 function buildFlat() {
   if (flatVideos) return flatVideos;
@@ -275,6 +277,7 @@ function doAbout() {
         <p>Tot conţinutul aparţine creatorilor <b>Creative Monkeyz</b>. Dacă îţi place, urmăreşte-i şi susţine-i pe canalele oficiale:</p>
         ${socialsHtml()}
         <p class="muted" style="margin-top:16px">Portal neoficial, neafiliat cu canalul. Realizat din respect pentru munca lor.</p>
+        <p class="lltcm-sign">LLTCM · Long Live The Creative Monkeyz</p>
       </div>
     </div>`;
   content.appendChild(wrap);
@@ -302,6 +305,7 @@ function renderFooter() {
       <div>
         <div class="footer-brand"><img src="assets/cm-logo.jpg" alt=""> Creative Monkeyz Portal</div>
         <p class="footer-note">Proiect-tribut neoficial făcut de un fan. Tot conţinutul aparţine Creative Monkeyz; videoclipurile sunt redate de pe YouTube. Neafiliat oficial cu canalul.</p>
+        <p class="lltcm-sign">LLTCM · Long Live The Creative Monkeyz</p>
       </div>
       <div>
         <p class="footer-note" style="margin-bottom:10px">Urmăreşte Creative Monkeyz:</p>
@@ -362,7 +366,7 @@ document.addEventListener("keydown", (e) => {
 $("#searchInput").addEventListener("input", (e) => {
   const q = e.target.value.trim().toLowerCase();
   if (!q) { doHome(); return; }
-  if (q === "banana" || q === "maimuta" || q === "fart" || q === "aloha") { e.target.value = ""; bananaRain(); doHome(); return; }
+  if (q === "lltcm" || q === "banana" || q === "maimuta" || q === "aloha") { e.target.value = ""; lltcmRain(); doHome(); return; }
   setActiveNav(null); pathStack = [];
   const results = [];
   (function walk(node, prefix) {
@@ -385,7 +389,7 @@ let logoClicks = 0, logoTimer = null;
 $("#brand").onclick = () => {
   navHome();
   logoClicks++; clearTimeout(logoTimer); logoTimer = setTimeout(() => (logoClicks = 0), 1200);
-  if (logoClicks >= 7) { logoClicks = 0; bananaRain(); }
+  if (logoClicks >= 7) { logoClicks = 0; lltcmRain(); }
 };
 $("#navHome").onclick = navHome;
 $("#navAbout").onclick = navAbout;
@@ -393,10 +397,10 @@ $("#navFartravel").onclick = navFartravel;
 $("#btnRandom").onclick = playRandom;
 $("#btnMenu").onclick = () => $(".nav").classList.toggle("open");
 
-function bananaRain() {
+function lltcmRain() {
   for (let i = 0; i < 40; i++) {
     const b = document.createElement("div");
-    b.className = "banana"; b.textContent = "🍌";
+    b.className = "lltcm-drop"; b.textContent = "LLTCM";
     b.style.left = Math.random() * 100 + "vw";
     b.style.fontSize = 20 + Math.random() * 30 + "px";
     b.style.animationDuration = 2 + Math.random() * 2.8 + "s";
@@ -404,7 +408,7 @@ function bananaRain() {
     document.body.appendChild(b);
     setTimeout(() => b.remove(), 6000);
   }
-  cmpToast("🐵 Aloha! Ai găsit secretul Creative Monkeyz!");
+  cmpToast("LLTCM. Long Live The Creative Monkeyz");
 }
 function cmpToast(msg) {
   const t = document.createElement("div"); t.className = "cmp-toast"; t.textContent = msg;
@@ -417,8 +421,8 @@ function cmpToast(msg) {
   let pos = 0;
   document.addEventListener("keydown", (e) => {
     const k = e.key.toLowerCase();
-    if (k === seq[pos]) { pos++; if (pos === seq.length) { pos = 0; bananaRain(); } }
+    if (k === seq[pos]) { pos++; if (pos === seq.length) { pos = 0; lltcmRain(); } }
     else { pos = k === seq[0] ? 1 : 0; }
   });
 })();
-console.log("%c🐵 Creative Monkeyz Portal — Aloha! Incearca codul Konami (sus sus jos jos...) sau scrie 'banana' in cautare.", "color:#ff2740;font-weight:bold;font-size:13px");
+console.log("%cLLTCM. Long Live The Creative Monkeyz. Incearca codul Konami (sus sus jos jos...) sau scrie 'lltcm' in cautare.", "color:#ff2740;font-weight:bold;font-size:13px");
