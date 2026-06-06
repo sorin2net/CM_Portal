@@ -22,6 +22,21 @@ body {
 }
 img { display: block; }
 ::selection { background: var(--red); color: #fff; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #2c2c3c; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a4e; }
+::-webkit-scrollbar-track { background: transparent; }
+* { scrollbar-width: thin; scrollbar-color: #2c2c3c transparent; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; border-radius: 6px; }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } }
+.hero, .featured, .section { animation: rise .35s ease backwards; }
+
+.row.ranked { align-items: center; }
+.rank-item { display: flex; align-items: center; flex: 0 0 auto; }
+.rank-num { font-family: "Poppins", sans-serif; font-weight: 800; font-size: clamp(64px, 9vw, 104px); line-height: 1; color: transparent; -webkit-text-stroke: 3px #3a3a4e; margin-right: -24px; user-select: none; flex: none; }
+.rank-item .card { position: relative; z-index: 1; }
+.featured { transition: border-color .2s, transform .2s; }
+.featured:hover { border-color: rgba(255,39,64,.4); }
 
 .content { max-width: 1500px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px) 60px; }
 

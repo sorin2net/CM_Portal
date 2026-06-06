@@ -199,6 +199,16 @@ function videoRow(items) {
   items.forEach((v, i) => row.appendChild(videoCard(v, items, i, v.where)));
   return row;
 }
+function rankedRow(items) {
+  const row = document.createElement("div"); row.className = "row ranked";
+  items.forEach((v, i) => {
+    const item = document.createElement("div"); item.className = "rank-item";
+    const num = document.createElement("span"); num.className = "rank-num"; num.textContent = i + 1;
+    item.appendChild(num); item.appendChild(videoCard(v, items, i, v.where));
+    row.appendChild(item);
+  });
+  return row;
+}
 function wrapRow(row) {
   const wrap = document.createElement("div"); wrap.className = "row-wrap";
   const L = document.createElement("button"); L.className = "row-arrow left"; L.innerHTML = "&#8249;";
@@ -251,8 +261,8 @@ function doHome() {
   if (hist.length) appendSection("Continuă vizionarea", null, wrapRow(videoRow(hist)));
   const favs = getFavs().map((id) => idx[id]).filter(Boolean);
   if (favs.length) appendSection("Lista mea", null, wrapRow(videoRow(favs)));
-  const pop = getPopular(24);
-  if (pop.length) appendSection("Populare", null, wrapRow(videoRow(pop)));
+  const pop = getPopular(10);
+  if (pop.length) appendSection("Top 10 Populare", null, wrapRow(rankedRow(pop)));
 
   CATALOG.categories.forEach((cat) => {
     const row = document.createElement("div"); row.className = "row";
