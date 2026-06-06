@@ -49,7 +49,7 @@ img { display: block; }
 }
 .nav-link:hover, .nav-link.active { color: var(--text); background: var(--surface-2); }
 .search {
-  margin-left: auto; display: flex; align-items: center; gap: 8px;
+  margin-left: 10px; display: flex; align-items: center; gap: 8px;
   background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
   padding: 0 14px; transition: border-color .15s, box-shadow .15s;
 }
@@ -59,6 +59,28 @@ img { display: block; }
   width: 230px; max-width: 46vw; padding: 11px 2px;
   background: transparent; border: 0; outline: 0; color: var(--text); font-size: 14px;
 }
+.pill-btn { margin-left: auto; display: inline-flex; align-items: center; gap: 7px; background: var(--red); color: #fff; border: 0; border-radius: 999px; padding: 9px 16px; font-size: 13.5px; font-weight: 600; cursor: pointer; transition: .15s; white-space: nowrap; }
+.pill-btn:hover { background: var(--red-dim); transform: translateY(-1px); }
+.pill-ic { width: 16px; height: 16px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.socials { display: flex; gap: 10px; flex-wrap: wrap; }
+.social { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-2); border: 1px solid var(--line); transition: .15s; }
+.social svg { width: 19px; height: 19px; fill: var(--text); }
+.social:hover { background: var(--red); border-color: var(--red); transform: translateY(-3px); }
+.social:hover svg { fill: #fff; }
+
+.fartravel { display: grid; place-items: center; padding: 8px 0 50px; }
+.ft-card { max-width: 720px; width: 100%; background: linear-gradient(160deg, #221528, #101019); border: 1px solid var(--line); border-radius: 20px; padding: clamp(26px, 4vw, 46px); text-align: center; box-shadow: var(--shadow); }
+.ft-logo { width: 92px; height: 92px; border-radius: 24px; margin: 0 auto 16px; display: block; box-shadow: var(--shadow); }
+.ft-badge { display: inline-block; background: var(--yellow); color: #1a1a1a; font-weight: 800; font-size: 11px; letter-spacing: 2px; padding: 5px 13px; border-radius: 999px; margin-bottom: 14px; }
+.ft-card h1 { font-family: "Poppins"; font-size: clamp(30px, 5vw, 48px); font-weight: 800; letter-spacing: -1px; }
+.ft-card h1 b { color: var(--red); }
+.ft-card p { color: #d2d2de; line-height: 1.7; margin: 14px auto; max-width: 560px; }
+.ft-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 24px 0 6px; }
+.ft-btn { text-decoration: none; padding: 13px 26px; border-radius: 12px; font-weight: 600; font-size: 15px; background: var(--surface-2); color: var(--text); border: 1px solid var(--line); transition: .15s; }
+.ft-btn.primary { background: var(--red); border-color: var(--red); color: #fff; }
+.ft-btn:hover { transform: translateY(-2px); border-color: var(--red); }
+.ft-note { font-size: 12.5px; color: var(--muted); margin-top: 16px; line-height: 1.6; }
 
 .hero {
   position: relative; border-radius: 18px; overflow: hidden;
