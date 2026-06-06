@@ -4,8 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Creative Monkeyz Portal</title>
-  <meta name="description" content="Portal-tribut neoficial: o colectie organizata de videoclipuri Creative Monkeyz, de la Robotzi la gaming." />
+  <meta name="description" content="Portalul fanilor Creative Monkeyz: Robotzi, gaming, muzica, interviuri si momente de pe stream. LLTCM." />
   <link rel="icon" href="assets/cm-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Creative Monkeyz Portal" />
+  <meta property="og:title" content="Creative Monkeyz Portal" />
+  <meta property="og:description" content="Portalul fanilor Creative Monkeyz: Robotzi, gaming, muzica, interviuri si momente de pe stream. LLTCM, Long Live The Creative Monkeyz." />
+  <meta property="og:url" content="https://sorin2net.github.io/CM_Portal/" />
+  <meta property="og:image" content="https://sorin2net.github.io/CM_Portal/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Creative Monkeyz Portal" />
+  <meta name="twitter:description" content="Portalul fanilor Creative Monkeyz: Robotzi, gaming, muzica si multe altele. LLTCM." />
+  <meta name="twitter:image" content="https://sorin2net.github.io/CM_Portal/assets/og.jpg" />
+  <meta name="theme-color" content="#08080d" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="assets/icon-192.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -30,6 +45,8 @@
       <svg viewBox="0 0 24 24" class="pill-ic"><path d="M18 4l3 3-3 3M21 7H8M6 20l-3-3 3-3M3 17h13"/></svg>
       <span>Random</span>
     </button>
+    <button class="accent-btn" id="btnAccent" title="Culoare accent" aria-label="Culoare accent"></button>
+    <div class="accent-pop" id="accentPop" hidden></div>
     <div class="search">
       <svg viewBox="0 0 24 24" class="search-ic"><path d="M21 21l-4.3-4.3M11 19a8 8 0 110-16 8 8 0 010 16z"/></svg>
       <input id="searchInput" type="search" placeholder="Caut&#259; un clip..." autocomplete="off" />
@@ -60,5 +77,6 @@
   </div>
 
   <script src="app.js"></script>
+  <script>if ("serviceWorker" in navigator) { window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); }); }</script>
 </body>
 </html>

@@ -61,7 +61,8 @@ function resolvePath(names) {
   return chain;
 }
 
-function escapeHtml(s) { return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+function stripEmoji(s) { return String(s).replace(/[\u{1F000}-\u{1FFFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE00}-\u{FE0F}\u{200D}]/gu, "").replace(/\s{2,}/g, " ").trim(); }
+function escapeHtml(s) { return stripEmoji(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
 function countVideos(node) { let n = node.videos.length; node.subcategories.forEach((s) => (n += countVideos(s))); return n; }
 function thumb(id, q) { return `https://img.youtube.com/vi/${id}/${q || "mqdefault"}.jpg`; }
 function coverId(node) {
@@ -112,6 +113,33 @@ function toggleFav(id) { const a = getFavs(); const i = a.indexOf(id); if (i >= 
 function getHist() { try { return JSON.parse(localStorage.getItem(HIST_KEY)) || []; } catch (e) { return []; } }
 function pushHist(id) { if (!id) return; let a = getHist().filter((x) => x !== id); a.unshift(id); localStorage.setItem(HIST_KEY, JSON.stringify(a.slice(0, 30))); }
 
+const WATCHED_KEY = "cmp_watched";
+function getWatched() { try { return JSON.parse(localStorage.getItem(WATCHED_KEY)) || {}; } catch (e) { return {}; } }
+function isWatched(id) { return !!getWatched()[id]; }
+function markWatched(id) { if (!id) return; const w = getWatched(); w[id] = 1; localStorage.setItem(WATCHED_KEY, JSON.stringify(w)); }
+
+const ACCENTS = [
+  ["Rosu", "#ff2740", "#c01228"],
+  ["Galben", "#ffb800", "#cc8f00"],
+  ["Albastru", "#3b82f6", "#2563eb"],
+  ["Verde", "#22c55e", "#16a34a"],
+  ["Mov", "#a855f7", "#7e22ce"],
+  ["Roz", "#ec4899", "#be185d"],
+];
+function applyAccent(i) {
+  const a = ACCENTS[i] || ACCENTS[0];
+  document.documentElement.style.setProperty("--red", a[1]);
+  document.documentElement.style.setProperty("--red-dim", a[2]);
+  localStorage.setItem("cmp_accent", i);
+  const b = $("#btnAccent"); if (b) b.style.background = a[1];
+}
+function initAccent() {
+  applyAccent(+(localStorage.getItem("cmp_accent") || 0));
+  const pop = $("#accentPop"); if (!pop) return;
+  pop.innerHTML = "";
+  ACCENTS.forEach((a, i) => { const d = document.createElement("button"); d.className = "accent-dot"; d.style.background = a[1]; d.title = a[0]; d.onclick = () => { applyAccent(i); pop.hidden = true; }; pop.appendChild(d); });
+}
+
 function setActiveNav(which) {
   $("#navHome").classList.toggle("active", which === "home");
   $("#navAbout").classList.toggle("active", which === "about");
@@ -157,6 +185,7 @@ function videoCard(video, list, index, where) {
     fav.onclick = (e) => { e.stopPropagation(); toggleFav(video.youtubeId); fav.classList.toggle("on"); };
     cover.appendChild(fav);
   }
+  if (video.youtubeId && isWatched(video.youtubeId)) { const wb = document.createElement("div"); wb.className = "watched-badge"; wb.innerHTML = "&#10003; v&#259;zut"; cover.appendChild(wb); }
   el.appendChild(cover);
   if (!video.youtubeId) { const nl = document.createElement("div"); nl.className = "badge-nolink"; nl.innerHTML = "f&#259;r&#259; link"; el.appendChild(nl); }
   const label = document.createElement("div"); label.className = "card-label";
@@ -204,6 +233,19 @@ function doHome() {
     </div>`;
   content.appendChild(hero);
 
+  const pickPool = (function () { const p = getPopular(150); return p.length ? p : Object.values(getVideoIndex()); })();
+  if (pickPool.length) {
+    const pick = pickPool[Math.floor(Date.now() / 86400000) % pickPool.length];
+    const feat = document.createElement("section"); feat.className = "featured";
+    feat.innerHTML = `
+      <div class="feat-thumb">${pick.youtubeId && !pick.noThumb ? `<img src="${thumb(pick.youtubeId, "hqdefault")}" alt="" onerror="this.remove()">` : ""}<div class="play-badge"><i></i></div></div>
+      <div class="feat-info"><span class="feat-tag">Pick-ul zilei</span><h3>${escapeHtml(pick.title)}</h3><div class="feat-where">${escapeHtml(pick.where || "")}</div><button class="ctrl feat-play">Red&#259; acum</button></div>`;
+    const play = () => openPlayer([pick], 0, pick.where || "");
+    feat.querySelector(".feat-thumb").onclick = play;
+    feat.querySelector(".feat-play").onclick = play;
+    content.appendChild(feat);
+  }
+
   const idx = getVideoIndex();
   const hist = getHist().map((id) => idx[id]).filter(Boolean);
   if (hist.length) appendSection("Continuă vizionarea", null, wrapRow(videoRow(hist)));
@@ -241,9 +283,19 @@ function doNode(chain) {
   }
   if (node.videos.length) {
     const sec = document.createElement("section"); sec.className = "section";
-    sec.innerHTML = `<div class="section-head"><h2>Videoclipuri</h2><span class="count">${node.videos.length}</span></div>`;
+    sec.innerHTML = `<div class="section-head"><h2>Videoclipuri</h2><span class="count">${node.videos.length}</span>
+      <select class="sort-sel"><option value="def">Ordine implicit&#259;</option><option value="az">A - Z</option><option value="za">Z - A</option><option value="views">Cele mai vizionate</option></select></div>`;
     const grid = document.createElement("div"); grid.className = "grid";
-    node.videos.forEach((v, i) => grid.appendChild(videoCard(v, node.videos, i, where)));
+    function fill(mode) {
+      grid.innerHTML = "";
+      let arr = node.videos.slice();
+      if (mode === "az") arr.sort((a, b) => a.title.localeCompare(b.title, "ro"));
+      else if (mode === "za") arr.sort((a, b) => b.title.localeCompare(a.title, "ro"));
+      else if (mode === "views") arr.sort((a, b) => (b.views || 0) - (a.views || 0));
+      arr.forEach((v, i) => grid.appendChild(videoCard(v, arr, i, where)));
+    }
+    fill("def");
+    sec.querySelector(".sort-sel").onchange = (e) => fill(e.target.value);
     sec.appendChild(grid); content.appendChild(sec);
   }
 }
@@ -325,9 +377,10 @@ function openPlayer(list, index, where) {
 }
 function showCurrentVideo() {
   const v = playerList[playerIndex];
-  $("#playerTitle").textContent = v.title;
-  $("#playerWhere").textContent = v.where || playerWhere;
+  $("#playerTitle").textContent = stripEmoji(v.title);
+  $("#playerWhere").textContent = stripEmoji(v.where || playerWhere);
   pushHist(v.youtubeId);
+  markWatched(v.youtubeId);
   if (v.youtubeId) {
     if (ytReady && window.YT && YT.Player) {
       if (ytPlayer && ytPlayer.loadVideoById) ytPlayer.loadVideoById(v.youtubeId);
@@ -396,6 +449,9 @@ $("#navAbout").onclick = navAbout;
 $("#navFartravel").onclick = navFartravel;
 $("#btnRandom").onclick = playRandom;
 $("#btnMenu").onclick = () => $(".nav").classList.toggle("open");
+$("#btnAccent").onclick = (e) => { e.stopPropagation(); const p = $("#accentPop"); p.hidden = !p.hidden; };
+document.addEventListener("click", (e) => { const p = $("#accentPop"); if (p && !p.hidden && !p.contains(e.target) && e.target !== $("#btnAccent")) p.hidden = true; });
+initAccent();
 
 function lltcmRain() {
   for (let i = 0; i < 40; i++) {

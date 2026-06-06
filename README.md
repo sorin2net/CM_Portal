@@ -21,28 +21,35 @@ Peste **740 de videoclipuri** în **11 categorii**:
 | Categorie | Conținut |
 |---|---|
 | **RObotzi** | Sezoanele 1-5 complete (cu titlurile reale ale episoadelor), Extras, Songs |
-| **IOBAGG** | Gaming: OUTLAST, PUBG, Resident Evil, Wolfenstein, Dead Space, Dying Light, Titanfall, Battlefield, DOOM, Call of Duty și multe altele |
-| **CODIN&RAMO** | Podcasturi, interviuri, conferințe (EECC, Ice Comic Con), DPS, PUNCT, ALTCEVA |
-| **3lar** | Toate edițiile, pe ani (2013-2019) |
-| **PIRAMIDA, RENDAM, MiEZ** | Seriile muzicale și de divertisment |
-| **CSP, NinjaRamo, MONSTRII Recomand** | Gameplay, muzică, recomandări |
-| **CM Clips** | Canalul de clips: reacții, știri, gaming, DePeStream, politică |
+| **IOBAGG** | Gaming: OUTLAST, PUBG, Resident Evil, Wolfenstein, Dead Space, Dying Light, Titanfall, Battlefield, DOOM, Call of Duty si multe altele |
+| **CODIN&RAMO** | Podcasturi, interviuri, conferinte (EECC, Ice Comic Con), DPS, PUNCT, ALTCEVA |
+| **3lar** | Toate editiile, pe ani (2013-2019) |
+| **PIRAMIDA, RENDAM, MiEZ** | Seriile muzicale si de divertisment |
+| **CSP, NinjaRamo, MONSTRII Recomand** | Gameplay, muzica, recomandari |
+| **CM Clips** | Canalul de clips: reactii, stiri, gaming, DePeStream, politica |
 
 ## Funcționalități
 
 - Răsfoire stil Netflix, cu poze de copertă reale și buton de Înapoi
 - Căutare instantanee
-- Buton "Random" (un clip la întâmplare)
-- "Lista mea" (favorite) și "Continuă vizionarea" (istoric), salvate în browser
+- Buton "Random" (un clip la întâmplare) si "Pick-ul zilei" (recomandare care se schimbă zilnic)
+- "Lista mea" (favorite), "Continuă vizionarea" (istoric) și marcaj "văzut", salvate în browser
 - Auto-play pentru episodul următor (binge), cu buton de pornit/oprit
 - Rândul "Populare", sortat după numărul de vizualizări
+- Sortare în interiorul unei categorii (A-Z, Z-A, cele mai vizionate)
+- Comutator de culoare de accent (6 teme)
 - Pagină dedicată jocului RObotzi Fartravel (cu gameplay)
 - Meniu pe mobil și săgeți de derulare pe rânduri
+- Instalabilă ca aplicație (PWA), funcționează și offline (interfața)
+- Previzualizare frumoasă la share (Open Graph) pe WhatsApp/Facebook
 - Linkuri către canalele oficiale Creative Monkeyz
+- Mic easter egg: scrie "lltcm" în căutare sau folosește codul Konami
 
-## Scop
+## Instalare ca aplicație (PWA)
 
-Să existe un loc unde fanii pot vedea aproape tot conținutul Creative Monkeyz, sortat și organizat frumos, ușor de navigat: un arhivar de tribut pentru un canal îndrăgit.
+Pe telefon sau PC, din browser, alege "Instalează aplicația" / "Add to Home screen". Portalul se deschide ca o aplicație separată, cu iconița Creative Monkeyz, și pornește instant. Interfața funcționează și offline (clipurile au nevoie de internet, fiind de pe YouTube).
+
+Fiind o aplicație web (PWA), poate fi împachetată ulterior și pentru Google Play (printr-un TWA, de exemplu cu PWABuilder sau Bubblewrap).
 
 ## Cum funcționează (tehnic)
 
@@ -51,26 +58,46 @@ Site static, fără server: `HTML + CSS + JavaScript` simplu, care citește un f
 ```
 index.html        interfata
 styles.css        designul
-app.js            navigarea, cautarea, playerul
+app.js            navigarea, cautarea, playerul, functiile
 catalog.json      biblioteca (generata automat)
-assets/           logo, banner, iconita Fartravel
+manifest.json     configuratia PWA (aplicatie instalabila)
+sw.js             service worker (cache + offline)
+assets/           logo, banner, iconite PWA, imagine Open Graph
 scripts/          unelte care construiesc catalogul
 data/             liste YouTube si completari manuale
-publica.bat       buton de actualizare (build + urcare)
+publica.bat       buton de actualizare (build + urcare pe GitHub)
 ```
 
-## Cum se actualizează / extinde
+## Scripturi
 
-Rulează (sau dă dublu-click pe `publica.bat`):
+Toata constructia catalogului ruleaza cu o singura comanda (sau dublu-click pe `publica.bat`):
 
 ```bash
 node scripts/build-all.js
 ```
 
-Pipeline-ul: scanează arhiva, potrivește cu YouTube, potrivește pe playlist-uri, aplică completări manuale, pune titluri reale la Robotzi, adaugă jocurile și clipurile de pe canal, aplică vizualizările și verifică pozele.
+Pipeline-ul, in ordine:
 
-- **Clip fără link?** Adaugă-l în `data/manual-ids.json` sub forma `"cale/fisier.mp4": "ID_YouTube"`.
-- **Vrei numerele de vizualizări actualizate?** Rulează din nou `node scripts/fetch-views.js` (sau comanda de descărcare a vizualizărilor).
+1. `build-catalog.js` - scaneaza folderul local `CM` si genereaza structura
+2. `match-youtube.js` - potriveste fisierele cu clipurile de pe canal
+3. `match-pass2.js` - potriveste pe playlist-uri (Piramida, Rendam, OUTLAST cu cifre romane etc.)
+4. `apply-manual.js` - aplica ID-urile completate manual din `data/manual-ids.json`
+5. `prettify-titles.js` - pune titlurile reale la episoadele Robotzi
+6. `add-games.js` - adauga seriile de jocuri de pe canal sub IOBAGG
+7. `add-clips.js` - adauga categoria CM Clips (canalul de clips/reactii)
+8. `apply-views.js` - aplica numarul de vizualizari (pentru randul Populare)
+9. `check-thumbs.js` - detecteaza pozele goale si le pune un placeholder
+
+Unelte separate (se ruleaza ocazional):
+
+- `fetch-views.js` - descarca numarul de vizualizari (lent) in `data/views-raw.txt`
+- `generate-assets.py` - genereaza imaginea Open Graph si iconitele PWA (necesita Python + Pillow)
+
+## Cum se actualizează / extinde
+
+- **Clip fără link?** Adaugă-l în `data/manual-ids.json` sub forma `"cale/fisier.mp4": "ID_YouTube"`, apoi rulează `node scripts/build-all.js`.
+- **Vizualizări actualizate?** Rulează `node scripts/fetch-views.js`, apoi `node scripts/build-all.js`.
+- **Publicare:** orice modificare se urcă pe GitHub cu `publica.bat` (sau `git add -A && git commit -m "..." && git push`). GitHub Pages publică automat în circa un minut.
 
 ## Credite
 
