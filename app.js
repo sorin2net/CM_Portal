@@ -362,6 +362,7 @@ document.addEventListener("keydown", (e) => {
 $("#searchInput").addEventListener("input", (e) => {
   const q = e.target.value.trim().toLowerCase();
   if (!q) { doHome(); return; }
+  if (q === "banana" || q === "maimuta" || q === "fart" || q === "aloha") { e.target.value = ""; bananaRain(); doHome(); return; }
   setActiveNav(null); pathStack = [];
   const results = [];
   (function walk(node, prefix) {
@@ -380,9 +381,44 @@ $("#searchInput").addEventListener("input", (e) => {
   if (!results.length) content.innerHTML += '<p class="empty-msg">Niciun rezultat.</p>';
 });
 
-$("#brand").onclick = navHome;
+let logoClicks = 0, logoTimer = null;
+$("#brand").onclick = () => {
+  navHome();
+  logoClicks++; clearTimeout(logoTimer); logoTimer = setTimeout(() => (logoClicks = 0), 1200);
+  if (logoClicks >= 7) { logoClicks = 0; bananaRain(); }
+};
 $("#navHome").onclick = navHome;
 $("#navAbout").onclick = navAbout;
 $("#navFartravel").onclick = navFartravel;
 $("#btnRandom").onclick = playRandom;
 $("#btnMenu").onclick = () => $(".nav").classList.toggle("open");
+
+function bananaRain() {
+  for (let i = 0; i < 40; i++) {
+    const b = document.createElement("div");
+    b.className = "banana"; b.textContent = "🍌";
+    b.style.left = Math.random() * 100 + "vw";
+    b.style.fontSize = 20 + Math.random() * 30 + "px";
+    b.style.animationDuration = 2 + Math.random() * 2.8 + "s";
+    b.style.animationDelay = Math.random() * 0.7 + "s";
+    document.body.appendChild(b);
+    setTimeout(() => b.remove(), 6000);
+  }
+  cmpToast("🐵 Aloha! Ai găsit secretul Creative Monkeyz!");
+}
+function cmpToast(msg) {
+  const t = document.createElement("div"); t.className = "cmp-toast"; t.textContent = msg;
+  document.body.appendChild(t);
+  requestAnimationFrame(() => t.classList.add("show"));
+  setTimeout(() => { t.classList.remove("show"); setTimeout(() => t.remove(), 350); }, 2800);
+}
+(function () {
+  const seq = ["arrowup", "arrowup", "arrowdown", "arrowdown", "arrowleft", "arrowright", "arrowleft", "arrowright", "b", "a"];
+  let pos = 0;
+  document.addEventListener("keydown", (e) => {
+    const k = e.key.toLowerCase();
+    if (k === seq[pos]) { pos++; if (pos === seq.length) { pos = 0; bananaRain(); } }
+    else { pos = k === seq[0] ? 1 : 0; }
+  });
+})();
+console.log("%c🐵 Creative Monkeyz Portal — Aloha! Incearca codul Konami (sus sus jos jos...) sau scrie 'banana' in cautare.", "color:#ff2740;font-weight:bold;font-size:13px");

@@ -242,6 +242,11 @@ img { display: block; }
 
 .menu-btn { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); color: var(--text); font-size: 20px; cursor: pointer; }
 
+.banana { position: fixed; top: -50px; z-index: 9999; pointer-events: none; animation: banana-fall linear forwards; }
+@keyframes banana-fall { to { transform: translateY(112vh) rotate(540deg); } }
+.cmp-toast { position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%) translateY(24px); background: var(--red); color: #fff; padding: 13px 24px; border-radius: 999px; font-weight: 600; z-index: 10000; opacity: 0; transition: opacity .3s, transform .3s; box-shadow: var(--shadow); }
+.cmp-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
 @media (hover: none) { .row-arrow { display: none; } .fav-btn { opacity: 1; } }
 @media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
 @media (max-width: 620px) {
