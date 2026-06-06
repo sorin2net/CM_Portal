@@ -23,3 +23,7 @@ node_modules/
 # APK temporar (NU se urca)
 tmp/
 *.apk
+
+# Intermediare vizualizari (se genereaza local)
+data/all-urls.txt
+data/views-raw.txt

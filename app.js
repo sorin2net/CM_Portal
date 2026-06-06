@@ -4,12 +4,17 @@ let playerList = [];
 let playerIndex = 0;
 let playerWhere = "";
 let flatVideos = null;
+let videoIndex = null;
+let ytPlayer = null;
+let ytReady = false;
+let autoNext = localStorage.getItem("cmp_auto") !== "0";
 
 const $ = (s) => document.querySelector(s);
 const content = $("#content");
 
 const YT_ICON = '<svg viewBox="0 0 24 24"><path d="M23 12s0-3.5-.45-5.18a2.78 2.78 0 0 0-1.95-1.96C18.88 4.4 12 4.4 12 4.4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.45 6.82C1 8.5 1 12 1 12s0 3.5.45 5.18a2.78 2.78 0 0 0 1.95 1.96c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.95-1.96C23 15.5 23 12 23 12zM9.75 15.5v-7l6 3.5-6 3.5z"/></svg>';
 const FOLDER_ICON = '<svg viewBox="0 0 24 24"><path d="M10 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8l-2-2z"/></svg>';
+const HEART = '<svg viewBox="0 0 24 24"><path d="M12 21s-6.7-4.3-9.3-8.3C1 10 2 6.2 5.6 6.2c2 0 3.3 1.3 4.4 2.7 1.1-1.4 2.4-2.7 4.4-2.7 3.6 0 4.6 3.8 2.9 6.5C18.7 16.7 12 21 12 21z"/></svg>';
 
 const SOCIALS = [
   ["YouTube", "https://www.youtube.com/@CreativeMonkeyzArmy", '<path d="M23 12s0-3.5-.45-5.18a2.78 2.78 0 0 0-1.95-1.96C18.88 4.4 12 4.4 12 4.4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.45 6.82C1 8.5 1 12 1 12s0 3.5.45 5.18a2.78 2.78 0 0 0 1.95 1.96c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.95-1.96C23 15.5 23 12 23 12zM9.75 15.5v-7l6 3.5-6 3.5z"/>'],
@@ -22,11 +27,15 @@ function socialsHtml() {
   return `<div class="socials">${SOCIALS.map((s) => `<a class="social" href="${s[1]}" target="_blank" rel="noopener" title="${s[0]}" aria-label="${s[0]}"><svg viewBox="0 0 24 24">${s[2]}</svg></a>`).join("")}</div>`;
 }
 
+(function () { const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s); })();
+window.onYouTubeIframeAPIReady = function () { ytReady = true; };
+
 fetch("catalog.json?t=" + Date.now())
   .then((r) => r.json())
   .then((data) => {
     CATALOG = data;
     renderFooter();
+    updateAutoBtn();
     history.replaceState({ v: "home" }, "");
     doHome();
   })
@@ -37,16 +46,14 @@ window.addEventListener("popstate", (e) => render(e.state || { v: "home" }));
 function render(state) {
   if (state.v === "about") return doAbout();
   if (state.v === "fartravel") return doFartravel();
-  if (state.v === "node") {
-    const chain = resolvePath(state.path);
-    if (chain && chain.length) return doNode(chain);
-  }
+  if (state.v === "node") { const chain = resolvePath(state.path); if (chain && chain.length) return doNode(chain); }
   doHome();
 }
 function applyState(state) { history.pushState(state, ""); render(state); }
-function navHome() { $("#searchInput").value = ""; applyState({ v: "home" }); }
-function navAbout() { applyState({ v: "about" }); }
-function navFartravel() { applyState({ v: "fartravel" }); }
+function closeMenu() { $(".nav").classList.remove("open"); }
+function navHome() { closeMenu(); $("#searchInput").value = ""; applyState({ v: "home" }); }
+function navAbout() { closeMenu(); applyState({ v: "about" }); }
+function navFartravel() { closeMenu(); applyState({ v: "fartravel" }); }
 function navNode(chain) { applyState({ v: "node", path: chain.map((n) => n.name) }); }
 function resolvePath(names) {
   let nodes = CATALOG.categories, chain = [];
@@ -65,24 +72,43 @@ function coverId(node) {
   node.__cover = id;
   return id;
 }
-
+function getVideoIndex() {
+  if (videoIndex) return videoIndex;
+  videoIndex = {};
+  (function w(n, p) {
+    n.videos.forEach((v) => { if (v.youtubeId && !videoIndex[v.youtubeId]) videoIndex[v.youtubeId] = { title: v.title, where: p, youtubeId: v.youtubeId, noThumb: v.noThumb }; });
+    n.subcategories.forEach((s) => w(s, p ? p + " › " + s.name : s.name));
+  })({ videos: [], subcategories: CATALOG.categories }, "");
+  return videoIndex;
+}
+function getPopular(n) {
+  const arr = [];
+  (function w(node, p) {
+    node.videos.forEach((v) => { if (v.youtubeId && v.views) arr.push({ title: v.title, youtubeId: v.youtubeId, where: p, views: v.views, noThumb: v.noThumb }); });
+    node.subcategories.forEach((s) => w(s, p ? p + " › " + s.name : s.name));
+  })({ videos: [], subcategories: CATALOG.categories }, "");
+  arr.sort((a, b) => b.views - a.views);
+  return arr.slice(0, n);
+}
 function buildFlat() {
   if (flatVideos) return flatVideos;
   const out = [];
-  (function w(node, prefix) {
-    node.videos.forEach((v) => { if (v.youtubeId) out.push({ title: v.title, youtubeId: v.youtubeId, where: prefix }); });
-    node.subcategories.forEach((s) => w(s, prefix ? prefix + " › " + s.name : s.name));
+  (function w(node, p) {
+    node.videos.forEach((v) => { if (v.youtubeId) out.push({ title: v.title, youtubeId: v.youtubeId, where: p }); });
+    node.subcategories.forEach((s) => w(s, p ? p + " › " + s.name : s.name));
   })({ videos: [], subcategories: CATALOG.categories }, "");
   for (let i = out.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [out[i], out[j]] = [out[j], out[i]]; }
   flatVideos = out;
   return out;
 }
-function playRandom() {
-  const list = buildFlat();
-  if (!list.length) return;
-  const i = Math.floor(Math.random() * list.length);
-  openPlayer(list, i, list[i].where);
-}
+function playRandom() { const list = buildFlat(); if (list.length) openPlayer(list, Math.floor(Math.random() * list.length), ""); }
+
+const FAV_KEY = "cmp_fav", HIST_KEY = "cmp_hist";
+function getFavs() { try { return JSON.parse(localStorage.getItem(FAV_KEY)) || []; } catch (e) { return []; } }
+function isFav(id) { return getFavs().includes(id); }
+function toggleFav(id) { const a = getFavs(); const i = a.indexOf(id); if (i >= 0) a.splice(i, 1); else a.unshift(id); localStorage.setItem(FAV_KEY, JSON.stringify(a)); }
+function getHist() { try { return JSON.parse(localStorage.getItem(HIST_KEY)) || []; } catch (e) { return []; } }
+function pushHist(id) { if (!id) return; let a = getHist().filter((x) => x !== id); a.unshift(id); localStorage.setItem(HIST_KEY, JSON.stringify(a.slice(0, 30))); }
 
 function setActiveNav(which) {
   $("#navHome").classList.toggle("active", which === "home");
@@ -90,20 +116,8 @@ function setActiveNav(which) {
   $("#navFartravel").classList.toggle("active", which === "fartravel");
 }
 
-function backButton() {
-  const b = document.createElement("button");
-  b.className = "back-btn";
-  b.innerHTML = "&#8249; &Icirc;napoi";
-  b.onclick = () => history.back();
-  return b;
-}
-function navBar(breadcrumbEl) {
-  const bar = document.createElement("div");
-  bar.className = "navbar";
-  bar.appendChild(backButton());
-  bar.appendChild(breadcrumbEl);
-  return bar;
-}
+function backButton() { const b = document.createElement("button"); b.className = "back-btn"; b.innerHTML = "&#8249; &Icirc;napoi"; b.onclick = () => history.back(); return b; }
+function navBar(breadcrumbEl) { const bar = document.createElement("div"); bar.className = "navbar"; bar.appendChild(backButton()); bar.appendChild(breadcrumbEl); return bar; }
 function simpleBreadcrumb(label) {
   const bc = document.createElement("nav"); bc.className = "breadcrumb";
   const home = document.createElement("a"); home.textContent = "Acasă"; home.onclick = navHome; bc.appendChild(home);
@@ -113,57 +127,67 @@ function simpleBreadcrumb(label) {
 }
 
 function makeCover(id, noThumb) {
-  const cover = document.createElement("div");
-  cover.className = "cover";
+  const cover = document.createElement("div"); cover.className = "cover";
   if (id && !noThumb) {
-    const img = document.createElement("img");
-    img.loading = "lazy"; img.alt = "";
+    const img = document.createElement("img"); img.loading = "lazy"; img.alt = "";
     img.onerror = () => { cover.classList.add("no-thumb"); img.remove(); };
     img.src = thumb(id, "mqdefault");
     cover.appendChild(img);
-  } else {
-    cover.classList.add("no-thumb");
-  }
+  } else { cover.classList.add("no-thumb"); }
   return cover;
 }
-
 function folderCard(node, chain) {
-  const el = document.createElement("div");
-  el.className = "card";
+  const el = document.createElement("div"); el.className = "card";
   el.appendChild(makeCover(coverId(node)));
-  const badge = document.createElement("div");
-  badge.className = "badge-folder"; badge.innerHTML = FOLDER_ICON + countVideos(node);
-  el.appendChild(badge);
-  const label = document.createElement("div");
-  label.className = "card-label"; label.innerHTML = `<div class="card-title">${escapeHtml(node.name)}</div>`;
-  el.appendChild(label);
+  const badge = document.createElement("div"); badge.className = "badge-folder"; badge.innerHTML = FOLDER_ICON + countVideos(node); el.appendChild(badge);
+  const label = document.createElement("div"); label.className = "card-label"; label.innerHTML = `<div class="card-title">${escapeHtml(node.name)}</div>`; el.appendChild(label);
   el.onclick = () => navNode(chain);
   return el;
 }
-
 function videoCard(video, list, index, where) {
-  const el = document.createElement("div");
-  el.className = "card";
+  const el = document.createElement("div"); el.className = "card";
   const cover = makeCover(video.youtubeId, video.noThumb);
-  const pb = document.createElement("div"); pb.className = "play-badge"; pb.innerHTML = "<i></i>";
-  cover.appendChild(pb);
+  const pb = document.createElement("div"); pb.className = "play-badge"; pb.innerHTML = "<i></i>"; cover.appendChild(pb);
+  if (video.youtubeId) {
+    const fav = document.createElement("button");
+    fav.className = "fav-btn" + (isFav(video.youtubeId) ? " on" : "");
+    fav.innerHTML = HEART; fav.title = "Lista mea";
+    fav.onclick = (e) => { e.stopPropagation(); toggleFav(video.youtubeId); fav.classList.toggle("on"); };
+    cover.appendChild(fav);
+  }
   el.appendChild(cover);
   if (!video.youtubeId) { const nl = document.createElement("div"); nl.className = "badge-nolink"; nl.innerHTML = "f&#259;r&#259; link"; el.appendChild(nl); }
   const label = document.createElement("div"); label.className = "card-label";
   label.innerHTML = `<div class="card-title">${escapeHtml(video.title)}</div>${where ? `<div class="card-where">${escapeHtml(where)}</div>` : ""}`;
   el.appendChild(label);
-  el.onclick = () => openPlayer(list, index, where || "");
+  el.onclick = () => openPlayer(list, index, where || video.where || "");
   return el;
+}
+function videoRow(items) {
+  const row = document.createElement("div"); row.className = "row";
+  items.forEach((v, i) => row.appendChild(videoCard(v, items, i, v.where)));
+  return row;
+}
+function wrapRow(row) {
+  const wrap = document.createElement("div"); wrap.className = "row-wrap";
+  const L = document.createElement("button"); L.className = "row-arrow left"; L.innerHTML = "&#8249;";
+  const R = document.createElement("button"); R.className = "row-arrow right"; R.innerHTML = "&#8250;";
+  L.onclick = () => row.scrollBy({ left: -row.clientWidth * 0.85, behavior: "smooth" });
+  R.onclick = () => row.scrollBy({ left: row.clientWidth * 0.85, behavior: "smooth" });
+  wrap.append(L, row, R);
+  return wrap;
+}
+function appendSection(title, count, rowWrapEl, moreFn) {
+  const sec = document.createElement("section"); sec.className = "section";
+  const head = document.createElement("div"); head.className = "section-head";
+  head.innerHTML = `<h2>${escapeHtml(title)}</h2>` + (count ? `<span class="count">${escapeHtml(count)}</span>` : "");
+  if (moreFn) { const m = document.createElement("span"); m.className = "more"; m.textContent = "Vezi tot ›"; m.onclick = moreFn; head.appendChild(m); }
+  sec.appendChild(head); sec.appendChild(rowWrapEl); content.appendChild(sec);
 }
 
 function doHome() {
-  setActiveNav("home");
-  pathStack = [];
-  window.scrollTo(0, 0);
-  content.innerHTML = "";
-
-  const hero = document.createElement("section");
-  hero.className = "hero";
+  setActiveNav("home"); pathStack = []; window.scrollTo(0, 0); content.innerHTML = "";
+  const hero = document.createElement("section"); hero.className = "hero";
   hero.innerHTML = `
     <div class="hero-bg"><img src="assets/cm-banner.jpg" alt=""></div>
     <div class="hero-inner">
@@ -178,90 +202,63 @@ function doHome() {
     </div>`;
   content.appendChild(hero);
 
+  const idx = getVideoIndex();
+  const hist = getHist().map((id) => idx[id]).filter(Boolean);
+  if (hist.length) appendSection("Continuă vizionarea", null, wrapRow(videoRow(hist)));
+  const favs = getFavs().map((id) => idx[id]).filter(Boolean);
+  if (favs.length) appendSection("Lista mea", null, wrapRow(videoRow(favs)));
+  const pop = getPopular(24);
+  if (pop.length) appendSection("Populare", null, wrapRow(videoRow(pop)));
+
   CATALOG.categories.forEach((cat) => {
-    const sec = document.createElement("section");
-    sec.className = "section";
-    const head = document.createElement("div");
-    head.className = "section-head";
-    head.innerHTML = `<h2>${escapeHtml(cat.name)}</h2><span class="count">${countVideos(cat)} clipuri</span>`;
-    if (cat.subcategories.length) {
-      const more = document.createElement("span");
-      more.className = "more"; more.textContent = "Vezi tot ›";
-      more.onclick = () => navNode([cat]);
-      head.appendChild(more);
-    }
-    sec.appendChild(head);
-    const row = document.createElement("div");
-    row.className = "row";
+    const row = document.createElement("div"); row.className = "row";
     cat.subcategories.forEach((sub) => row.appendChild(folderCard(sub, [cat, sub])));
     cat.videos.forEach((v, i) => row.appendChild(videoCard(v, cat.videos, i, cat.name)));
-    sec.appendChild(row);
-    content.appendChild(sec);
+    appendSection(cat.name, countVideos(cat) + " clipuri", wrapRow(row), cat.subcategories.length ? () => navNode([cat]) : null);
   });
 }
 
 function doNode(chain) {
-  setActiveNav(null);
-  pathStack = chain.slice();
+  setActiveNav(null); pathStack = chain.slice();
   const node = chain[chain.length - 1];
-  window.scrollTo(0, 0);
-  content.innerHTML = "";
+  window.scrollTo(0, 0); content.innerHTML = "";
   content.appendChild(navBar(buildBreadcrumb()));
-
   const id = coverId(node);
-  const head = document.createElement("div");
-  head.className = "page-head";
+  const head = document.createElement("div"); head.className = "page-head";
   head.innerHTML = `
-    ${id ? `<img class="page-head-cover" src="${thumb(id, "hqdefault")}" alt="">` : ""}
+    ${id ? `<img class="page-head-cover" src="${thumb(id, "hqdefault")}" alt="" onerror="this.remove()">` : ""}
     <div><h1>${escapeHtml(node.name)}</h1><div class="sub">${countVideos(node)} clipuri${node.subcategories.length ? " · " + node.subcategories.length + " sec&#539;iuni" : ""}</div></div>`;
   content.appendChild(head);
-
   const where = pathStack.map((n) => n.name).join(" › ");
   if (node.subcategories.length) {
-    const sec = document.createElement("section");
-    sec.className = "section";
+    const sec = document.createElement("section"); sec.className = "section";
     sec.innerHTML = `<div class="section-head"><h2>Sec&#539;iuni</h2><span class="count">${node.subcategories.length}</span></div>`;
-    const grid = document.createElement("div");
-    grid.className = "grid";
+    const grid = document.createElement("div"); grid.className = "grid";
     node.subcategories.forEach((sub) => grid.appendChild(folderCard(sub, [...pathStack, sub])));
-    sec.appendChild(grid);
-    content.appendChild(sec);
+    sec.appendChild(grid); content.appendChild(sec);
   }
   if (node.videos.length) {
-    const sec = document.createElement("section");
-    sec.className = "section";
+    const sec = document.createElement("section"); sec.className = "section";
     sec.innerHTML = `<div class="section-head"><h2>Videoclipuri</h2><span class="count">${node.videos.length}</span></div>`;
-    const grid = document.createElement("div");
-    grid.className = "grid";
+    const grid = document.createElement("div"); grid.className = "grid";
     node.videos.forEach((v, i) => grid.appendChild(videoCard(v, node.videos, i, where)));
-    sec.appendChild(grid);
-    content.appendChild(sec);
+    sec.appendChild(grid); content.appendChild(sec);
   }
 }
 
 function buildBreadcrumb() {
-  const bc = document.createElement("nav");
-  bc.className = "breadcrumb";
-  const home = document.createElement("a");
-  home.textContent = "Acasă"; home.onclick = navHome;
-  bc.appendChild(home);
+  const bc = document.createElement("nav"); bc.className = "breadcrumb";
+  const home = document.createElement("a"); home.textContent = "Acasă"; home.onclick = navHome; bc.appendChild(home);
   pathStack.forEach((node, i) => {
     const sep = document.createElement("span"); sep.className = "sep"; sep.textContent = "›"; bc.appendChild(sep);
-    if (i === pathStack.length - 1) {
-      const cur = document.createElement("span"); cur.className = "current"; cur.textContent = node.name; bc.appendChild(cur);
-    } else {
-      const a = document.createElement("a"); a.textContent = node.name;
-      a.onclick = () => navNode(pathStack.slice(0, i + 1)); bc.appendChild(a);
-    }
+    if (i === pathStack.length - 1) { const cur = document.createElement("span"); cur.className = "current"; cur.textContent = node.name; bc.appendChild(cur); }
+    else { const a = document.createElement("a"); a.textContent = node.name; a.onclick = () => navNode(pathStack.slice(0, i + 1)); bc.appendChild(a); }
   });
   return bc;
 }
 
 function doAbout() {
-  setActiveNav("about");
-  pathStack = [];
-  window.scrollTo(0, 0);
-  content.innerHTML = "";
+  setActiveNav("about"); pathStack = []; window.scrollTo(0, 0); content.innerHTML = "";
   content.appendChild(navBar(simpleBreadcrumb("Despre")));
   const wrap = document.createElement("div");
   wrap.innerHTML = `
@@ -284,13 +281,9 @@ function doAbout() {
 }
 
 function doFartravel() {
-  setActiveNav("fartravel");
-  pathStack = [];
-  window.scrollTo(0, 0);
-  content.innerHTML = "";
+  setActiveNav("fartravel"); pathStack = []; window.scrollTo(0, 0); content.innerHTML = "";
   content.appendChild(navBar(simpleBreadcrumb("Fartravel")));
-  const wrap = document.createElement("div");
-  wrap.className = "fartravel";
+  const wrap = document.createElement("div"); wrap.className = "fartravel";
   wrap.innerHTML = `
     <div class="ft-card">
       <img class="ft-logo" src="assets/fartravel-icon.png" alt="RObotzi Fartravel">
@@ -330,20 +323,34 @@ function showCurrentVideo() {
   const v = playerList[playerIndex];
   $("#playerTitle").textContent = v.title;
   $("#playerWhere").textContent = v.where || playerWhere;
+  pushHist(v.youtubeId);
   if (v.youtubeId) {
-    playerFrame.innerHTML = `<iframe src="https://www.youtube.com/embed/${v.youtubeId}?autoplay=1&rel=0&modestbranding=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    if (ytReady && window.YT && YT.Player) {
+      if (ytPlayer && ytPlayer.loadVideoById) ytPlayer.loadVideoById(v.youtubeId);
+      else { playerFrame.innerHTML = '<div id="ytplayer"></div>'; ytPlayer = new YT.Player("ytplayer", { videoId: v.youtubeId, playerVars: { autoplay: 1, rel: 0, modestbranding: 1, playsinline: 1 }, events: { onStateChange: onYtState } }); }
+    } else {
+      playerFrame.innerHTML = `<iframe src="https://www.youtube.com/embed/${v.youtubeId}?autoplay=1&rel=0&modestbranding=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    }
   } else {
+    ytPlayer = null;
     playerFrame.innerHTML = '<div class="player-empty">Acest clip nu are încă un <b>link YouTube</b>.<br>Face parte din arhiva locală.</div>';
   }
   $("#btnPrev").disabled = playerIndex <= 0;
   $("#btnNext").disabled = playerIndex >= playerList.length - 1;
 }
-function closePlayer() { overlay.hidden = true; playerFrame.innerHTML = ""; document.body.style.overflow = ""; }
+function onYtState(e) { if (e.data === 0 && autoNext && playerIndex < playerList.length - 1) { playerIndex++; showCurrentVideo(); } }
+function closePlayer() {
+  overlay.hidden = true;
+  if (ytPlayer && ytPlayer.destroy) { try { ytPlayer.destroy(); } catch (e) {} }
+  ytPlayer = null; playerFrame.innerHTML = ""; document.body.style.overflow = "";
+}
+function updateAutoBtn() { const b = $("#btnAuto"); if (!b) return; b.textContent = "Auto-play: " + (autoNext ? "ON" : "OFF"); b.classList.toggle("on", autoNext); }
 
 $("#btnClose").onclick = closePlayer;
 $("#btnPrev").onclick = () => { if (playerIndex > 0) { playerIndex--; showCurrentVideo(); } };
 $("#btnNext").onclick = () => { if (playerIndex < playerList.length - 1) { playerIndex++; showCurrentVideo(); } };
 $("#btnFullscreen").onclick = () => { const el = playerFrame.querySelector("iframe") || playerFrame; if (el.requestFullscreen) el.requestFullscreen(); };
+$("#btnAuto").onclick = () => { autoNext = !autoNext; localStorage.setItem("cmp_auto", autoNext ? "1" : "0"); updateAutoBtn(); };
 overlay.addEventListener("click", (e) => { if (e.target === overlay) closePlayer(); });
 document.addEventListener("keydown", (e) => {
   if (overlay.hidden) return;
@@ -355,15 +362,13 @@ document.addEventListener("keydown", (e) => {
 $("#searchInput").addEventListener("input", (e) => {
   const q = e.target.value.trim().toLowerCase();
   if (!q) { doHome(); return; }
-  setActiveNav(null);
-  pathStack = [];
+  setActiveNav(null); pathStack = [];
   const results = [];
   (function walk(node, prefix) {
     node.videos.forEach((v) => { if (v.title.toLowerCase().includes(q)) results.push({ v, where: prefix }); });
     node.subcategories.forEach((s) => walk(s, prefix + " › " + s.name));
   })({ videos: [], subcategories: CATALOG.categories }, "");
-  window.scrollTo(0, 0);
-  content.innerHTML = "";
+  window.scrollTo(0, 0); content.innerHTML = "";
   content.appendChild(navBar(simpleBreadcrumb("Căutare")));
   const sh = document.createElement("div"); sh.className = "section-head";
   sh.innerHTML = `<h2>Rezultate</h2><span class="count">${results.length}</span>`;
@@ -380,3 +385,4 @@ $("#navHome").onclick = navHome;
 $("#navAbout").onclick = navAbout;
 $("#navFartravel").onclick = navFartravel;
 $("#btnRandom").onclick = playRandom;
+$("#btnMenu").onclick = () => $(".nav").classList.toggle("open");

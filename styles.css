@@ -227,10 +227,31 @@ img { display: block; }
 .ctrl-ghost:hover { background: #2b2b3a; }
 .ctrl:disabled { opacity: .35; cursor: not-allowed; transform: none; background: var(--surface-2); }
 
+.fav-btn { position: absolute; top: 9px; right: 9px; z-index: 3; width: 34px; height: 34px; border-radius: 50%; background: rgba(8,8,13,.55); border: 1px solid rgba(255,255,255,.15); display: grid; place-items: center; cursor: pointer; opacity: 0; transition: opacity .15s, transform .15s, background .15s; }
+.card:hover .fav-btn, .fav-btn.on { opacity: 1; }
+.fav-btn:hover { background: rgba(8,8,13,.9); transform: scale(1.12); }
+.fav-btn svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; }
+.fav-btn.on svg { fill: var(--red); stroke: var(--red); }
+
+.row-wrap { position: relative; }
+.row-arrow { position: absolute; top: 0; bottom: 16px; width: 46px; z-index: 5; border: 0; cursor: pointer; color: #fff; font-size: 30px; display: grid; place-items: center; opacity: 0; transition: opacity .15s; }
+.row-wrap:hover .row-arrow { opacity: 1; }
+.row-arrow:hover { color: var(--red); }
+.row-arrow.left { left: 0; background: linear-gradient(90deg, rgba(8,8,13,.92), transparent); }
+.row-arrow.right { right: 0; background: linear-gradient(270deg, rgba(8,8,13,.92), transparent); }
+
+.menu-btn { display: none; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); color: var(--text); font-size: 20px; cursor: pointer; }
+
+@media (hover: none) { .row-arrow { display: none; } .fav-btn { opacity: 1; } }
 @media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
 @media (max-width: 620px) {
-  .nav { display: none; }
+  .menu-btn { display: inline-flex; margin-left: auto; }
+  .pill-btn { margin-left: 10px; padding: 9px 12px; }
+  .pill-btn span { display: none; }
   .brand-text { display: none; }
+  .nav { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 4px; background: var(--bg-2); border-bottom: 1px solid var(--line); padding: 10px; display: none; }
+  .nav.open { display: flex; }
+  .nav-link { padding: 12px 14px; }
   .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
   .hero { min-height: 240px; }
 }
