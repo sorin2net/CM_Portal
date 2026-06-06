@@ -19,3 +19,7 @@ node_modules/
 
 # Loguri goale de la yt-dlp
 *.err
+
+# APK temporar (NU se urca)
+tmp/
+*.apk

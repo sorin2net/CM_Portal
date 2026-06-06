@@ -22,8 +22,6 @@ function socialsHtml() {
   return `<div class="socials">${SOCIALS.map((s) => `<a class="social" href="${s[1]}" target="_blank" rel="noopener" title="${s[0]}" aria-label="${s[0]}"><svg viewBox="0 0 24 24">${s[2]}</svg></a>`).join("")}</div>`;
 }
 
-const FARTRAVEL_APK = "https://apkpure.com/robotzi-fartravel/com.creativemonkeyz.robotzifartravel";
-
 fetch("catalog.json?t=" + Date.now())
   .then((r) => r.json())
   .then((data) => {
@@ -281,15 +279,12 @@ function doFartravel() {
   wrap.className = "fartravel";
   wrap.innerHTML = `
     <div class="ft-card">
-      <img class="ft-logo" src="assets/cm-logo.jpg" alt="">
+      <img class="ft-logo" src="assets/fartravel-icon.png" alt="RObotzi Fartravel">
       <div class="ft-badge">JOC PIERDUT · 2014</div>
       <h1>RObotzi <b>Fartravel</b></h1>
       <p>Jocul mobil lansat de Creative Monkeyz în 2014 şi retras din Google Play în 2017. Îi ghidezi pe <b>MO</b> şi <b>F.O.C.A.</b> prin spaţiu — plutind cu ajutorul gazelor 💨 şi colectând boabe spaţiale pentru combustibil. Un mic giuvaer pierdut, readus la lumină aici.</p>
-      <div class="ft-actions">
-        <a class="ft-btn primary" href="${FARTRAVEL_APK}" target="_blank" rel="noopener">⬇ Descarcă APK (Android)</a>
-        <a class="ft-btn" href="https://www.youtube.com/results?search_query=RObotzi+Fartravel" target="_blank" rel="noopener">Vezi gameplay</a>
-      </div>
-      <p class="ft-note">Este un joc <b>Android</b> (~33 MB), aşa că nu rulează direct în browser. Îl poţi instala pe un telefon Android sau pe PC cu un emulator (ex. BlueStacks). Sursă terţă (APKPure) — instalează pe propriul risc. Nu mai este disponibil pe Google Play.</p>
+      <div class="ft-video"><iframe src="https://www.youtube.com/embed/iIkoraEr4K4?rel=0&modestbranding=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <p class="ft-note">Joc <b>Unity</b> nativ din 2014 — codul nu poate rula direct într-un browser, aşa că îl retrăieşti aici prin gameplay. Tot conţinutul aparţine Creative Monkeyz.</p>
     </div>`;
   content.appendChild(wrap);
 }
