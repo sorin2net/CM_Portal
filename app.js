@@ -453,6 +453,11 @@ $("#btnAccent").onclick = (e) => { e.stopPropagation(); const p = $("#accentPop"
 document.addEventListener("click", (e) => { const p = $("#accentPop"); if (p && !p.hidden && !p.contains(e.target) && e.target !== $("#btnAccent")) p.hidden = true; });
 initAccent();
 
+let deferredPrompt = null;
+window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); deferredPrompt = e; $("#btnInstall").hidden = false; });
+window.addEventListener("appinstalled", () => { deferredPrompt = null; $("#btnInstall").hidden = true; });
+$("#btnInstall").onclick = async () => { if (!deferredPrompt) return; deferredPrompt.prompt(); try { await deferredPrompt.userChoice; } catch (e) {} deferredPrompt = null; $("#btnInstall").hidden = true; };
+
 function lltcmRain() {
   for (let i = 0; i < 40; i++) {
     const b = document.createElement("div");
