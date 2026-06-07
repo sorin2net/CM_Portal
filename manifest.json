@@ -4,6 +4,7 @@
   "description": "Portalul fanilor Creative Monkeyz: Robotzi, gaming, muzica si momente de pe stream.",
   "lang": "ro",
   "id": "./",
+  "categories": ["entertainment", "music"],
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
