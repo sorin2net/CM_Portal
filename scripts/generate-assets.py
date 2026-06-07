@@ -37,7 +37,7 @@ tx = 330
 d.text((tx, 215), "Creative Monkeyz", font=fb, fill=(245, 245, 248))
 d.text((tx, 298), "PORTAL", font=fb, fill=(255, 39, 64))
 d.text((tx, 405), "Robotzi, gaming, muzica, interviuri si momente de pe stream", font=fr, fill=(212, 212, 224))
-d.text((tx, 452), "LLTCM - Long Live The Creative Monkeyz", font=fy, fill=(255, 210, 30))
+d.text((tx, 452), "LLTCM", font=fy, fill=(255, 210, 30))
 og.save(os.path.join(A, "og.jpg"), quality=88)
 
 FW, FH = 1024, 500

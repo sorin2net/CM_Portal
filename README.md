@@ -1,10 +1,10 @@
 # Creative Monkeyz Portal
 
-**Un portal-tribut neoficial** care adună într-un singur loc, organizat ca un "Netflix", videoclipurile canalelor de YouTube [Creative Monkeyz](https://www.youtube.com/@CreativeMonkeyzArmy): de la *Robotzi* la gaming, muzică, interviuri, momente de pe stream și reacții.
+**Un portal-tribut neoficial** care adună într-un singur loc, organizat pe categorii și sezoane, videoclipurile canalelor de YouTube [Creative Monkeyz](https://www.youtube.com/@CreativeMonkeyzArmy): de la *Robotzi* la gaming, muzică, interviuri, momente de pe stream și reacții.
 
 **Live:** https://sorin2net.github.io/CM_Portal/
 
-*LLTCM, Long Live The Creative Monkeyz.*
+*LLTCM.*
 
 ---
 
@@ -30,7 +30,7 @@ Peste **740 de videoclipuri** în **11 categorii**:
 
 ## Funcționalități
 
-- Răsfoire stil Netflix, cu poze de copertă reale și buton de Înapoi
+- Răsfoire pe categorii, cu poze de copertă reale și buton de Înapoi
 - Căutare instantanee
 - Buton "Random" (un clip la întâmplare) si "Pick-ul zilei" (recomandare care se schimbă zilnic)
 - "Lista mea" (favorite), "Continuă vizionarea" (istoric) și marcaj "văzut", salvate în browser
@@ -107,4 +107,4 @@ Tot conținutul aparține creatorilor **[Creative Monkeyz](https://www.youtube.c
 
 Acesta este un **proiect neoficial, făcut de un fan**, neafiliat cu Creative Monkeyz. Nu găzduiește și nu redistribuie fișiere video, ci doar încorporează clipuri publice de pe YouTube. Toate drepturile aparțin deținătorilor de drept.
 
-*LLTCM, Long Live The Creative Monkeyz.*
+*LLTCM.*

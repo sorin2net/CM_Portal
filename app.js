@@ -339,7 +339,7 @@ function doAbout() {
         <p>Tot conţinutul aparţine creatorilor <b>Creative Monkeyz</b>. Dacă îţi place, urmăreşte-i şi susţine-i pe canalele oficiale:</p>
         ${socialsHtml()}
         <p class="muted" style="margin-top:16px">Portal neoficial, neafiliat cu canalul. Realizat din respect pentru munca lor.</p>
-        <p class="lltcm-sign">LLTCM · Long Live The Creative Monkeyz</p>
+        <p class="lltcm-sign">LLTCM</p>
       </div>
     </div>`;
   content.appendChild(wrap);
@@ -367,7 +367,7 @@ function renderFooter() {
       <div>
         <div class="footer-brand"><img src="assets/cm-logo.jpg" alt=""> Creative Monkeyz Portal</div>
         <p class="footer-note">Proiect-tribut neoficial făcut de un fan. Tot conţinutul aparţine Creative Monkeyz; videoclipurile sunt redate de pe YouTube. Neafiliat oficial cu canalul.</p>
-        <p class="lltcm-sign">LLTCM · Long Live The Creative Monkeyz</p>
+        <p class="lltcm-sign">LLTCM</p>
       </div>
       <div>
         <p class="footer-note" style="margin-bottom:10px">Urmăreşte Creative Monkeyz:</p>
@@ -489,7 +489,7 @@ function lltcmRain() {
     document.body.appendChild(b);
     setTimeout(() => b.remove(), 6000);
   }
-  cmpToast("LLTCM. Long Live The Creative Monkeyz");
+  cmpToast("LLTCM");
 }
 function cmpToast(msg, ms) {
   const t = document.createElement("div"); t.className = "cmp-toast"; t.textContent = msg;
@@ -506,4 +506,4 @@ function cmpToast(msg, ms) {
     else { pos = k === seq[0] ? 1 : 0; }
   });
 })();
-console.log("%cLLTCM. Long Live The Creative Monkeyz. Incearca codul Konami (sus sus jos jos...) sau scrie 'lltcm' in cautare.", "color:#ff2740;font-weight:bold;font-size:13px");
+console.log("%cLLTCM. Incearca codul Konami (sus sus jos jos...) sau scrie 'lltcm' in cautare.", "color:#ff2740;font-weight:bold;font-size:13px");

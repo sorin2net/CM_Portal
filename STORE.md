@@ -9,12 +9,12 @@ Creative Monkeyz Portal (neoficial)
 Show-urile Creative Monkeyz, organizate: Robotzi, gaming, muzica si momente.
 
 ## Descriere completa (max 4000 caractere)
-Creative Monkeyz Portal este un proiect-tribut neoficial, facut de un fan, care aduna intr-un singur loc, organizat ca un "Netflix", show-urile canalului Creative Monkeyz.
+Creative Monkeyz Portal este un proiect-tribut neoficial, facut de un fan, care aduna intr-un singur loc, organizat pe categorii si sezoane, show-urile canalului Creative Monkeyz.
 
 Rasfoieste pe categorii si sezoane: Robotzi (toate sezoanele, cu numele reale ale episoadelor), IOBAGG si zeci de gameplay-uri (Wolfenstein, Dying Light, Dead Space, Call of Duty, Battlefield si altele), 3lar, Piramida, Rendam, MiEZ, interviuri, conferinte, muzica si clipuri de pe stream.
 
 Functii:
-- Cautare rapida si rasfoire stil Netflix, cu poze de coperta
+- Cautare rapida si rasfoire pe categorii, cu poze de coperta
 - Lista mea (favorite) si Continua vizionarea
 - Marcaj pentru clipurile vazute
 - Buton Random si Pick-ul zilei
@@ -28,7 +28,7 @@ Videoclipurile ruleaza direct din playerul oficial YouTube, asa ca toate vizuali
 
 Disclaimer: aplicatie neoficiala, neafiliata cu Creative Monkeyz. Tot continutul apartine creatorilor de drept si este redat de pe YouTube.
 
-LLTCM, Long Live The Creative Monkeyz.
+LLTCM.
 
 ## Alte campuri
 - Categorie: Entertainment (Divertisment)
