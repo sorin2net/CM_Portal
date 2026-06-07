@@ -469,13 +469,13 @@ $("#btnAccent").onclick = (e) => { e.stopPropagation(); const p = $("#accentPop"
 document.addEventListener("click", (e) => { const p = $("#accentPop"); if (p && !p.hidden && !p.contains(e.target) && e.target !== $("#btnAccent")) p.hidden = true; });
 initAccent();
 
-let deferredPrompt = null;
 if (window.matchMedia("(display-mode: standalone)").matches || navigator.standalone) $("#btnInstall").hidden = true;
-window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); deferredPrompt = e; });
-window.addEventListener("appinstalled", () => { deferredPrompt = null; $("#btnInstall").hidden = true; });
+window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); window.__cmpInstall = e; });
+window.addEventListener("appinstalled", () => { window.__cmpInstall = null; $("#btnInstall").hidden = true; });
 $("#btnInstall").onclick = async () => {
-  if (deferredPrompt) { deferredPrompt.prompt(); try { await deferredPrompt.userChoice; } catch (e) {} deferredPrompt = null; $("#btnInstall").hidden = true; return; }
-  cmpToast("Pentru instalare: in Chrome/Edge deschide meniul (3 puncte) si alege 'Instaleaza aplicatia'. Pe iPhone: Share, apoi 'Add to Home Screen'.", 7000);
+  const dp = window.__cmpInstall;
+  if (dp) { dp.prompt(); try { await dp.userChoice; } catch (e) {} window.__cmpInstall = null; $("#btnInstall").hidden = true; return; }
+  cmpToast("Pentru instalare: in Chrome/Edge apasa iconita de instalare din bara de adrese (sus-dreapta), sau meniul (3 puncte) > 'Instaleaza aplicatia'. Pe iPhone: Share, apoi 'Add to Home Screen'.", 7000);
 };
 
 function lltcmRain() {
