@@ -93,6 +93,18 @@ function getPopular(n) {
   for (const v of arr) { if (!seen.has(v.youtubeId)) { seen.add(v.youtubeId); uniq.push(v); } }
   return uniq.slice(0, n);
 }
+function fmtDur(s) { s = Math.round(s || 0); if (!s) return ""; const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60; return (h ? h + ":" + String(m).padStart(2, "0") : m) + ":" + String(x).padStart(2, "0"); }
+function getRecent(n) {
+  const arr = [];
+  (function w(node, p) {
+    node.videos.forEach((v) => { if (v.youtubeId && v.date) arr.push({ title: v.title, youtubeId: v.youtubeId, where: p, date: v.date, duration: v.duration, noThumb: v.noThumb }); });
+    node.subcategories.forEach((s) => w(s, p ? p + " › " + s.name : s.name));
+  })({ videos: [], subcategories: CATALOG.categories }, "");
+  arr.sort((a, b) => b.date.localeCompare(a.date));
+  const seen = new Set(); const u = [];
+  for (const v of arr) { if (!seen.has(v.youtubeId)) { seen.add(v.youtubeId); u.push(v); } }
+  return u.slice(0, n);
+}
 function buildFlat() {
   if (flatVideos) return flatVideos;
   const out = [];
@@ -186,6 +198,7 @@ function videoCard(video, list, index, where) {
     cover.appendChild(fav);
   }
   if (video.youtubeId && isWatched(video.youtubeId)) { const wb = document.createElement("div"); wb.className = "watched-badge"; wb.innerHTML = "&#10003; v&#259;zut"; cover.appendChild(wb); }
+  if (video.duration) { const db = document.createElement("div"); db.className = "dur-badge"; db.textContent = fmtDur(video.duration); cover.appendChild(db); }
   el.appendChild(cover);
   if (!video.youtubeId) { const nl = document.createElement("div"); nl.className = "badge-nolink"; nl.innerHTML = "f&#259;r&#259; link"; el.appendChild(nl); }
   const label = document.createElement("div"); label.className = "card-label";
@@ -197,16 +210,6 @@ function videoCard(video, list, index, where) {
 function videoRow(items) {
   const row = document.createElement("div"); row.className = "row";
   items.forEach((v, i) => row.appendChild(videoCard(v, items, i, v.where)));
-  return row;
-}
-function rankedRow(items) {
-  const row = document.createElement("div"); row.className = "row ranked";
-  items.forEach((v, i) => {
-    const item = document.createElement("div"); item.className = "rank-item";
-    const num = document.createElement("span"); num.className = "rank-num"; num.textContent = i + 1;
-    item.appendChild(num); item.appendChild(videoCard(v, items, i, v.where));
-    row.appendChild(item);
-  });
   return row;
 }
 function wrapRow(row) {
@@ -261,8 +264,10 @@ function doHome() {
   if (hist.length) appendSection("Continuă vizionarea", null, wrapRow(videoRow(hist)));
   const favs = getFavs().map((id) => idx[id]).filter(Boolean);
   if (favs.length) appendSection("Lista mea", null, wrapRow(videoRow(favs)));
-  const pop = getPopular(10);
-  if (pop.length) appendSection("Top 10 Populare", null, wrapRow(rankedRow(pop)));
+  const recent = getRecent(18);
+  if (recent.length) appendSection("Adăugate recent", null, wrapRow(videoRow(recent)));
+  const pop = getPopular(24);
+  if (pop.length) appendSection("Populare", null, wrapRow(videoRow(pop)));
 
   CATALOG.categories.forEach((cat) => {
     const row = document.createElement("div"); row.className = "row";
@@ -294,7 +299,7 @@ function doNode(chain) {
   if (node.videos.length) {
     const sec = document.createElement("section"); sec.className = "section";
     sec.innerHTML = `<div class="section-head"><h2>Videoclipuri</h2><span class="count">${node.videos.length}</span>
-      <select class="sort-sel"><option value="def">Ordine implicit&#259;</option><option value="az">A - Z</option><option value="za">Z - A</option><option value="views">Cele mai vizionate</option></select></div>`;
+      <select class="sort-sel"><option value="def">Ordine implicit&#259;</option><option value="az">A - Z</option><option value="za">Z - A</option><option value="views">Cele mai vizionate</option><option value="new">Cele mai noi</option></select></div>`;
     const grid = document.createElement("div"); grid.className = "grid";
     function fill(mode) {
       grid.innerHTML = "";
@@ -302,6 +307,7 @@ function doNode(chain) {
       if (mode === "az") arr.sort((a, b) => a.title.localeCompare(b.title, "ro"));
       else if (mode === "za") arr.sort((a, b) => b.title.localeCompare(a.title, "ro"));
       else if (mode === "views") arr.sort((a, b) => (b.views || 0) - (a.views || 0));
+      else if (mode === "new") arr.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
       arr.forEach((v, i) => grid.appendChild(videoCard(v, arr, i, where)));
     }
     fill("def");
@@ -464,9 +470,13 @@ document.addEventListener("click", (e) => { const p = $("#accentPop"); if (p && 
 initAccent();
 
 let deferredPrompt = null;
-window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); deferredPrompt = e; $("#btnInstall").hidden = false; });
+if (window.matchMedia("(display-mode: standalone)").matches || navigator.standalone) $("#btnInstall").hidden = true;
+window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); deferredPrompt = e; });
 window.addEventListener("appinstalled", () => { deferredPrompt = null; $("#btnInstall").hidden = true; });
-$("#btnInstall").onclick = async () => { if (!deferredPrompt) return; deferredPrompt.prompt(); try { await deferredPrompt.userChoice; } catch (e) {} deferredPrompt = null; $("#btnInstall").hidden = true; };
+$("#btnInstall").onclick = async () => {
+  if (deferredPrompt) { deferredPrompt.prompt(); try { await deferredPrompt.userChoice; } catch (e) {} deferredPrompt = null; $("#btnInstall").hidden = true; return; }
+  cmpToast("Pentru instalare: in Chrome/Edge deschide meniul (3 puncte) si alege 'Instaleaza aplicatia'. Pe iPhone: Share, apoi 'Add to Home Screen'.", 7000);
+};
 
 function lltcmRain() {
   for (let i = 0; i < 40; i++) {
@@ -481,11 +491,11 @@ function lltcmRain() {
   }
   cmpToast("LLTCM. Long Live The Creative Monkeyz");
 }
-function cmpToast(msg) {
+function cmpToast(msg, ms) {
   const t = document.createElement("div"); t.className = "cmp-toast"; t.textContent = msg;
   document.body.appendChild(t);
   requestAnimationFrame(() => t.classList.add("show"));
-  setTimeout(() => { t.classList.remove("show"); setTimeout(() => t.remove(), 350); }, 2800);
+  setTimeout(() => { t.classList.remove("show"); setTimeout(() => t.remove(), 350); }, ms || 2800);
 }
 (function () {
   const seq = ["arrowup", "arrowup", "arrowdown", "arrowdown", "arrowleft", "arrowright", "arrowleft", "arrowright", "b", "a"];

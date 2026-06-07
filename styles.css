@@ -31,10 +31,6 @@ img { display: block; }
 @keyframes rise { from { opacity: 0; transform: translateY(12px); } }
 .hero, .featured, .section { animation: rise .35s ease backwards; }
 
-.row.ranked { align-items: center; }
-.rank-item { display: flex; align-items: center; flex: 0 0 auto; }
-.rank-num { font-family: "Poppins", sans-serif; font-weight: 800; font-size: clamp(64px, 9vw, 104px); line-height: 1; color: transparent; -webkit-text-stroke: 3px #3a3a4e; margin-right: -24px; user-select: none; flex: none; }
-.rank-item .card { position: relative; z-index: 1; }
 .featured { transition: border-color .2s, transform .2s; }
 .featured:hover { border-color: rgba(255,39,64,.4); }
 
@@ -270,6 +266,7 @@ img { display: block; }
 .sort-sel { margin-left: auto; background: var(--surface); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; font-size: 13px; cursor: pointer; }
 
 .watched-badge { position: absolute; bottom: 9px; left: 9px; z-index: 3; background: rgba(8,8,13,.82); color: #6ee7a8; font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 6px; border: 1px solid rgba(110,231,168,.35); }
+.dur-badge { position: absolute; bottom: 9px; right: 9px; z-index: 3; background: rgba(8,8,13,.85); color: #fff; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 5px; }
 
 .featured { display: flex; gap: 20px; background: linear-gradient(120deg, var(--surface), var(--bg-2)); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin: 4px 0 30px; }
 .feat-thumb { position: relative; width: 340px; max-width: 42%; aspect-ratio: 16/9; flex: none; background: #000; cursor: pointer; }

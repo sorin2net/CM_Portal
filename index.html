@@ -45,7 +45,7 @@
       <svg viewBox="0 0 24 24" class="pill-ic"><path d="M18 4l3 3-3 3M21 7H8M6 20l-3-3 3-3M3 17h13"/></svg>
       <span>Random</span>
     </button>
-    <button class="pill-btn install-btn" id="btnInstall" hidden title="Instaleaz&#259; aplica&#539;ia">
+    <button class="pill-btn install-btn" id="btnInstall" title="Instaleaz&#259; aplica&#539;ia">
       <svg viewBox="0 0 24 24" class="pill-ic"><path d="M12 3v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>
       <span>Instaleaz&#259;</span>
     </button>
@@ -81,6 +81,16 @@
   </div>
 
   <script src="app.js"></script>
-  <script>if ("serviceWorker" in navigator) { window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); }); }</script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("sw.js").catch(function () {});
+        var refreshing = false;
+        if (navigator.serviceWorker.controller) {
+          navigator.serviceWorker.addEventListener("controllerchange", function () { if (refreshing) return; refreshing = true; location.reload(); });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
