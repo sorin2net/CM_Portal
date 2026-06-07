@@ -125,11 +125,6 @@ function toggleFav(id) { const a = getFavs(); const i = a.indexOf(id); if (i >= 
 function getHist() { try { return JSON.parse(localStorage.getItem(HIST_KEY)) || []; } catch (e) { return []; } }
 function pushHist(id) { if (!id) return; let a = getHist().filter((x) => x !== id); a.unshift(id); localStorage.setItem(HIST_KEY, JSON.stringify(a.slice(0, 30))); }
 
-const WATCHED_KEY = "cmp_watched";
-function getWatched() { try { return JSON.parse(localStorage.getItem(WATCHED_KEY)) || {}; } catch (e) { return {}; } }
-function isWatched(id) { return !!getWatched()[id]; }
-function markWatched(id) { if (!id) return; const w = getWatched(); w[id] = 1; localStorage.setItem(WATCHED_KEY, JSON.stringify(w)); }
-
 const ACCENTS = [
   ["Rosu", "#ff2740", "#c01228"],
   ["Galben", "#ffb800", "#cc8f00"],
@@ -197,7 +192,6 @@ function videoCard(video, list, index, where) {
     fav.onclick = (e) => { e.stopPropagation(); toggleFav(video.youtubeId); fav.classList.toggle("on"); };
     cover.appendChild(fav);
   }
-  if (video.youtubeId && isWatched(video.youtubeId)) { const wb = document.createElement("div"); wb.className = "watched-badge"; wb.innerHTML = "&#10003; v&#259;zut"; cover.appendChild(wb); }
   if (video.duration) { const db = document.createElement("div"); db.className = "dur-badge"; db.textContent = fmtDur(video.duration); cover.appendChild(db); }
   el.appendChild(cover);
   if (!video.youtubeId) { const nl = document.createElement("div"); nl.className = "badge-nolink"; nl.innerHTML = "f&#259;r&#259; link"; el.appendChild(nl); }
@@ -396,7 +390,6 @@ function showCurrentVideo() {
   $("#playerTitle").textContent = stripEmoji(v.title);
   $("#playerWhere").textContent = stripEmoji(v.where || playerWhere);
   pushHist(v.youtubeId);
-  markWatched(v.youtubeId);
   if (v.youtubeId) {
     if (ytReady && window.YT && YT.Player) {
       if (ytPlayer && ytPlayer.loadVideoById) ytPlayer.loadVideoById(v.youtubeId);
