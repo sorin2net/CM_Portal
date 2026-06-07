@@ -474,8 +474,15 @@ window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); wind
 window.addEventListener("appinstalled", () => { window.__cmpInstall = null; $("#btnInstall").hidden = true; });
 $("#btnInstall").onclick = async () => {
   const dp = window.__cmpInstall;
-  if (dp) { dp.prompt(); try { await dp.userChoice; } catch (e) {} window.__cmpInstall = null; $("#btnInstall").hidden = true; return; }
-  cmpToast("Pentru instalare: in Chrome/Edge apasa iconita de instalare din bara de adrese (sus-dreapta), sau meniul (3 puncte) > 'Instaleaza aplicatia'. Pe iPhone: Share, apoi 'Add to Home Screen'.", 7000);
+  if (dp) {
+    dp.prompt();
+    let outcome = "";
+    try { outcome = (await dp.userChoice).outcome; } catch (e) {}
+    window.__cmpInstall = null;
+    if (outcome === "accepted") $("#btnInstall").hidden = true;
+    return;
+  }
+  cmpToast("Pentru instalare: in Chrome/Edge apasa iconita de instalare din bara de adrese (sus-dreapta), sau meniul (...) > Aplicatii > 'Instaleaza acest site ca aplicatie'. Pe iPhone: Share, apoi 'Add to Home Screen'.", 7000);
 };
 
 function lltcmRain() {

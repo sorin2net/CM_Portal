@@ -3,6 +3,7 @@
   "short_name": "CM Portal",
   "description": "Portalul fanilor Creative Monkeyz: Robotzi, gaming, muzica si momente de pe stream.",
   "lang": "ro",
+  "id": "./",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
