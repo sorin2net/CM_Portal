@@ -35,7 +35,7 @@ Peste **740 de videoclipuri** în **11 categorii**:
 - Buton "Random" (un clip la întâmplare) si "Pick-ul zilei" (recomandare care se schimbă zilnic)
 - "Lista mea" (favorite) și "Continuă vizionarea" (istoric), salvate în browser
 - Auto-play pentru episodul următor (binge), cu buton de pornit/oprit
-- Rândul "Populare" (după vizualizări), rândul "Adăugate recent" și durata afișată pe fiecare clip
+- Rândul "Populare" (după vizualizări) și durata afișată pe fiecare clip
 - Sortare în interiorul unei categorii (A-Z, Z-A, cele mai vizionate, cele mai noi)
 - Comutator de culoare de accent (6 teme)
 - Pagină dedicată jocului RObotzi Fartravel (cu gameplay)

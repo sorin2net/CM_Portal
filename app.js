@@ -94,17 +94,6 @@ function getPopular(n) {
   return uniq.slice(0, n);
 }
 function fmtDur(s) { s = Math.round(s || 0); if (!s) return ""; const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60; return (h ? h + ":" + String(m).padStart(2, "0") : m) + ":" + String(x).padStart(2, "0"); }
-function getRecent(n) {
-  const arr = [];
-  (function w(node, p) {
-    node.videos.forEach((v) => { if (v.youtubeId && v.date) arr.push({ title: v.title, youtubeId: v.youtubeId, where: p, date: v.date, duration: v.duration, noThumb: v.noThumb }); });
-    node.subcategories.forEach((s) => w(s, p ? p + " › " + s.name : s.name));
-  })({ videos: [], subcategories: CATALOG.categories }, "");
-  arr.sort((a, b) => b.date.localeCompare(a.date));
-  const seen = new Set(); const u = [];
-  for (const v of arr) { if (!seen.has(v.youtubeId)) { seen.add(v.youtubeId); u.push(v); } }
-  return u.slice(0, n);
-}
 function buildFlat() {
   if (flatVideos) return flatVideos;
   const out = [];
@@ -258,8 +247,6 @@ function doHome() {
   if (hist.length) appendSection("Continuă vizionarea", null, wrapRow(videoRow(hist)));
   const favs = getFavs().map((id) => idx[id]).filter(Boolean);
   if (favs.length) appendSection("Lista mea", null, wrapRow(videoRow(favs)));
-  const recent = getRecent(18);
-  if (recent.length) appendSection("Adăugate recent", null, wrapRow(videoRow(recent)));
   const pop = getPopular(24);
   if (pop.length) appendSection("Populare", null, wrapRow(videoRow(pop)));
 
