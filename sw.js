@@ -1,4 +1,4 @@
-const CACHE = "cmp-v3";
+const CACHE = "cmp-v4";
 const CORE = [
   "./", "./index.html", "./styles.css", "./app.js", "./manifest.json",
   "./assets/cm-logo.jpg", "./assets/cm-banner.jpg", "./assets/fartravel-icon.png",

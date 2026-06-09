@@ -402,7 +402,6 @@ function updateAutoBtn() { const b = $("#btnAuto"); if (!b) return; b.textConten
 $("#btnClose").onclick = closePlayer;
 $("#btnPrev").onclick = () => { if (playerIndex > 0) { playerIndex--; showCurrentVideo(); } };
 $("#btnNext").onclick = () => { if (playerIndex < playerList.length - 1) { playerIndex++; showCurrentVideo(); } };
-$("#btnFullscreen").onclick = () => { const el = playerFrame.querySelector("iframe") || playerFrame; if (el.requestFullscreen) el.requestFullscreen(); };
 $("#btnAuto").onclick = () => { autoNext = !autoNext; localStorage.setItem("cmp_auto", autoNext ? "1" : "0"); updateAutoBtn(); };
 overlay.addEventListener("click", (e) => { if (e.target === overlay) closePlayer(); });
 document.addEventListener("keydown", (e) => {
