@@ -16,7 +16,6 @@ Rasfoieste pe categorii si sezoane: Robotzi (toate sezoanele, cu numele reale al
 Functii:
 - Cautare rapida si rasfoire pe categorii, cu poze de coperta
 - Lista mea (favorite) si Continua vizionarea
-- Marcaj pentru clipurile vazute
 - Buton Random si Pick-ul zilei
 - Rand Populare (dupa vizualizari) si sortare in categorii
 - Auto-play pentru episodul urmator

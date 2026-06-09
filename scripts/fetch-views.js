@@ -12,6 +12,6 @@ const urlsFile = path.join(ROOT, "data", "all-urls.txt");
 fs.writeFileSync(urlsFile, [...ids].map((id) => "https://www.youtube.com/watch?v=" + id).join("\n"));
 console.log(`Descarc vizualizarile pentru ${ids.size} clipuri (dureaza cateva minute)...`);
 
-const out = execFileSync(YTDLP, ["-a", urlsFile, "--no-warnings", "--ignore-errors", "--print", "%(id)s|%(view_count)s"], { encoding: "utf8", maxBuffer: 1 << 26 });
-fs.writeFileSync(path.join(ROOT, "data", "views-raw.txt"), out);
+const out = execFileSync(YTDLP, ["-a", urlsFile, "--no-warnings", "--ignore-errors", "--print", "%(id)s|%(view_count)s|%(duration)s|%(upload_date)s"], { encoding: "utf8", maxBuffer: 1 << 26 });
+fs.writeFileSync(path.join(ROOT, "data", "meta-raw.txt"), out);
 console.log(`Gata. Ruleaza acum: node scripts/build-all.js`);

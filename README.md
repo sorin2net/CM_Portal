@@ -33,10 +33,10 @@ Peste **740 de videoclipuri** în **11 categorii**:
 - Răsfoire pe categorii, cu poze de copertă reale și buton de Înapoi
 - Căutare instantanee
 - Buton "Random" (un clip la întâmplare) si "Pick-ul zilei" (recomandare care se schimbă zilnic)
-- "Lista mea" (favorite), "Continuă vizionarea" (istoric) și marcaj "văzut", salvate în browser
+- "Lista mea" (favorite) și "Continuă vizionarea" (istoric), salvate în browser
 - Auto-play pentru episodul următor (binge), cu buton de pornit/oprit
-- Rândul "Populare", sortat după numărul de vizualizări
-- Sortare în interiorul unei categorii (A-Z, Z-A, cele mai vizionate)
+- Rândul "Populare" (după vizualizări), rândul "Adăugate recent" și durata afișată pe fiecare clip
+- Sortare în interiorul unei categorii (A-Z, Z-A, cele mai vizionate, cele mai noi)
 - Comutator de culoare de accent (6 teme)
 - Pagină dedicată jocului RObotzi Fartravel (cu gameplay)
 - Meniu pe mobil și săgeți de derulare pe rânduri
@@ -85,13 +85,13 @@ Pipeline-ul, in ordine:
 5. `prettify-titles.js` - pune titlurile reale la episoadele Robotzi
 6. `add-games.js` - adauga seriile de jocuri de pe canal sub IOBAGG
 7. `add-clips.js` - adauga categoria CM Clips (canalul de clips/reactii)
-8. `apply-views.js` - aplica numarul de vizualizari (pentru randul Populare)
+8. `apply-views.js` - aplica vizualizarile, durata si data publicarii (Populare, badge durata, sortari)
 9. `check-thumbs.js` - detecteaza pozele goale si le pune un placeholder
 
 Unelte separate (se ruleaza ocazional):
 
-- `fetch-views.js` - descarca numarul de vizualizari (lent) in `data/views-raw.txt`
-- `generate-assets.py` - genereaza imaginea Open Graph si iconitele PWA (necesita Python + Pillow)
+- `fetch-views.js` - descarca metadatele (vizualizari, durata, data), lent, in `data/meta-raw.txt`
+- `generate-assets.py` - genereaza imaginea Open Graph, feature graphic-ul si iconitele PWA (necesita Python + Pillow)
 
 ## Cum se actualizează / extinde
 
