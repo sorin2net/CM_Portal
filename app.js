@@ -83,7 +83,7 @@ function getVideoIndex() {
   if (videoIndex) return videoIndex;
   videoIndex = {};
   (function w(n, p) {
-    n.videos.forEach((v) => { if (v.youtubeId && !videoIndex[v.youtubeId]) videoIndex[v.youtubeId] = { title: v.title, where: p, youtubeId: v.youtubeId, noThumb: v.noThumb }; });
+    n.videos.forEach((v) => { if (v.youtubeId && !videoIndex[v.youtubeId]) videoIndex[v.youtubeId] = { title: v.title, where: p, youtubeId: v.youtubeId, noThumb: v.noThumb, duration: v.duration }; });
     n.subcategories.forEach((s) => w(s, p ? p + " › " + s.name : s.name));
   })({ videos: [], subcategories: CATALOG.categories }, "");
   return videoIndex;
@@ -91,7 +91,7 @@ function getVideoIndex() {
 function getPopular(n) {
   const arr = [];
   (function w(node, p) {
-    node.videos.forEach((v) => { if (v.youtubeId && v.views) arr.push({ title: v.title, youtubeId: v.youtubeId, where: p, views: v.views, noThumb: v.noThumb }); });
+    node.videos.forEach((v) => { if (v.youtubeId && v.views) arr.push({ title: v.title, youtubeId: v.youtubeId, where: p, views: v.views, noThumb: v.noThumb, duration: v.duration }); });
     node.subcategories.forEach((s) => w(s, p ? p + " › " + s.name : s.name));
   })({ videos: [], subcategories: CATALOG.categories }, "");
   arr.sort((a, b) => b.views - a.views);
@@ -214,6 +214,10 @@ function videoCard(video, list, index, where) {
     cover.appendChild(fav);
   }
   if (video.duration) { const db = document.createElement("div"); db.className = "dur-badge"; db.textContent = fmtDur(video.duration); cover.appendChild(db); }
+  if (video.youtubeId && video.duration) {
+    const p = getPos(video.youtubeId);
+    if (p > 0 && p < video.duration) { const pr = document.createElement("div"); pr.className = "card-progress"; const f = document.createElement("i"); f.style.width = Math.min(100, Math.round((p / video.duration) * 100)) + "%"; pr.appendChild(f); cover.appendChild(pr); }
+  }
   el.appendChild(cover);
   if (!video.youtubeId) { const nl = document.createElement("div"); nl.className = "badge-nolink"; nl.innerHTML = "f&#259;r&#259; link"; el.appendChild(nl); }
   const label = document.createElement("div"); label.className = "card-label";
@@ -381,7 +385,7 @@ function doFartravel() {
       <h1>RObotzi <b>Fartravel</b></h1>
       <p class="ft-tag">„How fart can you travel?"</p>
       <p>O aventură prin spaţiu cu <b>MO</b> şi <b>F.O.C.A.</b>, din serialul RObotzi. După ce MO a folosit piese de navă ca să repare o staţie orbitală, cei doi pornesc spre casă pe o rablă spaţială, navigând cu ajutorul „reactorului cu fasole" al lui MO. Ai doar 5 apăsări, aşa că adună boabele spaţiale ca să te realimentezi şi să mergi mai departe. Strânge 20 de boabe şi apare o fasole secretă specială! Disponibil în engleză şi română.</p>
-      <div class="ft-video"><iframe src="https://www.youtube.com/embed/iIkoraEr4K4?rel=0&modestbranding=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <div class="ft-video"><iframe src="https://www.youtube.com/embed/iIkoraEr4K4?rel=0&modestbranding=1&playsinline=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
       <p class="ft-note">Joc creat de Creative Monkeyz.</p>
     </div>`;
   content.appendChild(wrap);
@@ -463,7 +467,7 @@ function showCurrentVideo() {
       if (ytPlayer && ytPlayer.loadVideoById) ytPlayer.loadVideoById({ videoId: v.youtubeId, startSeconds: start });
       else { playerFrame.innerHTML = '<div id="ytplayer"></div>'; ytPlayer = new YT.Player("ytplayer", { videoId: v.youtubeId, playerVars: { autoplay: 1, rel: 0, modestbranding: 1, playsinline: 1, start: start }, events: { onStateChange: onYtState } }); }
     } else {
-      playerFrame.innerHTML = `<iframe src="https://www.youtube.com/embed/${v.youtubeId}?autoplay=1&rel=0&modestbranding=1${start ? "&start=" + start : ""}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+      playerFrame.innerHTML = `<iframe src="https://www.youtube.com/embed/${v.youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1${start ? "&start=" + start : ""}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
     }
   } else {
     ytPlayer = null;
