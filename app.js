@@ -7,6 +7,8 @@ let flatVideos = null;
 let videoIndex = null;
 let ytPlayer = null;
 let ytReady = false;
+let playingId = null;
+let posTimer = null;
 let autoNext = localStorage.getItem("cmp_auto") !== "0";
 
 const $ = (s) => document.querySelector(s);
@@ -46,6 +48,8 @@ window.addEventListener("popstate", (e) => render(e.state || { v: "home" }));
 function render(state) {
   if (state.v === "about") return doAbout();
   if (state.v === "fartravel") return doFartravel();
+  if (state.v === "history") return doHistory();
+  if (state.v === "favs") return doFavs();
   if (state.v === "node") { const chain = resolvePath(state.path); if (chain && chain.length) return doNode(chain); }
   doHome();
 }
@@ -54,6 +58,8 @@ function closeMenu() { $(".nav").classList.remove("open"); }
 function navHome() { closeMenu(); $("#searchInput").value = ""; applyState({ v: "home" }); }
 function navAbout() { closeMenu(); applyState({ v: "about" }); }
 function navFartravel() { closeMenu(); applyState({ v: "fartravel" }); }
+function navHistory() { closeMenu(); applyState({ v: "history" }); }
+function navFavs() { closeMenu(); applyState({ v: "favs" }); }
 function navNode(chain) { applyState({ v: "node", path: chain.map((n) => n.name) }); }
 function resolvePath(names) {
   let nodes = CATALOG.categories, chain = [];
@@ -107,12 +113,31 @@ function buildFlat() {
 }
 function playRandom() { const list = buildFlat(); if (list.length) openPlayer(list, Math.floor(Math.random() * list.length), ""); }
 
-const FAV_KEY = "cmp_fav", HIST_KEY = "cmp_hist";
+const FAV_KEY = "cmp_fav", HIST_KEY = "cmp_hist", POS_KEY = "cmp_pos";
+const HIST_CAP = 200;
 function getFavs() { try { return JSON.parse(localStorage.getItem(FAV_KEY)) || []; } catch (e) { return []; } }
 function isFav(id) { return getFavs().includes(id); }
 function toggleFav(id) { const a = getFavs(); const i = a.indexOf(id); if (i >= 0) a.splice(i, 1); else a.unshift(id); localStorage.setItem(FAV_KEY, JSON.stringify(a)); }
 function getHist() { try { return JSON.parse(localStorage.getItem(HIST_KEY)) || []; } catch (e) { return []; } }
-function pushHist(id) { if (!id) return; let a = getHist().filter((x) => x !== id); a.unshift(id); localStorage.setItem(HIST_KEY, JSON.stringify(a.slice(0, 30))); }
+function pushHist(id) { if (!id) return; let a = getHist().filter((x) => x !== id); a.unshift(id); localStorage.setItem(HIST_KEY, JSON.stringify(a.slice(0, HIST_CAP))); }
+function clearHist() { localStorage.removeItem(HIST_KEY); }
+
+function collectIds(node) { const ids = []; (function w(n) { n.videos.forEach((v) => { if (v.youtubeId) ids.push(v.youtubeId); }); n.subcategories.forEach(w); })(node); return ids; }
+function folderFavState(node) { const ids = collectIds(node); if (!ids.length) return "none"; const favs = new Set(getFavs()); if (ids.every((id) => favs.has(id))) return "all"; return ids.some((id) => favs.has(id)) ? "some" : "none"; }
+function toggleFolderFav(node) {
+  const ids = collectIds(node); if (!ids.length) return "none";
+  let favs = getFavs(); const favSet = new Set(favs);
+  const inAll = ids.every((id) => favSet.has(id));
+  if (inAll) { const rm = new Set(ids); favs = favs.filter((id) => !rm.has(id)); }
+  else { favs = ids.filter((id) => !favSet.has(id)).concat(favs); }
+  localStorage.setItem(FAV_KEY, JSON.stringify(favs));
+  return inAll ? "none" : "all";
+}
+
+function getPosAll() { try { return JSON.parse(localStorage.getItem(POS_KEY)) || {}; } catch (e) { return {}; } }
+function getPos(id) { return getPosAll()[id] || 0; }
+function setPos(id, sec) { const a = getPosAll(); a[id] = Math.floor(sec); localStorage.setItem(POS_KEY, JSON.stringify(a)); }
+function clearPos(id) { const a = getPosAll(); if (a[id] != null) { delete a[id]; localStorage.setItem(POS_KEY, JSON.stringify(a)); } }
 
 const ACCENTS = [
   ["Rosu", "#ff2740", "#c01228"],
@@ -138,6 +163,8 @@ function initAccent() {
 
 function setActiveNav(which) {
   $("#navHome").classList.toggle("active", which === "home");
+  $("#navFavs").classList.toggle("active", which === "favs");
+  $("#navHistory").classList.toggle("active", which === "history");
   $("#navAbout").classList.toggle("active", which === "about");
   $("#navFartravel").classList.toggle("active", which === "fartravel");
 }
@@ -166,6 +193,11 @@ function folderCard(node, chain) {
   const el = document.createElement("div"); el.className = "card";
   el.appendChild(makeCover(coverId(node)));
   const badge = document.createElement("div"); badge.className = "badge-folder"; badge.innerHTML = FOLDER_ICON + countVideos(node); el.appendChild(badge);
+  const fav = document.createElement("button");
+  fav.className = "fav-btn" + (folderFavState(node) === "all" ? " on" : "");
+  fav.innerHTML = HEART; fav.title = "Adaugă tot folderul la Lista mea";
+  fav.onclick = (e) => { e.stopPropagation(); const r = toggleFolderFav(node); fav.classList.toggle("on", r === "all"); cmpToast(r === "all" ? "Folder adăugat la Lista mea" : "Folder scos din Lista mea"); };
+  el.appendChild(fav);
   const label = document.createElement("div"); label.className = "card-label"; label.innerHTML = `<div class="card-title">${escapeHtml(node.name)}</div>`; el.appendChild(label);
   el.onclick = () => navNode(chain);
   return el;
@@ -244,9 +276,9 @@ function doHome() {
 
   const idx = getVideoIndex();
   const hist = getHist().map((id) => idx[id]).filter(Boolean);
-  if (hist.length) appendSection("Continuă vizionarea", null, wrapRow(videoRow(hist)));
+  if (hist.length) appendSection("Continuă vizionarea", null, wrapRow(videoRow(hist)), navHistory);
   const favs = getFavs().map((id) => idx[id]).filter(Boolean);
-  if (favs.length) appendSection("Lista mea", null, wrapRow(videoRow(favs)));
+  if (favs.length) appendSection("Lista mea", null, wrapRow(videoRow(favs)), navFavs);
   const pop = getPopular(24);
   if (pop.length) appendSection("Populare", null, wrapRow(videoRow(pop)));
 
@@ -268,6 +300,13 @@ function doNode(chain) {
   head.innerHTML = `
     ${id ? `<img class="page-head-cover" src="${thumb(id, "hqdefault")}" alt="" onerror="this.remove()">` : ""}
     <div><h1>${escapeHtml(node.name)}</h1><div class="sub">${countVideos(node)} clipuri${node.subcategories.length ? " · " + node.subcategories.length + " sec&#539;iuni" : ""}</div></div>`;
+  if (collectIds(node).length) {
+    const fb = document.createElement("button"); fb.className = "head-fav";
+    const setLabel = () => { const all = folderFavState(node) === "all"; fb.classList.toggle("on", all); fb.innerHTML = HEART + "<span>" + (all ? "Salvat în Lista mea" : "Adaugă tot la Lista mea") + "</span>"; };
+    setLabel();
+    fb.onclick = () => { const r = toggleFolderFav(node); setLabel(); cmpToast(r === "all" ? "Adăugat la Lista mea" : "Scos din Lista mea"); };
+    head.appendChild(fb);
+  }
   content.appendChild(head);
   const where = pathStack.map((n) => n.name).join(" › ");
   if (node.subcategories.length) {
@@ -348,6 +387,35 @@ function doFartravel() {
   content.appendChild(wrap);
 }
 
+function doHistory() {
+  setActiveNav("history"); pathStack = []; window.scrollTo(0, 0); content.innerHTML = "";
+  content.appendChild(navBar(simpleBreadcrumb("Istoric")));
+  const idx = getVideoIndex();
+  const hist = getHist().map((id) => idx[id]).filter(Boolean);
+  const head = document.createElement("div"); head.className = "section-head";
+  head.innerHTML = `<h2>Istoricul vizion&#259;rilor</h2><span class="count">${hist.length}</span>`;
+  if (hist.length) { const clr = document.createElement("button"); clr.className = "clear-btn"; clr.textContent = "Șterge istoricul"; clr.onclick = () => { clearHist(); doHistory(); }; head.appendChild(clr); }
+  content.appendChild(head);
+  if (!hist.length) { content.insertAdjacentHTML("beforeend", '<p class="empty-msg">Nu ai vizionat &#238;nc&#259; niciun clip. Istoricul apare aici dup&#259; ce dai play.</p>'); return; }
+  const grid = document.createElement("div"); grid.className = "grid";
+  hist.forEach((v, i) => grid.appendChild(videoCard(v, hist, i, v.where)));
+  content.appendChild(grid);
+}
+
+function doFavs() {
+  setActiveNav("favs"); pathStack = []; window.scrollTo(0, 0); content.innerHTML = "";
+  content.appendChild(navBar(simpleBreadcrumb("Lista mea")));
+  const idx = getVideoIndex();
+  const favs = getFavs().map((id) => idx[id]).filter(Boolean);
+  const head = document.createElement("div"); head.className = "section-head";
+  head.innerHTML = `<h2>Lista mea</h2><span class="count">${favs.length}</span>`;
+  content.appendChild(head);
+  if (!favs.length) { content.insertAdjacentHTML("beforeend", '<p class="empty-msg">Lista ta e goal&#259;. Apas&#259; pe inim&#259; la un clip sau la o categorie ca s&#259;-l salvezi aici.</p>'); return; }
+  const grid = document.createElement("div"); grid.className = "grid";
+  favs.forEach((v, i) => grid.appendChild(videoCard(v, favs, i, v.where)));
+  content.appendChild(grid);
+}
+
 function renderFooter() {
   $("#siteFooter").innerHTML = `
     <div class="footer-inner">
@@ -371,18 +439,31 @@ function openPlayer(list, index, where) {
   showCurrentVideo();
   overlay.hidden = false;
   document.body.style.overflow = "hidden";
+  if (posTimer) clearInterval(posTimer);
+  posTimer = setInterval(savePosNow, 5000);
+}
+function savePosNow() {
+  if (!ytPlayer || !ytPlayer.getCurrentTime || !playingId) return;
+  try {
+    const t = ytPlayer.getCurrentTime();
+    const d = ytPlayer.getDuration ? ytPlayer.getDuration() : 0;
+    if (t > 8 && (!d || t < d - 20)) setPos(playingId, t); else clearPos(playingId);
+  } catch (e) {}
 }
 function showCurrentVideo() {
+  savePosNow();
   const v = playerList[playerIndex];
   $("#playerTitle").textContent = stripEmoji(v.title);
   $("#playerWhere").textContent = stripEmoji(v.where || playerWhere);
   pushHist(v.youtubeId);
+  playingId = v.youtubeId || null;
   if (v.youtubeId) {
+    const start = getPos(v.youtubeId);
     if (ytReady && window.YT && YT.Player) {
-      if (ytPlayer && ytPlayer.loadVideoById) ytPlayer.loadVideoById(v.youtubeId);
-      else { playerFrame.innerHTML = '<div id="ytplayer"></div>'; ytPlayer = new YT.Player("ytplayer", { videoId: v.youtubeId, playerVars: { autoplay: 1, rel: 0, modestbranding: 1, playsinline: 1 }, events: { onStateChange: onYtState } }); }
+      if (ytPlayer && ytPlayer.loadVideoById) ytPlayer.loadVideoById({ videoId: v.youtubeId, startSeconds: start });
+      else { playerFrame.innerHTML = '<div id="ytplayer"></div>'; ytPlayer = new YT.Player("ytplayer", { videoId: v.youtubeId, playerVars: { autoplay: 1, rel: 0, modestbranding: 1, playsinline: 1, start: start }, events: { onStateChange: onYtState } }); }
     } else {
-      playerFrame.innerHTML = `<iframe src="https://www.youtube.com/embed/${v.youtubeId}?autoplay=1&rel=0&modestbranding=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+      playerFrame.innerHTML = `<iframe src="https://www.youtube.com/embed/${v.youtubeId}?autoplay=1&rel=0&modestbranding=1${start ? "&start=" + start : ""}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
     }
   } else {
     ytPlayer = null;
@@ -391,11 +472,18 @@ function showCurrentVideo() {
   $("#btnPrev").disabled = playerIndex <= 0;
   $("#btnNext").disabled = playerIndex >= playerList.length - 1;
 }
-function onYtState(e) { if (e.data === 0 && autoNext && playerIndex < playerList.length - 1) { playerIndex++; showCurrentVideo(); } }
+function onYtState(e) {
+  if (e.data === 0) {
+    if (playingId) clearPos(playingId);
+    if (autoNext && playerIndex < playerList.length - 1) { playerIndex++; showCurrentVideo(); }
+  }
+}
 function closePlayer() {
+  savePosNow();
+  if (posTimer) { clearInterval(posTimer); posTimer = null; }
   overlay.hidden = true;
   if (ytPlayer && ytPlayer.destroy) { try { ytPlayer.destroy(); } catch (e) {} }
-  ytPlayer = null; playerFrame.innerHTML = ""; document.body.style.overflow = "";
+  ytPlayer = null; playingId = null; playerFrame.innerHTML = ""; document.body.style.overflow = "";
 }
 function updateAutoBtn() { const b = $("#btnAuto"); if (!b) return; b.textContent = "Auto-play: " + (autoNext ? "ON" : "OFF"); b.classList.toggle("on", autoNext); }
 
@@ -405,10 +493,12 @@ $("#btnNext").onclick = () => { if (playerIndex < playerList.length - 1) { playe
 $("#btnAuto").onclick = () => { autoNext = !autoNext; localStorage.setItem("cmp_auto", autoNext ? "1" : "0"); updateAutoBtn(); };
 overlay.addEventListener("click", (e) => { if (e.target === overlay) closePlayer(); });
 document.addEventListener("keydown", (e) => {
+  if (e.key === "?") { const ae = document.activeElement; if (ae && (ae.tagName === "INPUT" || ae.tagName === "TEXTAREA")) return; cmpToast("Scurtături: Esc închide playerul, săgeți schimbă clipul, Space pune pauză.", 5000); return; }
   if (overlay.hidden) return;
   if (e.key === "Escape") closePlayer();
   if (e.key === "ArrowRight") $("#btnNext").click();
   if (e.key === "ArrowLeft") $("#btnPrev").click();
+  if (e.key === " " || e.code === "Space") { if (ytPlayer && ytPlayer.getPlayerState) { e.preventDefault(); ytPlayer.getPlayerState() === 1 ? ytPlayer.pauseVideo() : ytPlayer.playVideo(); } }
 });
 
 $("#searchInput").addEventListener("input", (e) => {
@@ -440,6 +530,8 @@ $("#brand").onclick = () => {
   if (logoClicks >= 7) { logoClicks = 0; lltcmRain(); }
 };
 $("#navHome").onclick = navHome;
+$("#navFavs").onclick = navFavs;
+$("#navHistory").onclick = navHistory;
 $("#navAbout").onclick = navAbout;
 $("#navFartravel").onclick = navFartravel;
 $("#btnRandom").onclick = playRandom;
